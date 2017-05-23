@@ -11,7 +11,7 @@
  * Template     INSPINIA+ Admin Theme.
  */
 
-    define('waktu', 'Asia/Jakarta');
+    define('TIME', 'Asia/Jakarta');
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASS', 'root');
@@ -23,7 +23,7 @@
     
     session_start();
     
-    date_default_timezone_set(waktu);
+    date_default_timezone_set(TIME);
     setlocale(LC_MONETARY, 'id');
 
     $conn = new mysqli(HOST,USER,PASS);
