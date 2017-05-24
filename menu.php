@@ -9,13 +9,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">SISFOLOWONGANKERJA</a>
+                <a class="navbar-brand" href="?ref=home">SISFOLOWONGANKERJA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Beranda</a>
+                        <a href="?ref=home">Beranda</a>
                     </li>
                     <li>
                         <a href="#">Lowongan Kerja</a>
@@ -24,7 +24,7 @@
                         <a href="#">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="#">Login</a>
+                        <a href="?ref=login">Login</a>
                     </li>
                 </ul>
             </div>

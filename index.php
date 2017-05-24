@@ -9,13 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lowongan Kerja</title>
+    <title>Lowongan Kerja Kabupaten Cilacap</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/blog-home.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/login-style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,9 +40,9 @@
                     $ref = str_replace(".","/",$_GET['ref']).".php";
                 } else {
                     $ref = "home.php";    
-                } if( file_exists("system/".$ref) )
+                } if( file_exists("modul/".$ref) )
                 {
-                    include("system/".$ref);
+                    include("modul/".$ref);
                 } else {
                     include("home.php");
                 }  
@@ -53,15 +54,15 @@
         <hr>
 
         <!-- Footer -->
-        <footer>
-            <div class="row">
+        <!-- <footer> -->
+            <!-- <div class="row"> -->
                 <div class="col-lg-12">
                     <p>Copyright &copy; Your Website 2014</p>
                 </div>
                 <!-- /.col-lg-12 -->
-            </div>
+            <!-- </div> -->
             <!-- /.row -->
-        </footer>
+        <!-- </footer> -->
 
     </div>
     <!-- /.container -->
@@ -71,6 +72,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="../js/login.js"></script>
 
 </body>
 
