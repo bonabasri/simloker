@@ -11,7 +11,8 @@
  * Template     INSPINIA+ Admin Theme.
  */
 
-	require( dirname( __FILE__ ) . '/core.php' );
+	// require( dirname( __FILE__ ) . '../core.php' );
+	require('../core.php');
 	
 	$v_uname = $conn->real_escape_string($_POST['uname']);
 	$v_upsw	 = $conn->real_escape_string($_POST['upsw']);
