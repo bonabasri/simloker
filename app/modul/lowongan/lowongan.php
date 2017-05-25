@@ -1,13 +1,13 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header"> Pendaftaran</h3>
+            <h3 class="page-header"> Pasang Lowongan</h3>
         </div>
     </div>
     <div class="row"> 
         <div class="col-lg-12">
             <div class="panel panel-default">
-            <div class="panel-heading">Post Lamaran</div>
+            <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
@@ -17,6 +17,30 @@
                 <form class="form-horizontal" style="margin-top: 10px;" action="?ref=formulirs" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
                     <label class="col-sm-3 control-label"> Judul</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                        </div>
+                    </div><br/>
+                    <div class="form-group">
+                    <label class="col-sm-3 control-label"> Posisi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                        </div>
+                    </div><br/>
+                    <div class="form-group">
+                    <label class="col-sm-3 control-label"> Pendidikan</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                        </div>
+                    </div><br/>
+                    <div class="form-group">
+                    <label class="col-sm-3 control-label"> Umur</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                        </div>
+                    </div><br/>
+                    <div class="form-group">
+                    <label class="col-sm-3 control-label"> Tanggal Akhir Lowo</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
                         </div>
