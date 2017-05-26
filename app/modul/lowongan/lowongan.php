@@ -10,112 +10,52 @@
             <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-10">
                     
     
                    
-                <form class="form-horizontal" style="margin-top: 10px;" action="?ref=formulirs" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?ref=formulirs" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
-                    <label class="col-sm-3 control-label"> Judul</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Posisi</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Pendidikan</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Umur</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Tanggal Akhir Lowo</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Tempat, Tanggal Lahir</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" name="tmp_lhr" placeholder="Tempat Lahir" required/>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="text" name="tgl" id="tgl" class="form-control" placeholder="Tanggal Lahir" required/> <a style="color:#777; text-decoration:none;"> Ex: 13-07-2000</a>
-                        </div>
+                    <label> Judul</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
                     </div>
                     <div class="form-group">
-                    <label class="col-sm-3 control-label"> Jenis Kelamin</label>
-                        <div class="col-sm-4">
-                            <select class="form-control" name="jk" required/>
-                            <option value="">- Pilih -</option>
-                            <option value="L">Laki-Laki</option>
-                            <option value="P">Perempuan</option>
-                            </select>      
-                        </div>
-                    </div><br/>
+                    <label> Posisi</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                    </div>
                     <div class="form-group">
-                    <label class="col-sm-3 control-label"> Asal Sekolah</label>
+                    <label> Pendidikan Terakhir</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Gaji</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Keterangan Lowongan</label>
+                        <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Tanggal Akhir Lowongan</label>
+                            <input type="text" name="tgl" id="tgl" class="form-control" placeholder="Tanggal Lahir" required/> <a style="color:#777; text-decoration:none;"> Ex: 13-07-2000</a>
+                    </div><!-- 
+                    <div class="form-group">
+                    <label class="col-sm-3 control-label"> HAHAH</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="as_sklh" placeholder="Asal Sekolah" required/>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
-                    <label class="col-sm-3 control-label"> Nama Orang Tua</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" name="ortu" placeholder="Nama Ayah" required/>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Alamat Rumah</label>
-                        <div class="col-sm-8"></div>
-                    </div>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> RT</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" name="rt" maxlength="2" onkeypress="return number(event)" required/>
+                    <label> HAHAH</label>
+                        <div id="editor">
+                            <h1>Hello world!</h1>
+                            <p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
+                            
                         </div>
                     </div>
                     <div class="form-group">
-                    <label class="col-sm-3 control-label"> RW</label>
-                        <div class="col-sm-3">
-                            <input type="text" class="form-control" name="rw" maxlength="2" onkeypress="return number(event)" required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Desa, Kecamatan</label>
-                        <div class="col-sm-8">
-                            <textarea name="alamat" class="form-control" rows="2" placeholder="Alamat Lengkap" required/></textarea>
-                        </div>
-                    </div><br/>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"> Nomor HP</label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" pattern="[0-9]{12,12}" name="no_hp" onkeypress="return number(event)" placeholder="No HP" maxlength="12" required/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"></label>
-                        <div class="col-sm-9">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="agree" onclick="daftar.disabled=false;">&nbsp; Saya setuju untuk mendaftar.</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                    <label class="col-sm-3 control-label"></label>
-                        <div class="col-sm-7">
-                            <input type="submit" name="daftar" value="DAFTAR" class="btn btn-primary" align="left" disabled/>
-                        </div>
+                    <label></label>
+                        <input type="submit" name="daftar" value="Terbitkan" class="btn btn-primary"disabled/>
                     </div>                   
                 </form>
             </div>
@@ -137,6 +77,8 @@ $(document).ready(function() {
         changeYear: true
         });
     });
+    
+    initSample();
 </script>
 
 <script>

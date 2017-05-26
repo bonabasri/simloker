@@ -86,10 +86,10 @@
     <!-- Clock -->
     <script src="../dist/clock.js" type="text/javascript"></script>
 
-    <!-- Bootstrap WYSIHTML5 -->
-    <script src="../dist/bootstrap-wysihtml5/wysihtml5-0.3.0.min.js"></script>
-    <!-- bootstrap file -->
-    <script src="../dist/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+    <script src="../dist/ckeditor/ckeditor.js"></script>
+    <script src="../dist/ckeditor/samples/js/sample.js"></script>
+    <!-- <link rel="stylesheet" href="../dist/ckeditor/samples/css/samples.css">
+    <link rel="stylesheet" href="../dist/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css"> -->
 
 </head>
 
