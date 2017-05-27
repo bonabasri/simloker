@@ -79,11 +79,12 @@
                         <li>
                             <a href="?p=users.akun"><i class="fa fa-linux fa-fw"></i> Profil</a>
                         </li>
-
                         <li>
                             <a href="?p=lowongan.lowongan"><i class="fa fa-linux fa-fw"></i> Pasang Lowongan</a>
                         </li>
-                        
+                        <li>
+                            <a href="?p=resume.resume"><i class="fa fa-linux fa-fw"></i> Resume</a>
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Setting<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
