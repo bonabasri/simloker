@@ -20,12 +20,12 @@
         <ul class="nav navbar-top-links navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['usr_username']; ?> <i class="fa fa-caret-down fa-fw"></i>
+                    <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['uname']; ?> <i class="fa fa-caret-down fa-fw"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-messages">
                     <li>
                         <a href="#">
-                            <strong><?php echo $_SESSION['usr_nama']; ?></strong>
+                            <strong><?php echo $_SESSION['nama']; ?></strong>
                         </a>
                         
                     </li>
@@ -44,7 +44,10 @@
                 </ul>
             </li>
         </ul>
-
+<?php 
+    if ($_SESSION['uac'] === 'ADM') 
+    { 
+?>
            <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -60,21 +63,56 @@
                         <li>
                             <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
                         </li>
-                        <!-- <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Setting<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="?p=setting.sekolah"><i class="fa fa-genderless fa-fw"></i>Set. Identitas</a>
-                                </li>
-                                <li>
-                                    <a href="?p=setting.web"><i class="fa fa-genderless fa-fw"></i>Set. Web</a>
-                                </li>
-                            </ul>
-                        </li> -->
                         <li>
                             <a href="?p=info.view"><i class="fa fa-info fa-fw"></i> Blog</a>
                         </li>
                     </ul>
                 </div>
             </div>
+<?php 
+    } else if ($_SESSION['uac'] === 'PELAMAR') {
+?>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="?p=dashboard"><i class="fa fa-windows fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="?p=users.akun"><i class="fa fa-user fa-fw"></i> Profil</a>
+                        </li>
+                        <li>
+                            <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
+                        </li>
+                        <li>
+                            <a href="?p=info.view"><i class="fa fa-info fa-fw"></i> Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<?php 
+    } else if ($_SESSION['uac'] === 'PERUSAHAAN') {
+?>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="?p=dashboard"><i class="fa fa-windows fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="?p=users.akun"><i class="fa fa-user fa-fw"></i> Profil</a>
+                        </li>
+                        <li>
+                            <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
+                        </li>
+                        <li>
+                            <a href="?p=info.view"><i class="fa fa-info fa-fw"></i> Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+<?php 
+    } else {
+    }
+?>
         </nav>
