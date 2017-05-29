@@ -38,17 +38,11 @@
                     <div class="form-group">
                     <label> Riwayat Pendidikan</label>
                         <div id="editor">
-                            <h1>Hello world!</h1>
-                            <p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
-                            
                         </div>
                     </div>
                     <div class="form-group">
                     <label> Riwayat Pekerjaan</label>
                         <div id="editor">
-                            <h1>Hello world!</h1>
-                            <p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
-                            
                         </div>
                     </div>
                         <input type="submit" name="daftar" value="Terbitkan" class="btn btn-primary"disabled/>

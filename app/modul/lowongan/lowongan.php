@@ -32,7 +32,7 @@
                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
                     </div>
                     <div class="form-group">
-                    <label> Keterangan Lowongan</label>
+                    <label> Kategori</label>
                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required/>
                     </div>
                     <div class="form-group">
@@ -46,10 +46,8 @@
                         </div>
                     </div> -->
                     <div class="form-group">
-                    <label> HAHAH</label>
+                    <label> Keterangan Lowongan</label>
                         <div id="editor">
-                            <h1>Hello world!</h1>
-                            <p>I'm an instance of <a href="http://ckeditor.com">CKEditor</a>.</p>
                             
                         </div>
                     </div>

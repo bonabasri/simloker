@@ -93,7 +93,7 @@
 
 </head>
 
-<body onload="startclock()">
+<body>
 
     <div id="wrapper">
 
@@ -103,20 +103,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <?php
-                        if(isset($_GET['p']) && strlen($_GET['p']) > 0)
-                        {
+                        if(isset($_GET['p']) && strlen($_GET['p']) > 0) {
                             $p=str_replace(".","/",$_GET['p']).".php";
-                        }
-                        else 
-                        {
+                        } else {
                             $p="dashboard.php";    
-                        }
-                        if(file_exists("modul/".$p))
-                        {
+                        } if(file_exists("modul/".$p)) {
                             include("modul/".$p);    
-                        }
-                        else
-                        {
+                        } else {
                             include("dashboard.php");   
                         }  
                     ?>
