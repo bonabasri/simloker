@@ -52,7 +52,7 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="?p=dashboard"><i class="fa fa-windows fa-fw"></i> Dashboard</a>
+                            <a href="?p=dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="?p=users.akun"><i class="fa fa-user fa-fw"></i> Profil</a>
@@ -62,6 +62,12 @@
                         </li>
                         <li>
                             <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
+                        </li>
+                        <li>
+                            <a href="?p=pelamar.pelamar"><i class="fa fa-users fa-fw"></i> Data Pelamar</a>
+                        </li>
+                         <li>
+                            <a href="?p=perusahaan.perusahaan"><i class="fa fa-institution fa-fw"></i> Data Perusahaan</a>
                         </li>
                         <li>
                             <a href="?p=info.view"><i class="fa fa-info fa-fw"></i> Blog</a>

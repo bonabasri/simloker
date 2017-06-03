@@ -24,6 +24,9 @@
                         <a href="#">Pasang Lowongan</a>
                     </li>
                     <li>
+                        <a href="?ref=login">Registrasi</a>
+                    </li>
+                    <li>
                         <a href="?ref=login">Login</a>
                     </li>
                 </ul>

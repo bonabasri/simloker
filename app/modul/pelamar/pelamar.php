@@ -1,13 +1,13 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="page-header"> Pasang Lowongan</h3>
+            <h3 class="page-header"> Profil Pelamar</h3>
         </div>
     </div>
     <div class="row"> 
         <div class="col-lg-12">
             <div class="panel panel-default">
-            <div class="panel-heading">Informasi Lowongan</div>
+            <div class="panel-heading">Informasi Pelamar</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-10">
@@ -33,58 +33,49 @@
     ?>    
                    
                 <form class="" role="form" style="margin-top: 10px;" action="?ref=save" id="defaultForm" method="post" enctype="multipart/form-data">              
-                    <!-- <div class="form-group">
-                    <label> Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Judul Lowongan" required/>
-                    </div> -->
                     <div class="form-group">
-                    <label> Kategori Pekerjaan</label>
-                        <select class="form-control" name="id_kategori_pekerjaan" required/>
-                            <option value="">- Pilih -</option>
-                            <?php echo $kategori_kerja; ?>
-                        </select>
+                    <label> Nama Depan</label>
+                        <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>
                     </div>
                     <div class="form-group">
-                    <label> Posisi</label>
-                        <input type="text" class="form-control" name="posisi" placeholder="Nama Lengkap" required/>
+                    <label> Nama Belakang</label>
+                        <input type="text" class="form-control" name="nama_brand" placeholder="Nama Brand" required/>
                     </div>
                     <div class="form-group">
-                    <label> Jenis Kelamin</label>
-                        <select class="form-control" name="jk_require" required/>
-                            <option value="">- Pilih -</option>
-                            <option value="P">Pria</option>
-                            <option value="W">Wanita</option>
-                            <option value="PW">Pria dan Wanita</option>
-                        </select>
+                    <label> Nomor Registrasi</label>
+                        <input type="text" class="form-control" name="no_registrasi" placeholder="Nomor Registrasi" required/>
                     </div>
                     <div class="form-group">
-                    <label> Usia</label>
-                        <input type="text" class="form-control" name="usia" placeholder="Usia" required/>
+                    <label> Alamat</label>
+                        <input type="text" class="form-control" name="alamat" placeholder="Alamat" required/>
                     </div>
                     <div class="form-group">
-                    <label> Lulusan</label>
-                        <select class="form-control" name="id_pendidikan" required/>
-                            <option value="">- Pilih -</option>
-                            <?php echo $kategori_pendidikan; ?>
-                        </select>
+                        <input type="text" class="form-control" name="kota" placeholder="Kota" required/>
                     </div>
                     <div class="form-group">
-                    <label> Pengalaman</label>
-                        <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman" required/>
+                        <input type="text" class="form-control" name="prov" placeholder="Provinsi" required/>
                     </div>
                     <div class="form-group">
-                    <label> Tanggal Akhir Lowongan</label>
-                            <input type="text" name="tgl" id="tgl" class="form-control" placeholder="Tanggal Lahir" required/>
+                    <label> Nomor Telepon</label>
+                        <input type="text" class="form-control" name="no_telp" placeholder="Nomor Telepon" required/>
                     </div>
                     <div class="form-group">
-                    <label> Deskripsi Lowongan</label>
+                    <label> Email</label>
+                        <input type="text" class="form-control" name="email" placeholder="Email" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Logo Perusahaan</label>
+                        <input type="text" class="form-control" name="logo" placeholder="Logo" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Deskripsi Perusahaan</label>
                         <div id="editor">
                             
                         </div>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <input type="submit" name="daftar" value="Terbitkan" class="btn btn-primary">
+                        <input type="submit" name="daftar" value="Simpan" class="btn btn-primary">
                     </div>                   
                 </form>
             </div>

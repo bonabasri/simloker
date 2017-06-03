@@ -86,10 +86,10 @@
     <!-- Clock -->
     <script src="../dist/clock.js" type="text/javascript"></script>
 
-    <script src="../dist/ckeditor/ckeditor.js"></script>
-    <script src="../dist/ckeditor/samples/js/sample.js"></script>
-    <!-- <link rel="stylesheet" href="../dist/ckeditor/samples/css/samples.css">
-    <link rel="stylesheet" href="../dist/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css"> -->
+    <!-- <script src="../dist/ckeditor/ckeditor.js"></script>
+    <script src="../dist/ckeditor/samples/js/sample.js"></script> -->
+
+    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
 
 </head>
 
