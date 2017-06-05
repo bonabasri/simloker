@@ -1,12 +1,12 @@
 <?php
 	if ( isset($_POST['save']) ) 
 	{
-		$allowExt 			= array( 'png', 'jpg' );
+		$allowExt 			= array( 'png', 'jpg', 'jpeg' );
 
-		$fileName 			= $_FILES['file']['name'];
-		$fileExt			= strtolower(end(explode('.', $filename)));
-		$fileSize			= $_FILES['file']['size'];
-		$fileTemp 			= $_FILES['file']['tmp_name'];
+		$fileName 			= $_FILES['logo']['name'];
+		$fileExt			= strtolower(end(explode('.', $fileName)));
+		$fileSize			= $_FILES['logo']['size'];
+		$fileTemp 			= $_FILES['logo']['tmp_name'];
 
 		$v_nama_perusahaan 	= $_POST['nama_perusahaan'];
 		$v_alamat			= $_POST['alamat'];
@@ -17,7 +17,7 @@
 
 		$v_ket_perusahaan	= $_POST['ket_perusahaan'];
 
-		$upload_dir 		= "files/incoming/";
+		$upload_dir 		= "../dist/images/logo/";
 		$file 				= basename ($fileName);
 		$v_file 			= str_replace(' ','_',$file);
 
@@ -28,7 +28,8 @@
 				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_file) ) 
 				{
 					$sql = "INSERT INTO tb_perusahaan 
-										(nama_perusahaan, 
+										(
+										nama_perusahaan, 
 										alamat, 
 										kota, 
 										prov, 
@@ -36,20 +37,23 @@
 										email,
 										logo,
 										ket_perusahaan,
-										tgl_daftar,
-										) VALUES ($v_nama_perusahaan,
-												$v_alamat,
-												$v_kota,
-												$v_prov,
-												$v_no_telp,
-												$v_email,
-												$v_file,
-												$v_ket_perusahaan,
-												$NOW())";
-					if ($conn->query($sql) === TRUE ) {
+										tgl_daftar) VALUES 
+												(
+												'$v_nama_perusahaan',
+												'$v_alamat',
+												'$v_kota',
+												'$v_prov',
+												'$v_no_telp',
+												'$v_email',
+												'$v_file',
+												'$v_ket_perusahaan',
+												NOW()
+												)";
+
+					if ( $conn->query($sql) === TRUE ) {
 						echo "berhasil simpan";
 					} else {
-						echo $sql $conn->error;
+						echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 					}
 				} else {
 					echo 'gagal upload file';
@@ -61,6 +65,4 @@
 			echo 'ekstensi file tidak diijinkan';
 		}
 
-
 	}
-?>

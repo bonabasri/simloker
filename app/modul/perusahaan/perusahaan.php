@@ -32,7 +32,7 @@
                 }
     ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?ref=save" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?p=perusahaan.save" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
                     <label> Nama Perusahaan</label>
                         <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>
@@ -61,13 +61,14 @@
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
-                        <div id="editor">
+                        <div id="editor" name="ket_perusahaan">
                             
                         </div>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <input type="submit" name="save" value="Simpan" class="btn btn-primary">
+                        <!-- <input type="submit" name="save" value="Simpan" class="btn btn-primary"> -->
+                        <button class="btn btn-primary" type="submit" name="save">Simpan</button>
                     </div>                   
                 </form>
             </div>

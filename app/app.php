@@ -83,9 +83,6 @@
     <!-- Logout Warning -->
     <script src="../dist/logoutwarning.js"></script>
 
-    <!-- Clock -->
-    <script src="../dist/clock.js" type="text/javascript"></script>
-
     <!-- <script src="../dist/ckeditor/ckeditor.js"></script>
     <script src="../dist/ckeditor/samples/js/sample.js"></script> -->
 

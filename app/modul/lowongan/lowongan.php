@@ -32,7 +32,7 @@
                 }
     ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?ref=save" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?p=lowongan.save" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <!-- <div class="form-group">
                     <label> Judul</label>
                         <input type="text" class="form-control" name="judul" placeholder="Judul Lowongan" required/>
@@ -74,17 +74,17 @@
                     </div>
                     <div class="form-group">
                     <label> Tanggal Akhir Lowongan</label>
-                            <input type="text" name="tgl" id="tgl" class="form-control" placeholder="Tanggal Lahir" required/>
+                            <input type="text" name="tgl_akhir" id="tgl" class="form-control" placeholder="Tanggal Lahir" required/>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>
-                        <div id="editor">
+                        <div id="editor" name="deskripsi">
                             
                         </div>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <input type="submit" name="daftar" value="Terbitkan" class="btn btn-primary">
+                        <input type="submit" name="save" value="Terbitkan" class="btn btn-primary">
                     </div>                   
                 </form>
             </div>
