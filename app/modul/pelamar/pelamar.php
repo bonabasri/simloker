@@ -35,47 +35,74 @@
                 <form class="" role="form" style="margin-top: 10px;" action="?ref=save" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
                     <label> Nama Depan</label>
-                        <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>
+                        <input type="text" class="form-control" name="nama_depan" placeholder="Nama Depan" required/>
                     </div>
                     <div class="form-group">
                     <label> Nama Belakang</label>
-                        <input type="text" class="form-control" name="nama_brand" placeholder="Nama Brand" required/>
+                        <input type="text" class="form-control" name="nama_belakang" placeholder="Nama Belakang" required/>
                     </div>
                     <div class="form-group">
-                    <label> Nomor Registrasi</label>
-                        <input type="text" class="form-control" name="no_registrasi" placeholder="Nomor Registrasi" required/>
+                    <label> Tempat Lahir</label>
+                        <input type="text" class="form-control" name="tempat_lahir" placeholder="Tempat Lahir" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Tanggal Lahir</label>
+                        <input type="text" class="form-control" name="tgl_lahir" id="tgl" placeholder="Tanggal Lahir" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Jenis Kelamin</label>
+                        <select class="form-control" name="jk" required/>
+                            <option value="">- Pilih -</option>
+                            <option value="P">Pria</option>
+                            <option value="W">Wanita</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                    <label> Agama</label>
+                        <input type="text" class="form-control" name="agama" placeholder="Agama" required/>
                     </div>
                     <div class="form-group">
                     <label> Alamat</label>
                         <input type="text" class="form-control" name="alamat" placeholder="Alamat" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="kota" placeholder="Kota" required/>
+                    <label> Lulusan</label>
+                        <input type="text" class="form-control" name="lulusan" placeholder="Lulusan" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="prov" placeholder="Provinsi" required/>
+                    <label> Usia</label>
+                        <input type="text" class="form-control" name="usia" placeholder="Usia" required/>
                     </div>
                     <div class="form-group">
                     <label> Nomor Telepon</label>
-                        <input type="text" class="form-control" name="no_telp" placeholder="Nomor Telepon" required/>
+                        <input type="text" class="form-control" name="no_hp" placeholder="Nomor Telepon" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Pengalaman</label>
+                        <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman" required/>
                     </div>
                     <div class="form-group">
                     <label> Email</label>
                         <input type="text" class="form-control" name="email" placeholder="Email" required/>
                     </div>
                     <div class="form-group">
-                    <label> Logo Perusahaan</label>
-                        <input type="text" class="form-control" name="logo" placeholder="Logo" required/>
+                    <label> Tinggi Badan</label>
+                        <input type="text" class="form-control" name="tinggi_badan" placeholder="Tinggi Badan" required/>
                     </div>
                     <div class="form-group">
-                    <label> Deskripsi Perusahaan</label>
+                    <label> Foto</label>
+                        <input type="file" name="foto" placeholder="Foto" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Kelebihan</label>
                         <div id="editor">
                             
                         </div>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <input type="submit" name="daftar" value="Simpan" class="btn btn-primary">
+                        <input type="submit" name="save" value="Simpan" class="btn btn-primary">
                     </div>                   
                 </form>
             </div>

@@ -38,14 +38,6 @@
                         <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>
                     </div>
                     <div class="form-group">
-                    <label> Nama Brand</label>
-                        <input type="text" class="form-control" name="nama_brand" placeholder="Nama Brand" required/>
-                    </div>
-                    <div class="form-group">
-                    <label> Nomor Registrasi</label>
-                        <input type="text" class="form-control" name="no_registrasi" placeholder="Nomor Registrasi" required/>
-                    </div>
-                    <div class="form-group">
                     <label> Alamat</label>
                         <input type="text" class="form-control" name="alamat" placeholder="Alamat" required/>
                     </div>
@@ -65,7 +57,7 @@
                     </div>
                     <div class="form-group">
                     <label> Logo Perusahaan</label>
-                        <input type="text" class="form-control" name="logo" placeholder="Logo" required/>
+                        <input type="file" name="logo" required/>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
@@ -75,7 +67,7 @@
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <input type="submit" name="daftar" value="Simpan" class="btn btn-primary">
+                        <input type="submit" name="save" value="Simpan" class="btn btn-primary">
                     </div>                   
                 </form>
             </div>
