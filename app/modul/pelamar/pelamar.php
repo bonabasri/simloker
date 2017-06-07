@@ -32,7 +32,7 @@
                 }
     ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?ref=save" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?p=pelamar.action" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
                     <label> Nama Depan</label>
                         <input type="text" class="form-control" name="nama_depan" placeholder="Nama Depan" required/>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-group">
                     <label> Foto</label>
-                        <input type="file" name="foto" placeholder="Foto" required/>
+                        <input type="file" name="foto" required/>
                     </div>
                     <div class="form-group">
                     <label> Kelebihan</label>

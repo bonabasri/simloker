@@ -7,6 +7,10 @@
 		$v_usia 					= $_POST['usia'];
 		$v_id_pendidikan			= $_POST['id_pendidikan'];
 		$v_pengalaman				= $_POST['pengalaman'];
+
+		$tgl         				= explode('/',$_POST['tglaccept']);
+		$v_tglaccept 				= $tgl['2'].'-'.$tgl['1'].'-'.$tgl['0'];
+		
 		$v_tgl_akhir				= $_POST['tgl_akhir'];
 		$v_deskripsi				= $_POST['deskripsi'];
 

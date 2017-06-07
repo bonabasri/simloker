@@ -32,7 +32,7 @@
                 }
     ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?p=perusahaan.save" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?p=perusahaan.action" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
                     <label> Nama Perusahaan</label>
                         <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>

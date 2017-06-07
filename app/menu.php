@@ -66,8 +66,8 @@
                         <li>
                             <a href="?p=pelamar.pelamar"><i class="fa fa-users fa-fw"></i> Data Pelamar</a>
                         </li>
-                         <li>
-                            <a href="?p=perusahaan.perusahaan"><i class="fa fa-institution fa-fw"></i> Data Perusahaan</a>
+                        <li>
+                            <a href="?p=perusahaan.views"><i class="fa fa-institution fa-fw"></i> Data Perusahaan</a>
                         </li>
                         <li>
                             <a href="?p=info.view"><i class="fa fa-info fa-fw"></i> Blog</a>
@@ -110,6 +110,9 @@
                         </li>
                         <li>
                             <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
+                        </li>
+                        <li>
+                            <a href="?p=perusahaan.views"><i class="fa fa-institution fa-fw"></i> Data Perusahaan</a>
                         </li>
                         <li>
                             <a href="?p=info.view"><i class="fa fa-info fa-fw"></i> Blog</a>
