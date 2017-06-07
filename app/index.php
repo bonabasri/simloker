@@ -1,6 +1,6 @@
 <?php
 
-    // require_once ('../lib/config.php');
+    require_once ('../core.php');
 
     session_start();
     if ($_SESSION['uname']) {

@@ -18,14 +18,14 @@
 		$v_ket_perusahaan	= $_POST['ket_perusahaan'];
 
 		$upload_dir 		= "../dist/images/logo/";
-		$file 				= basename ($fileName);
-		$v_file 			= str_replace(' ','_',$file);
+		$logo 				= basename ($fileName);
+		$v_logo 			= str_replace(' ','_',$logo);
 
 		if ( in_array( $fileExt, $allowExt ) === TRUE ) 
 		{
 			if ( $fileSize < 1044070 ) 
 			{
-				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_file) ) 
+				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_logo) ) 
 				{
 					$sql = "INSERT INTO tb_perusahaan 
 										(
@@ -45,7 +45,7 @@
 												'$v_prov',
 												'$v_no_telp',
 												'$v_email',
-												'$v_file',
+												'$v_logo',
 												'$v_ket_perusahaan',
 												NOW()
 												)";

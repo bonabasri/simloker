@@ -39,7 +39,7 @@
                         <li><a href="?p=users.password"><i class="fa fa-key fa-fw"></i> Ganti Password</a>
                     </li>
                     <li class="divider"></li>
-                        <li><a href="#" id="logout"><i class="fa fa-power-off fa-fw"></i> Log Out...</a>
+                        <li><a href="logout.php"><i class="fa fa-power-off fa-fw"></i> Log Out...</a>
                     </li>
                 </ul>
             </li>

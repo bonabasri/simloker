@@ -1,5 +1,5 @@
 <?php
-	if (isset($_POST['save'])) 
+	if ( isset($_POST['save']) ) 
 	{
 		$v_id_kategori_pekerjaan 	= $_POST['id_kategori_pekerjaan'];
 		$v_posisi 					= $_POST['posisi'];
@@ -8,12 +8,10 @@
 		$v_id_pendidikan			= $_POST['id_pendidikan'];
 		$v_pengalaman				= $_POST['pengalaman'];
 
-		$tgl         				= explode('/',$_POST['tglaccept']);
-		$v_tglaccept 				= $tgl['2'].'-'.$tgl['1'].'-'.$tgl['0'];
-		
-		$v_tgl_akhir				= $_POST['tgl_akhir'];
-		$v_deskripsi				= $_POST['deskripsi'];
+		$date 	        			= explode('-',$_POST['tgl_akhir']);
+		$v_tgl_akhir 				= $date['2'].'-'.$date['1'].'-'.$date['0'];
 
+		$v_deskripsi				= $_POST['deskripsi'];
 
 		$sql = "INSERT INTO tb_lowongan (
 										id_kategori_pekerjaan,

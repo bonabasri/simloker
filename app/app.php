@@ -115,11 +115,23 @@
         </div>
 
     <script>
-        $(document).ready(function() {
             $('#dataTables-example').DataTable({
                     responsive: true
             });
-        });
+
+            $('#datepicker').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+
+            CKEDITOR.replace( 'editor' );
+            
     </script>
 
 </body>
