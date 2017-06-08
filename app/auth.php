@@ -26,7 +26,7 @@
 			# code...
 			$_SESSION[$key] = $value;
 			//session_start();
-			$_SESSION['id_us'] 	= $row['id_us']; 
+			$_SESSION['id_user']= $row['id_user']; 
 			$_SESSION['nip'] 	= $row['nip'];
 			$_SESSION['nama']	= $row['nama'];
 			$_SESSION['bgn'] 	= $row['bgn'];
