@@ -83,10 +83,10 @@
     <!-- Logout Warning -->
     <script src="../dist/logoutwarning.js"></script>
 
-    <!-- <script src="../dist/ckeditor/ckeditor.js"></script>
-    <script src="../dist/ckeditor/samples/js/sample.js"></script> -->
+    <script src="../dist/ckeditor/ckeditor.js"></script>
+    <script src="../dist/ckeditor/samples/js/sample.js"></script>
 
-    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script> -->
 
 </head>
 
