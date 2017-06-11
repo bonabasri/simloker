@@ -79,9 +79,10 @@
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>
-                        <div id="editor" name="deskripsi">
+                        <!-- <div > -->
+                        <textarea id="editor" name="deskripsi">Tulis Disini</textarea>
                             
-                        </div>
+                        <!-- </div> -->
                     </div>
                     <div class="form-group">
                     <label></label>

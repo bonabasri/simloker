@@ -61,9 +61,10 @@
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
-                        <div id="editor" name="ket_perusahaan">
+                        <!-- <div id="editor" name="ket_perusahaan">
                             
-                        </div>
+                        </div> -->
+                        <textarea id="editor" name="ket_perusahaan">Tulis Disini</textarea>
                     </div>
                     <div class="form-group">
                     <label></label>

@@ -96,9 +96,10 @@
                     </div>
                     <div class="form-group">
                     <label> Kelebihan</label>
-                        <div id="editor">
+                        <!-- <div id="editor">
                             
-                        </div>
+                        </div> -->
+                        <textarea id="editor" name="kelebihan">Tulis Disini</textarea>
                     </div>
                     <div class="form-group">
                     <label></label>

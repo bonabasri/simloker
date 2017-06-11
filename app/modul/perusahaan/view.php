@@ -20,7 +20,8 @@
 </div>
 
 <div class="btn-group" role="group" aria-label="...">
-    <a href="?p=data.views" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
+    <a class="btn btn-default" title="New Data" href="?p=perusahaan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
+    <a href="?p=perusahaan.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
 <div class="row">
@@ -59,7 +60,7 @@
 
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=data.edit&id=<?php echo $data['no_reg']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=perusahaan.edit&id=<?php echo $data['id_perusahaan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                             <a class="btn btn-default btn-sm" title="Konfirmasi Pendaftar" data-toggle="modal" data-target="#confirm<?php echo $data['no_reg']; ?>"><span class="fa fa-check fa-fw" aria-hidden="true"></span></a>
                         </div>
 

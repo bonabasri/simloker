@@ -42,7 +42,7 @@
                     <label> Judul</label>
                         <input type="text" class="form-control" name="judul" placeholder="Judul Lowongan" required/>
                     </div> -->
-                    <input type="hidden" name="id_perusahaan" value="<?php echo $GetID; ?>">
+                    <input type="hidden" name="id" value="<?php echo $GetID; ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
                         <select class="form-control" name="id_kategori_pekerjaan" required/>
