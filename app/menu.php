@@ -58,10 +58,10 @@
                             <a href="?p=users.akun"><i class="fa fa-user fa-fw"></i> Profil</a>
                         </li>
                         <li>
-                            <a href="?p=lowongan.view"><i class="fa fa-thumb-tack fa-fw"></i> Pasang Lowongan</a>
+                            <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
                         </li>
                         <li>
-                            <a href="?p=resume.resume"><i class="fa fa-rocket fa-fw"></i> Resume</a>
+                            <a href="?p=lowongan.view"><i class="fa fa-thumb-tack fa-fw"></i> Data Lowongan</a>
                         </li>
                         <li>
                             <a href="?p=pelamar.view"><i class="fa fa-users fa-fw"></i> Data Pelamar</a>

@@ -45,19 +45,19 @@
                     <input type="hidden" name="id" value="<?php echo $GetID; ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
-                        <select class="form-control" name="id_kategori_pekerjaan" required/>
+                        <select class="form-control" name="id_kategori_pekerjaan"/>
                             <option value="<?php echo $data['id_kategori_pekerjaan']; ?>"><?php echo $data['id_kategori_pekerjaan']; ?></option>
                             <?php echo $kategori_kerja; ?>
                         </select>
                     </div>
                     <div class="form-group">
                     <label> Posisi</label>
-                        <input type="text" class="form-control" name="posisi" value="<?php echo $data['posisi']; ?>" placeholder="Nama Lengkap" required/>
+                        <input type="text" class="form-control" name="posisi" value="<?php echo $data['posisi']; ?>"/>
                     </div>
                     <div class="form-group">
                     <label> Jenis Kelamin</label>
-                        <select class="form-control" name="jk_require" required/>
-                            <option value="">- Pilih -</option>
+                        <select class="form-control" name="jk_require"/>
+                            <option value="<?php echo $data['jk_require']; ?>"><?php echo $data['jk_require']; ?></option>
                             <option value="P">Pria</option>
                             <option value="W">Wanita</option>
                             <option value="PW">Pria dan Wanita</option>
@@ -65,32 +65,32 @@
                     </div>
                     <div class="form-group">
                     <label> Usia</label>
-                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>" placeholder="Usia" required/>
+                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>"/>
                     </div>
                     <div class="form-group">
                     <label> Lulusan</label>
-                        <select class="form-control" name="id_pendidikan" value="<?php echo $data['lulusan']; ?>" required/>
-                            <option value="">- Pilih -</option>
+                        <select class="form-control" name="id_pendidikan" value="<?php echo $data['id_pendidikan']; ?>"/>
+                            <option value="<?php echo $data['id_pendidikan']; ?>"><?php echo $data['id_pendidikan']; ?></option>
                             <?php echo $kategori_pendidikan; ?>
                         </select>
                     </div>
                     <div class="form-group">
                     <label> Pengalaman</label>
-                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>" placeholder="Pengalaman" required/>
+                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>" />
                     </div>
                     <div class="form-group">
                     <label> Tanggal Akhir Lowongan</label>
-                            <input type="text" name="tgl_akhir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?>" class="form-control" placeholder="Tanggal Akhir" required/>
+                            <input type="text" name="tgl_akhir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?>" class="form-control"/>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>
-                        <div id="editor" name="deskripsi">
-                            
-                        </div>
+                        <textarea id="editor" name="deskripsi"><?php echo $data['deskripsi'];?>
+                        </textarea>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <input type="submit" name="save" value="Terbitkan" class="btn btn-primary">
+                        <a class="btn btn-default" href="?p=lowongan.view">Batal</a>
+                        <button class="btn btn-primary" type="submit" name="edit">Ubah</button>
                     </div>                   
                 </form>
             </div>

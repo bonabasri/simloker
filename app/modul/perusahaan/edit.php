@@ -63,19 +63,17 @@
                     </div>
                     <div class="form-group">
                     <label> Logo Perusahaan</label>
-                        <input type="file" name="logo"><img src="../dist/images/logo/<?php echo $data['logo'];?>">
+                        <input type="file" name="logo"><img src="../dist/images/logo/<?php echo $data['logo'];?>" width="90" height="90">
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
-                        <!-- <div id="editor" name="ket_perusahaan">
-                            
-                        </div> -->
-                        <textarea id="editor" name="ket_perusahaan"><?php echo $data['ket_perusahaan'];?></textarea>
+                        <textarea id="editor" name="ket_perusahaan"><?php echo $data['ket_perusahaan'];?>
+                        </textarea>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <!-- <input type="submit" name="save" value="Simpan" class="btn btn-primary"> -->
-                        <button class="btn btn-primary" type="submit" name="edit">Simpan</button>
+                        <a class="btn btn-default" href="?p=perusahaan.view">Batal</a>
+                        <button class="btn btn-primary" type="submit" name="edit">Ubah</button>
                     </div>                   
                 </form>
             </div>

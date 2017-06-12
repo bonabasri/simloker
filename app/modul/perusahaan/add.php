@@ -61,14 +61,11 @@
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
-                        <!-- <div id="editor" name="ket_perusahaan">
-                            
-                        </div> -->
-                        <textarea id="editor" name="ket_perusahaan">Tulis Disini</textarea>
+                        <textarea id="editor" name="ket_perusahaan" required=""></textarea>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <!-- <input type="submit" name="save" value="Simpan" class="btn btn-primary"> -->
+                        <a class="btn btn-default" href="?p=perusahaan.view">Batal</a>
                         <button class="btn btn-primary" type="submit" name="save">Simpan</button>
                     </div>                   
                 </form>

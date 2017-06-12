@@ -79,13 +79,11 @@
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>
-                        <!-- <div > -->
-                        <textarea id="editor" name="deskripsi">Tulis Disini</textarea>
-                            
-                        <!-- </div> -->
+                        <textarea id="editor" name="deskripsi" required=""></textarea>
                     </div>
                     <div class="form-group">
                     <label></label>
+                        <a class="btn btn-default" href="?p=lowongan.view">Batal</a>
                         <input type="submit" name="save" value="Terbitkan" class="btn btn-primary">
                     </div>                   
                 </form>

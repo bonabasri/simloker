@@ -96,13 +96,11 @@
                     </div>
                     <div class="form-group">
                     <label> Kelebihan</label>
-                        <!-- <div id="editor">
-                            
-                        </div> -->
-                        <textarea id="editor" name="kelebihan">Tulis Disini</textarea>
+                        <textarea id="editor" name="kelebihan" required=""></textarea>
                     </div>
                     <div class="form-group">
                     <label></label>
+                        <a class="btn btn-default" href="?p=pelamar.view">Batal</a>
                         <input type="submit" name="save" value="Simpan" class="btn btn-primary">
                     </div>                   
                 </form>

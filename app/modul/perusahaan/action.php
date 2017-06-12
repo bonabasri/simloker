@@ -26,11 +26,11 @@
 			if ( $fileSize < 1044070 ) 
 			{
 				$v_id_perusahaan = $_POST['id_perusahaan'];
-				$valid = "SELECT nama_perusahaan 
+				$sqlCek = "SELECT *
 							FROM tb_perusahaan 
-						WHERE id_perusahaan = '$v_id_perusahaan' ";
+						WHERE nama_perusahaan = '$v_nama_perusahaan' ";
 
-		    	$result = $conn->query($valid);
+		    	$result = $conn->query($sqlCek);
 			    
 			    if ($result->num_rows > 0) 
 			    {
@@ -130,7 +130,7 @@
 
 			if ($conn->query($sql) === TRUE) {
 
-				echo '<script>alert("data berhasil disimpan"); </script>';
+				echo '<script>alert("data berhasil diubah"); </script>';
  				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
@@ -145,12 +145,11 @@
 		{
 			if ( $fileSize < 1044070 ) 
 			{
-				$v_id_perusahaan = $_POST['id_perusahaan'];
-				$valid = "SELECT nama_perusahaan 
+				$sqlCek = "SELECT * 
 							FROM tb_perusahaan 
-						WHERE id_perusahaan = '$v_id_perusahaan' ";
+						WHERE nama_perusahaan = '$v_nama_perusahaan' ";
 
-		    	$result = $conn->query($valid);
+		    	$result = $conn->query($sqlCek);
 			    
 			    if ($result->num_rows > 0) 
 			    {
@@ -176,7 +175,7 @@
 
 						if ($conn->query($sql) === TRUE) {
 
-							echo '<script>alert("data berhasil disimpan"); </script>';
+							echo '<script>alert("data berhasil diubah"); </script>';
 			 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';	    	
 						}else{
 							echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;

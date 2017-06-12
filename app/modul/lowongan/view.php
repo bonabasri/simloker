@@ -21,7 +21,7 @@
 
 <div class="btn-group" role="group" aria-label="...">
     <a class="btn btn-default" title="New Data" href="?p=lowongan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
-    <a href="?p=data.views" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
+    <a href="?p=lowongan.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
 <div class="row">
@@ -35,7 +35,8 @@
                         <th style="width:15%;">ID Perusahaan</th>
                         <th>ID Kategori Pekerjaan</th>
                         <th style="width:15%;">Posisi</th> 
-                        <th style="text-align:center;">Deskripsi</th>             
+                        <th style="text-align:center;">Deskripsi</th>
+                        <th style="text-align:center;">Tanggal Post/Akhir</th>
                         <th style="text-align:center;">Control</th>
                     </tr>
                 </thead>
@@ -53,13 +54,14 @@
                         <td ><?php echo $data['id_perusahaan']; ?></td>
                         <td ><?php echo $data['id_kategori_pekerjaan']; ?></td>
                         <td style="text-align:center;"><?php echo $data['posisi'];?></td>
-                        <td style="text-align:center;"><?php echo $data['deskripsi'];?> & <?php echo $data['jurpil2'];?></td>
+                        <td style="text-align:center;"><?php echo $data['deskripsi'];?></td>
+                        <td style="text-align:center;"><?php echo $data['tgl_posting']. ' - ' .$data['tgl_akhir'];?></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
                             <a class="btn btn-default btn-sm" title="Edit Data" href="?p=lowongan.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
-                            <a class="btn btn-default btn-sm" title="Konfirmasi Pendaftar" data-toggle="modal" data-target="#confirm<?php echo $data['no_reg']; ?>"><span class="fa fa-check fa-fw" aria-hidden="true"></span></a>
+                            <a href="?p=lowongan.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
                         </div>
 
                         </td>
