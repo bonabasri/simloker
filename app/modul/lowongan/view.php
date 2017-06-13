@@ -32,17 +32,24 @@
                 <thead>
                     <tr>                  
                         <th style="width:7%;">No</th>
-                        <th style="width:15%;">ID Perusahaan</th>
-                        <th>ID Kategori Pekerjaan</th>
+                        <th style="width:15%;">Perusahaan</th>
+                        <th>Kategori Kerja</th>
                         <th style="width:15%;">Posisi</th> 
-                        <th style="text-align:center;">Deskripsi</th>
+                        <th style="text-align:center;">Pendidikan</th>
                         <th style="text-align:center;">Tanggal Post/Akhir</th>
                         <th style="text-align:center;">Control</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM tb_lowongan ORDER BY id_lowongan DESC";
+                        $sql = "SELECT *FROM tb_lowongan 
+                        INNER JOIN tb_kategori_pekerjaan ON 
+                        (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
+                        INNER JOIN tb_kategori_pendidikan ON 
+                        (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
+                        INNER JOIN tb_user ON 
+                        (tb_lowongan.id_perusahaan=tb_user.id_user) ORDER BY tb_lowongan.id_lowongan DESC";
+
                         $res = $conn->query($sql);
                         $no  = 0;
                         foreach ($res as $row => $data) {
@@ -51,10 +58,10 @@
                     ?>
                     <tr class="odd gradeX">
                         <td style="text-align:center;"><?php echo $no; ?></td>
-                        <td ><?php echo $data['id_perusahaan']; ?></td>
-                        <td ><?php echo $data['id_kategori_pekerjaan']; ?></td>
+                        <td ><?php echo $data['uname']; ?></td>
+                        <td ><?php echo $data['nama_kategori_kerja']; ?></td>
                         <td style="text-align:center;"><?php echo $data['posisi'];?></td>
-                        <td style="text-align:center;"><?php echo $data['deskripsi'];?></td>
+                        <td style="text-align:center;"><?php echo $data['nama_pendidikan'];?></td>
                         <td style="text-align:center;"><?php echo $data['tgl_posting']. ' - ' .$data['tgl_akhir'];?></td>
                         <td style="text-align:center;">
 

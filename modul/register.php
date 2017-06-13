@@ -1,8 +1,9 @@
+
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel">
                     <div class="panel-heading" style="text-align: center;">
-                        <h1 class="panel-title" style="padding-top:13px;">Sign In</h1><hr>
+                        <h1 class="panel-title" style="padding-top:13px;">Sign Up</h1><hr>
 
                         <div style="color: rgba(102,117,127,0.6);">
                             <?php
@@ -14,13 +15,20 @@
                         </div>
                     
                     <div class="panel-body">
-                        <form role="form" method="post" action="login-cek.php">
+                        <form role="form" method="post" action="auth.php">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" name="usr_username" type="text" placeholder="Username" autocomplete="off" maxlength="32" autofocus required/>
+                                    <input class="form-control" name="uname" type="text" placeholder="Username" autocomplete="off" maxlength="32" autofocus required/>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" name="usr_password" type="password" placeholder="Password" autocomplete="off" maxlength="32" required/>
+                                    <input class="form-control" name="upsw" type="password" placeholder="Password" autocomplete="off" maxlength="32" required/>
+                                </div>
+                                <div class="form-group">
+                                        <select class="form-control" name="role" required/>
+                                        <option value="">- Pilih -</option>
+                                        <option value="Pelamar">Pelamar</option>
+                                        <option value="Perusahaan">Perusahaan</option>
+                                        </select>
                                 </div>
                                 <div class="checkbox" style="text-align: left;">
                                     <label>
@@ -28,14 +36,12 @@
                                     </label>
                                 </div><br/>
                                 
-                                <input type="submit" value="Login" class="btn btn-md btn-primary pull-right">
-
+                                <input type="submit" value="Register" class="btn btn-md btn-primary btn-block"><br/>Punya Akun?
+                                <a style="text-decoration:none;" href="?ref=login"> Masuk </a>
                         
                             </fieldset>
                         </form>
                     </div>
-                    
                 </div>
             </div>
         </div>
-        <?php include '../sidebar.php'; ?>

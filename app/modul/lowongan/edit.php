@@ -14,7 +14,10 @@
                     
     <?php
         $GetID  = $_GET['id'];
-        $sql = "SELECT *FROM tb_lowongan WHERE id_lowongan='$GetID'";
+        $sql = "SELECT *FROM tb_lowongan 
+                INNER JOIN tb_kategori_pekerjaan ON (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
+                INNER JOIN tb_kategori_pendidikan ON (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan) 
+                WHERE tb_lowongan.id_lowongan = '$GetID'";
         $res = $conn->query($sql);
         $data = $res->fetch_assoc();
 
@@ -46,7 +49,7 @@
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
                         <select class="form-control" name="id_kategori_pekerjaan"/>
-                            <option value="<?php echo $data['id_kategori_pekerjaan']; ?>"><?php echo $data['id_kategori_pekerjaan']; ?></option>
+                            <option value="<?php echo $data['id_kategori_pekerjaan']; ?>"><?php echo $data['nama_kategori_kerja']; ?></option>
                             <?php echo $kategori_kerja; ?>
                         </select>
                     </div>
@@ -58,9 +61,9 @@
                     <label> Jenis Kelamin</label>
                         <select class="form-control" name="jk_require"/>
                             <option value="<?php echo $data['jk_require']; ?>"><?php echo $data['jk_require']; ?></option>
-                            <option value="P">Pria</option>
-                            <option value="W">Wanita</option>
-                            <option value="PW">Pria dan Wanita</option>
+                            <option value="Pria">Pria</option>
+                            <option value="Wanita">Wanita</option>
+                            <option value="Pria & Wanita">Pria & Wanita</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -70,7 +73,7 @@
                     <div class="form-group">
                     <label> Lulusan</label>
                         <select class="form-control" name="id_pendidikan" value="<?php echo $data['id_pendidikan']; ?>"/>
-                            <option value="<?php echo $data['id_pendidikan']; ?>"><?php echo $data['id_pendidikan']; ?></option>
+                            <option value="<?php echo $data['id_pendidikan']; ?>"><?php echo $data['nama_pendidikan']; ?></option>
                             <?php echo $kategori_pendidikan; ?>
                         </select>
                     </div>

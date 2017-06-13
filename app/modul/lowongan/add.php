@@ -53,9 +53,9 @@
                     <label> Jenis Kelamin</label>
                         <select class="form-control" name="jk_require" required/>
                             <option value="">- Pilih -</option>
-                            <option value="P">Pria</option>
-                            <option value="W">Wanita</option>
-                            <option value="PW">Pria dan Wanita</option>
+                            <option value="Pria">Pria</option>
+                            <option value="Wanita">Wanita</option>
+                            <option value="Pria & Wanita">Pria & Wanita</option>
                         </select>
                     </div>
                     <div class="form-group">

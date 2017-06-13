@@ -32,7 +32,7 @@
                 <thead>
                     <tr>                  
                         <th style="width:7%;">No</th>
-                        <th style="width:15%;">Nama Perusahaan</th>
+                        <th style="width:20%;">Nama Perusahaan</th>
                         <th>Alamat</th>
                         <th style="width:15%;">No Telepon</th> 
                         <th style="text-align:center;">Email</th>
@@ -55,7 +55,7 @@
                         <td ><?php echo $data['alamat']; ?></td>
                         <td style="text-align:center;"><?php echo $data['no_telp'];?></td>
                         <td style="text-align:center;"><?php echo $data['email'];?> & <?php echo $data['jurpil2'];?></td>
-                        <td style="text-align:center;"><img src="../dist/images/logo/<?php echo $data['logo'];?>" width="30" height="30"></td>
+                        <td style="text-align:center;"><img src="../dist/images/logo/<?php echo $data['logo'];?>" width="35" height="35"></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
