@@ -58,10 +58,6 @@
                         <input type="text" class="form-control" name="no_telp" value="<?php echo $data['no_telp']; ?>"/>
                     </div>
                     <div class="form-group">
-                    <label> Email</label>
-                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>"/>
-                    </div>
-                    <div class="form-group">
                     <label> Logo Perusahaan</label>
                         <input type="file" name="logo"><img src="../dist/images/logo/<?php echo $data['logo'];?>" width="90" height="90">
                     </div>

@@ -48,7 +48,7 @@
                         INNER JOIN tb_kategori_pendidikan ON 
                         (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
                         INNER JOIN tb_user ON 
-                        (tb_lowongan.id_perusahaan=tb_user.id_user) ORDER BY tb_lowongan.id_lowongan DESC";
+                        (tb_lowongan.id_perusahaan=tb_user.id) ORDER BY tb_lowongan.id_lowongan DESC";
 
                         $res = $conn->query($sql);
                         $no  = 0;

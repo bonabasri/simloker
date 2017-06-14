@@ -22,7 +22,6 @@
 		$v_usia				= $_POST['usia'];
 		$v_no_hp 			= $_POST['no_hp'];
 		$v_pengalaman		= $_POST['pengalaman'];
-		$v_email 			= $_POST['email'];
 		$v_tinggi_badan		= $_POST['tinggi_badan'];
 
 		$v_kelebihan		= $_POST['kelebihan'];
@@ -50,7 +49,6 @@
 										usia,
 										no_hp,
 										pengalaman,
-										email,
 										tinggi_badan,
 										foto,
 										kelebihan)
@@ -66,7 +64,6 @@
 											'$v_usia',
 											'$v_no_hp',
 											'$v_pengalaman',
-											'$v_email',
 											'$v_tinggi_badan',
 											'$v_foto',
 											'$v_kelebihan')
@@ -121,7 +118,6 @@
 		$v_usia				= $_POST['usia'];
 		$v_no_hp 			= $_POST['no_hp'];
 		$v_pengalaman		= $_POST['pengalaman'];
-		$v_email 			= $_POST['email'];
 		$v_tinggi_badan		= $_POST['tinggi_badan'];
 
 		$v_kelebihan		= $_POST['kelebihan'];
@@ -145,7 +141,6 @@
 									usia 			= '$v_usia',
 									no_hp 			= '$v_no_hp',
 									pengalaman 		= '$v_pengalaman',
-									email 			= '$v_email',
 									tinggi_badan 	= '$v_tinggi_badan',
 									kelebihan 		= '$v_kelebihan'
 								WHERE id_pelamar 	= '$getId' ";
@@ -183,7 +178,6 @@
 									usia 			= '$v_usia',
 									no_hp 			= '$v_no_hp',
 									pengalaman 		= '$v_pengalaman',
-									email 			= '$v_email',
 									tinggi_badan 	= '$v_tinggi_badan',
 									foto 			= '$v_foto',
 									kelebihan 		= '$v_kelebihan'

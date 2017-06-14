@@ -13,7 +13,6 @@
 		$v_kota				= $_POST['kota'];
 		$v_prov				= $_POST['prov'];
 		$v_no_telp			= $_POST['no_telp'];
-		$v_email			= $_POST['email'];
 
 		$v_ket_perusahaan	= $_POST['ket_perusahaan'];
 
@@ -47,7 +46,6 @@
 											kota, 
 											prov, 
 											no_telp,
-											email,
 											logo,
 											ket_perusahaan,
 											tgl_daftar) VALUES 
@@ -57,7 +55,6 @@
 													'$v_kota',
 													'$v_prov',
 													'$v_no_telp',
-													'$v_email',
 													'$v_logo',
 													'$v_ket_perusahaan',
 													NOW()
@@ -106,7 +103,6 @@
 		$v_kota				= $_POST['kota'];
 		$v_prov				= $_POST['prov'];
 		$v_no_telp			= $_POST['no_telp'];
-		$v_email			= $_POST['email'];
 
 		$v_ket_perusahaan	= $_POST['ket_perusahaan'];
 
@@ -124,7 +120,6 @@
 								kota 			= '$v_kota',
 								prov 			= '$v_prov',
 								no_telp 		= '$v_no_telp',
-								email 			= '$v_email',
 								ket_perusahaan 	= '$v_ket_perusahaan' 
 							WHERE id_perusahaan = '".$getId."' ";
 
@@ -168,7 +163,6 @@
 									kota 			= '$v_kota',
 									prov 			= '$v_prov',
 									no_telp 		= '$v_no_telp',
-									email 			= '$v_email',
 									logo 			= '$v_logo',
 									ket_perusahaan 	= '$v_ket_perusahaan' 
 								WHERE id_perusahaan = '".$getId."' ";

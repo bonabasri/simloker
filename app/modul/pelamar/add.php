@@ -83,10 +83,6 @@
                         <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman" required/>
                     </div>
                     <div class="form-group">
-                    <label> Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Email" required/>
-                    </div>
-                    <div class="form-group">
                     <label> Tinggi Badan</label>
                         <input type="text" class="form-control" name="tinggi_badan" placeholder="Tinggi Badan" required/>
                     </div>

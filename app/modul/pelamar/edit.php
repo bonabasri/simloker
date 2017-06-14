@@ -89,10 +89,6 @@
                         <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>"/>
                     </div>
                     <div class="form-group">
-                    <label> Email</label>
-                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>"/>
-                    </div>
-                    <div class="form-group">
                     <label> Tinggi Badan</label>
                         <input type="text" class="form-control" name="tinggi_badan" value="<?php echo $data['tinggi_badan']; ?>"/>
                     </div>
