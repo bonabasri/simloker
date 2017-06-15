@@ -27,11 +27,11 @@
                                     <input class="form-control" name="email" type="text" placeholder="Email" autocomplete="off" maxlength="32" autofocus required/>
                                 </div>
                                 <div class="form-group">
-                                        <select class="form-control" name="uac" required/>
-                                        <option value="">- Pilih -</option>
+                                    <select class="form-control" name="uac" required/>
+                                        <option value="">Select Role</option>
                                         <option value="PELAMAR">Pelamar</option>
                                         <option value="PERUSAHAAN">Perusahaan</option>
-                                        </select>
+                                    </select>
                                 </div>
                                 <div class="checkbox" style="text-align: left;">
                                     <label>

@@ -26,7 +26,7 @@
 						$query = "INSERT INTO tb_user 
 										(uname, upsw, email, uac)
 									VALUES ('$uname, $upsw', '$email', '$uac')";
-						if ($conn->query($sql) === TRUE)
+						if ($conn->query($query) === TRUE)
 						{
 							echo('<script>alert("registrasi berhasil, silahkan login"); </script>');
 	 						echo '<meta http-equiv="refresh" content="0;URL=?ref=login">';
