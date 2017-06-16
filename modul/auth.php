@@ -12,7 +12,7 @@
  */
 
 	// require( dirname( __FILE__ ) . '../core.php' );
-	require('../core.php');
+	require('./core.php');
 	
 	$v_uname = $conn->real_escape_string($_POST['uname']);
 	$v_upsw	 = $conn->real_escape_string($_POST['upsw']);
@@ -26,15 +26,12 @@
 			# code...
 			$_SESSION[$key] = $value;
 			//session_start();
-			$_SESSION['id_user']= $row['id_user']; 
-			$_SESSION['nip'] 	= $row['nip'];
-			$_SESSION['nama']	= $row['nama'];
-			$_SESSION['bgn'] 	= $row['bgn'];
-			$_SESSION['uname'] 	= $row['uname'];
-			$_SESSION['upsw']	= $row['upsw'];  
+			$_SESSION['user_id']= $row['user_id'];
+			$_SESSION['uname'] 	= $v_uname;
+			$_SESSION['upsw']	= $v_upsw;  
 			$_SESSION['uac'] 	= $row['uac']; 
 
-			header('location:app.php');
+			header('location:?ref=member');
 		}
 	} else {
 		header('location:login.php?act=error');

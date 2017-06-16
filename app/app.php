@@ -1,16 +1,4 @@
 <?php
-
-/**
- * PSB Online - SMK Kosgoro Nganjuk
- * ------------------------------------------------------------------------
- * @package     PSB Online
- * @author      Luqman Hakim <luckman.heckem@gmail.com>
- * @copyright   Copyright (c) 2016
- * @link        github.com/luqmanhakim1
- * ------------------------------------------------------------------------
- * Template by www.startbootstrap.com
- */
- 
     session_start();
     if ( empty($_SESSION['uname']) ) {
         header('location:./');

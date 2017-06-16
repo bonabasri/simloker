@@ -1,7 +1,7 @@
 <!-- Blog Entries Column -->
             <div class="col-md-9">
 
-                <h1 class="page-header">
+                <h1 class="page-header" style="margin: 0;">
                     
                     <small>Lowongan Terbaru</small>
                 </h1>

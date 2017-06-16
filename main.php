@@ -1,13 +1,10 @@
-<?php ob_start();
-    require_once ('core.php');
-
+<?php     
     session_start();
-    if ($_SESSION['uname']) 
+    if ( empty($_SESSION['uname']) ) 
     {
-        header('location:main.php');
+        header('location:./');
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,10 +62,7 @@
                         <a href="#">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="?ref=register">Registrasi</a>
-                    </li>
-                    <li>
-                        <a href="?ref=login">Login</a>
+                        <a href="?ref=logout">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +75,7 @@
     <div class="container">
 
         <div class="row">
-
+        
             <?php
                 if( isset($_GET['ref']) && strlen($_GET['ref']) > 0 )
                 {

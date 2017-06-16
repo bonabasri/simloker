@@ -5,7 +5,7 @@
     session_start();
     if ($_SESSION['uname']) {
         header('location:app.php');
-    } else {
+    }
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +98,3 @@
 </body>
 
 </html>
-<?php
-}
-?>  

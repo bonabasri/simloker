@@ -14,7 +14,7 @@
                         </div>
                     
                     <div class="panel-body">
-                        <form role="form" method="post" action="auth.php">
+                        <form role="form" method="post" action="?ref=auth">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" name="uname" type="text" placeholder="Username" autocomplete="off" maxlength="32" autofocus required/>
