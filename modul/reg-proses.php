@@ -1,31 +1,35 @@
 <?php
-	if (isset($_POST['daftar'])) 
-	{
-		$user_id	= $_POST['user_id'];
-		$uname 		= $_POST['uname'];
-		$upsw 		= sha1($_POST['upsw']);
-		$uac 		= $_POST['uac'];
-		$email 		= $_POST['email'];
+	include_once './core.php';
 
-		if (!empty($email)) 
+	if (isset($_POST['daftar'])) 
+	{	
+		$uname 		= $_POST['uname'];
+		$user_id	= $uname;
+		$upsw 		= sha1($_POST['upsw']);
+		$email 		= $_POST['email'];
+		$uac 		= $_POST['uac'];
+		
+		if (!empty($uname)) 
 		{
-			$sql = "SELECT *FROM tb_perusahaan WHERE email = '$email'";
+			$sql = "SELECT *FROM tb_user WHERE uname = '$uname'";
 			$res = $conn->query($sql);
 			$row = $res->fetch_assoc();
 			
-			if ($row['email'] != $email)
+			if ($row['uname'] != $uname)
 			{
-				if (!empty($uname))
+				if (!empty($email))
 				{
-					$sql = "SELECT *FROM tb_user WHERE uname = '$uname'";
+					$sql = "SELECT *FROM tb_user WHERE email = '$email'";
 					$res = $conn->query($sql);
 					$row = $res->fetch_assoc();
 					
-					if ($row['uname'] != $uname)
+					if ($row['email'] != $email)
 					{
 						$query = "INSERT INTO tb_user 
-										(uname, upsw, email, uac)
-									VALUES ('$uname, $upsw', '$email', '$uac')";
+										(user_id, uname, upsw, email, uac)
+									VALUES 
+										('$user_id', '$uname', '$upsw', '$email', '$uac')";
+						
 						if ($conn->query($query) === TRUE)
 						{
 							echo('<script>alert("registrasi berhasil, silahkan login"); </script>');
@@ -42,19 +46,19 @@
 							$conn->query($sql);
 						} 
 					} else {
-						echo('<script>alert("username sudah digunakan"); </script>');
+						echo('<script>alert("email sudah digunakan"); </script>');
 	 					echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
 					}
 				} else {
-					echo('<script>alert("anda belum mengisi username"); </script>');
+					echo('<script>alert("email belum diisi"); </script>');
 	 				echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
 				}
 			} else {
-				echo('<script>alert("email sudah digunakan"); </script>');
+				echo('<script>alert("username sudah digunakan"); </script>');
 	 			echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
 			}
 		} else {
-			echo('<script>alert("email belum diisi"); </script>');
+			echo('<script>alert("username belum diisi"); </script>');
 	 		echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
 		}
 	}

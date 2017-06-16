@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="?ref=home">INFO LOWONGAN KERJA</a>
+                <a class="navbar-brand" href="?ref=home">LOWONGAN KERJA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
