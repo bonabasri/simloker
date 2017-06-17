@@ -33,14 +33,9 @@
                                         <option value="PERUSAHAAN">Perusahaan</option>
                                     </select>
                                 </div>
-                                <div class="checkbox" style="text-align: left;">
-                                    <label>
-                                    <input name="remember" type="checkbox" value="Remember Me">&nbsp;Remember Me
-                                    </label>
-                                </div><br/>
                                 
                                 <input type="submit" name="daftar" value="Register" class="btn btn-md btn-primary btn-block"><br/>Punya Akun?
-                                <a style="text-decoration:none;" href="?ref=login"> Masuk </a>
+                                <a style="text-decoration:none;" href="?ref=login"> Masuk</a>
                         
                             </fieldset>
                         </form>

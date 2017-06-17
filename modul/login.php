@@ -1,4 +1,4 @@
-<div class="row">
+        <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel">
                     <div class="panel-heading" style="text-align: center;">
@@ -13,7 +13,7 @@
                             ?>
                         </div>
                     
-                    <div class="panel-body">
+                    <div class="panel-body" style="height: 300px;">
                         <form role="form" method="post" action="?ref=auth">
                             <fieldset>
                                 <div class="form-group">
@@ -26,10 +26,10 @@
                                     <label>
                                     <input name="remember" type="checkbox" value="Remember Me">&nbsp;Remember Me
                                     </label>
-                                </div><br/>
+                                </div>
                                 
                                 <input type="submit" value="Masuk" class="btn btn-md btn-primary btn-block"><br/>Belum Punya Akun?
-                                <a style="text-decoration:none;" href="?ref=register"> Register</a>
+                                <a style="text-decoration:none;" href="?ref=register"> Daftar</a>
                         
                             </fieldset>
                         </form>

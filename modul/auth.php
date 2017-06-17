@@ -1,17 +1,5 @@
 <?php
 
-/**
- * siMAYA
- * ------------------------------------------------------------------------
- * @package     siMAYA
- * @author      Luqman Hakim <luckman.heckem@gmail.com>
- * @copyright   Copyright (c) 2016
- * @link        github.com/luqmanhakim1
- * ------------------------------------------------------------------------
- * Template     INSPINIA+ Admin Theme.
- */
-
-	// require( dirname( __FILE__ ) . '../core.php' );
 	require('./core.php');
 	
 	$v_uname = $conn->real_escape_string($_POST['uname']);
