@@ -15,7 +15,7 @@
                         </div>
                     
                     <div class="panel-body">
-                        <form role="form" method="post" action="?ref=reg-proses">
+                        <form role="form" method="post" action="?p=reg-proses">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" name="uname" type="text" placeholder="Username" autocomplete="off" maxlength="32" autofocus required/>

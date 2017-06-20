@@ -102,8 +102,22 @@
                         <a href="#">Lowongan Kerja</a>
                     </li>
                     <li>
-                        <a href="?p=logout">Logout</a>
+                        <a href="?p=pelamar.profil">Profile</a>
                     </li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="?p=logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
     <?php 
@@ -170,12 +184,12 @@
                     {
                         $p = str_replace(".","/",$_GET['p']).".php";
                     } else {
-                        $p = "home.php";    
+                        $p = "pelamar/profil.php";    
                     } if( file_exists("modul/".$p) )
                     {
                         include("modul/".$p);
                     } else {
-                        include("home.php");
+                        include("pelamar/profil.php");
                     }
                 }  
             ?>
