@@ -14,7 +14,7 @@
                         </div>
                     
                     <div class="panel-body" style="height: 300px;">
-                        <form role="form" method="post" action="?ref=auth">
+                        <form role="form" method="post" action="?p=auth">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" name="uname" type="text" placeholder="Username" autocomplete="off" maxlength="32" autofocus required/>
@@ -29,7 +29,7 @@
                                 </div>
                                 
                                 <input type="submit" value="Masuk" class="btn btn-md btn-primary btn-block"><br/>Belum Punya Akun?
-                                <a style="text-decoration:none;" href="?ref=register"> Daftar</a>
+                                <a style="text-decoration:none;" href="?p=register"> Daftar</a>
                         
                             </fieldset>
                         </form>

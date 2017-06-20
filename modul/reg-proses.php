@@ -33,7 +33,7 @@
 						if ($conn->query($query) === TRUE)
 						{
 							echo('<script>alert("registrasi berhasil, silahkan login"); </script>');
-	 						echo '<meta http-equiv="refresh" content="0;URL=?ref=login">';
+	 						echo '<meta http-equiv="refresh" content="0;URL=?p=login">';
 						}
 						if ($uac === 'PELAMAR') 
 						{
@@ -47,18 +47,18 @@
 						} 
 					} else {
 						echo('<script>alert("email sudah digunakan"); </script>');
-	 					echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
+	 					echo '<meta http-equiv="refresh" content="0;URL=?p=register">';
 					}
 				} else {
 					echo('<script>alert("email belum diisi"); </script>');
-	 				echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
+	 				echo '<meta http-equiv="refresh" content="0;URL=?p=register">';
 				}
 			} else {
 				echo('<script>alert("username sudah digunakan"); </script>');
-	 			echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
+	 			echo '<meta http-equiv="refresh" content="0;URL=?p=register">';
 			}
 		} else {
 			echo('<script>alert("username belum diisi"); </script>');
-	 		echo '<meta http-equiv="refresh" content="0;URL=?ref=register">';
+	 		echo '<meta http-equiv="refresh" content="0;URL=?p=register">';
 		}
 	}

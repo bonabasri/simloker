@@ -41,12 +41,6 @@
     <!-- Bootstrap datetimepicker CSS -->
     <link href="../dist/bootstrap-datepicker/bootstrap-datepicker3.min.css" rel="stylesheet">
 
-    <!-- Wysihtml5 -->
-    <link href="../dist/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css">
-
-    <!-- Sweet alert -->
-    <link href="../dist/sweetalert/sweetalert.css" rel="stylesheet">
-
     <!-- jQuery -->
     <script src="../bootstrap/jquery/dist/jquery.min.js"></script>
 
@@ -65,11 +59,6 @@
 
     <!-- Bootstrap Datetimepicker JS-->
     <script src="../dist/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-
-    <!-- Sweet alert -->
-    <script src="../dist/sweetalert/sweetalert.min.js" type="text/javascript"></script>
-    <!-- Logout Warning -->
-    <script src="../dist/logoutwarning.js"></script>
 
     <script src="../dist/ckeditor/ckeditor.js"></script>
     <script src="../dist/ckeditor/samples/js/sample.js"></script>

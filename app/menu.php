@@ -121,7 +121,6 @@
                 </div>
             </div>
 <?php 
-    } else {
     }
 ?>
         </nav>

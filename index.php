@@ -1,4 +1,5 @@
-<?php ob_start();
+<?php 
+    ob_start();
     require_once ('core.php');
 
     session_start();
@@ -56,7 +57,7 @@
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="?ref=home">Beranda</a>
+                        <a href="?p=home">Beranda</a>
                     </li>
                     <li>
                         <a href="#">Lowongan Kerja</a>
@@ -65,10 +66,10 @@
                         <a href="#">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="?ref=register">Registrasi</a>
+                        <a href="?p=register">Registrasi</a>
                     </li>
                     <li>
-                        <a href="?ref=login">Login</a>
+                        <a href="?p=login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -83,14 +84,14 @@
         <div class="row">
 
             <?php
-                if( isset($_GET['ref']) && strlen($_GET['ref']) > 0 )
+                if( isset($_GET['p']) && strlen($_GET['p']) > 0 )
                 {
-                    $ref = str_replace(".","/",$_GET['ref']).".php";
+                    $p = str_replace(".","/",$_GET['p']).".php";
                 } else {
-                    $ref = "home.php";    
-                } if( file_exists("modul/".$ref) )
+                    $p = "home.php";    
+                } if( file_exists("modul/".$p) )
                 {
-                    include("modul/".$ref);
+                    include("modul/".$p);
                 } else {
                     include("home.php");
                 }  

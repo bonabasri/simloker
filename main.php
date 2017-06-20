@@ -1,6 +1,7 @@
 <?php     
     session_start();
-    if ( empty($_SESSION['uname']) ) 
+    require_once ('core.php');
+    if  ( empty($_SESSION['uname']))  
     {
         header('location:./');
     }
@@ -32,6 +33,24 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+        <!-- MetisMenu CSS -->
+    <link href="bootstrap/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="bootstrap/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Timeline CSS -->
+    <link href="dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Bootstrap datetimepicker CSS -->
+    <link href="dist/bootstrap-datepicker/bootstrap-datepicker3.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -47,28 +66,82 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="?ref=home">LOWONGAN KERJA</a>
+                <a class="navbar-brand" href="#">LOWONGAN KERJA</a>
             </div>
+    <?php
+    if ($_SESSION['uac'] === 'ADM') {
+    ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="?ref=home">Beranda</a>
+                        <a href="?p=home">Beranda</a>
                     </li>
                     <li>
                         <a href="#">Lowongan Kerja</a>
                     </li>
                     <li>
-                        <a href="#">Pasang Lowongan</a>
+                        <a href="?p=lowongan.view">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="?ref=logout">Logout</a>
+                        <a href="?p=logout">Logout</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
+        
+    <?php 
+        } elseif($_SESSION['uac'] === 'PELAMAR') {
+    ?>
+            <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="?p=home">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="#">Lowongan Kerja</a>
+                    </li>
+                    <li>
+                        <a href="?p=logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+    <?php 
+        } elseif ($_SESSION['uac'] === 'PERUSAHAAN') {
+    ?>
+            <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="?p=home">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="?p=lowongan.view">Pasang Lowongan</a>
+                    </li>
+                    <li>
+                        <a href="?p=perusahaan.profil">Profile</a>
+                    </li>
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="?p=logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
         </div>
         <!-- /.container -->
+    <?php 
+        }
+    ?>
     </nav>
 
     <!-- Page Content -->
@@ -77,16 +150,33 @@
         <div class="row">
         
             <?php
-                if( isset($_GET['ref']) && strlen($_GET['ref']) > 0 )
+                if ($_SESSION['uac'] === 'PERUSAHAAN') 
                 {
-                    $ref = str_replace(".","/",$_GET['ref']).".php";
-                } else {
-                    $ref = "home.php";    
-                } if( file_exists("modul/".$ref) )
+                    if( isset($_GET['p']) && strlen($_GET['p']) > 0 )
+                    {
+                        $p = str_replace(".","/",$_GET['p']).".php";
+                    } else {
+                        $p = "perusahaan/profil.php";    
+                    } if( file_exists("modul/".$p) )
+                    {
+                        include("modul/".$p);
+                    } else {
+                        include("perusahaan/profil.php");
+                    }
+                } 
+                else if($_SESSION['uac'] === 'PELAMAR') 
                 {
-                    include("modul/".$ref);
-                } else {
-                    include("home.php");
+                    if( isset($_GET['p']) && strlen($_GET['p']) > 0 )
+                    {
+                        $p = str_replace(".","/",$_GET['p']).".php";
+                    } else {
+                        $p = "home.php";    
+                    } if( file_exists("modul/".$p) )
+                    {
+                        include("modul/".$p);
+                    } else {
+                        include("home.php");
+                    }
                 }  
             ?>
 
@@ -116,6 +206,43 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="js/login.js"></script>
+
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bootstrap/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="bootstrap/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="bootstrap/datatables/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    <!-- Bootstrap Datetimepicker JS-->
+    <script src="dist/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+    <script src="dist/ckeditor/ckeditor.js"></script>
+    <script src="dist/ckeditor/samples/js/sample.js"></script>
+
+    <script>
+            $('#dataTables-example').DataTable({
+                    responsive: true
+            });
+
+            $('#datepicker').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+
+            CKEDITOR.replace( 'editor' );
+            
+    </script>
 
 </body>
 
