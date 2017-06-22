@@ -26,7 +26,7 @@
 
 		$v_kelebihan		= $_POST['kelebihan'];
 
-		$upload_dir 		= "../dist/images/foto/";
+		$upload_dir 		= "dist/images/foto/";
 		$foto 				= basename ($fileName);
 		$v_foto 			= str_replace(' ','_',$foto);
 
@@ -92,8 +92,9 @@
 
 	if ( isset($_POST['edit']) ) 
 	{
-		$getId	= $_REQUEST['id'];
-		$cek   	= "SELECT * FROM tb_pelamar WHERE id_pelamar = '".$getId."' "; 
+		$getId	= $_GET['user_id'];
+		$v_user_id	= $_POST['user_id'];
+		$cek   	= "SELECT * FROM tb_pelamar WHERE user_id = '".$getId."' "; 
 		$res    = $conn->query($cek);
 		$data   = $res->fetch_array();
 
@@ -122,7 +123,7 @@
 
 		$v_kelebihan		= $_POST['kelebihan'];
 
-		$upload_dir 		= "../dist/images/foto/";
+		$upload_dir 		= "dist/images/foto/";
 		$foto 				= basename ($fileName);
 		$v_foto 			= str_replace(' ','_',$foto);
 
@@ -143,12 +144,12 @@
 									pengalaman 		= '$v_pengalaman',
 									tinggi_badan 	= '$v_tinggi_badan',
 									kelebihan 		= '$v_kelebihan'
-								WHERE id_pelamar 	= '$getId' ";
+								WHERE user_id 		= '$v_user_id' ";
 
 			if ($conn->query($sql) === TRUE) {
 
-				echo '<script>alert("data berhasil diubah"); </script>';
- 				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.view">';	    	
+				echo '<script>alert("profil berhasil diupdate"); </script>';
+ 				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 			}
@@ -181,25 +182,25 @@
 									tinggi_badan 	= '$v_tinggi_badan',
 									foto 			= '$v_foto',
 									kelebihan 		= '$v_kelebihan'
-								WHERE id_pelamar 	= '$getId' ";
+								WHERE user_id 	= '$v_user_id' ";
 
 					if ( $conn->query($sql) === TRUE ) {
-						echo '<script>alert("data berhasil disimpan"); </script>';
-	 					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.view">';
+						echo '<script>alert("profil berhasil diupdate"); </script>';
+	 					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
 					} else {
 						echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 					}
 				} else {
 					echo '<script>alert("gagal upload file"); </script>';
-					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
 			}
 		}
 		$conn->close();

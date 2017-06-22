@@ -1,16 +1,26 @@
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-lg-12">
             <h3 class="page-header"> Profil Pelamar</h3>
         </div>
+    </div> -->
+
+    <div class="row">
+    <div class="col-lg-10">
+        <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Lengkapi profil data diri anda <a href="#" class="alert-link"></a>
+        </div>
     </div>
+    </div>
+
     <div class="row"> 
-        <div class="col-lg-12">
+        <div class="col-lg-10">
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Pelamar</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                     
     <?php
         $GetID  = $_SESSION['user_id'];
@@ -39,8 +49,8 @@
                 }
     ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?p=pelamar.action" id="defaultForm" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="<?php echo $GetID; ?>">
+                <form class="" role="form" style="margin: 10px 30px 20px 20px" action="?p=pelamar.action" id="defaultForm" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="user_id" value="<?php echo $GetID; ?>">
                     <div class="form-group">
                     <label> Username</label>
                         <input type="text" class="form-control" name="user_id" value="<?php echo $data['user_id']; ?>"/>
@@ -112,7 +122,7 @@
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <a class="btn btn-default" href="?p=pelamar.view">Batal</a>
+                        <a class="btn btn-default" href="#">Batal</a>
                         <button class="btn btn-primary" type="submit" name="edit">Ubah</button>
                     </div>                   
                 </form>
