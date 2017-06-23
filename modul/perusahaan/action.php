@@ -16,7 +16,7 @@
 
 		$v_ket_perusahaan	= $_POST['ket_perusahaan'];
 
-		$upload_dir 		= "../dist/images/logo/";
+		$upload_dir 		= "dist/images/logo/";
 		$logo 				= basename ($fileName);
 		$v_logo 			= str_replace(' ','_',$logo);
 
@@ -86,8 +86,9 @@
 
 	if ( isset($_POST['edit']) ) 
 	{
-		$getId	= $_REQUEST['id'];
-		$cek   	= "SELECT * FROM tb_perusahaan WHERE id_perusahaan = '".$getId."' "; 
+		$getId		= $_GET['user_id'];
+		$v_user_id	= $_POST['user_id'];
+		$cek   	= "SELECT * FROM tb_perusahaan WHERE user_id = '".$getId."' "; 
 		$res    = $conn->query($cek);
 		$data   = $res->fetch_array();
 
@@ -106,7 +107,7 @@
 
 		$v_ket_perusahaan	= $_POST['ket_perusahaan'];
 
-		$upload_dir 		= "../dist/images/logo/";
+		$upload_dir 		= "dist/images/logo/";
 		$logo 				= basename ($fileName);
 		$v_logo 			= str_replace(' ','_',$logo);
 
@@ -121,12 +122,12 @@
 								prov 			= '$v_prov',
 								no_telp 		= '$v_no_telp',
 								ket_perusahaan 	= '$v_ket_perusahaan' 
-							WHERE id_perusahaan = '".$getId."' ";
+							WHERE user_id 		= '".$v_user_id."' ";
 
 			if ($conn->query($sql) === TRUE) {
 
 				echo '<script>alert("data berhasil diubah"); </script>';
- 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';	    	
+ 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 			}
@@ -149,7 +150,7 @@
 			    if ($result->num_rows > 0) 
 			    {
 			        echo '<script>alert("nama perusahaan sudah terdaftar"); </script>';
- 					echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+ 					echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
 			    } else {
 
 					if ( move_uploaded_file( $fileTemp,$upload_dir.$v_logo) ) 
@@ -165,27 +166,27 @@
 									no_telp 		= '$v_no_telp',
 									logo 			= '$v_logo',
 									ket_perusahaan 	= '$v_ket_perusahaan' 
-								WHERE id_perusahaan = '".$getId."' ";
+								WHERE user_id 		= '".$v_user_id."' ";
 
 						if ($conn->query($sql) === TRUE) {
 
 							echo '<script>alert("data berhasil diubah"); </script>';
-			 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';	    	
+			 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';	    	
 						}else{
 							echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 						}
 					} else {
 						echo '<script>alert("gagal upload file"); </script>';
-						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.add">';
+						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
 					}
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.add">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.add">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
 			}
 		}
 		$conn->close();

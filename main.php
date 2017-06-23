@@ -129,10 +129,13 @@
                         <a href="?p=home">Beranda</a>
                     </li>
                     <li>
+                        <a href="?p=lowongan.view">Postingan</a>
+                    </li>
+                    <li>
                         <a href="?p=lowongan.view">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="?p=perusahaan.profil">Profile</a>
+                        <a href="?p=perusahaan.profil">Profil</a>
                     </li>
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>

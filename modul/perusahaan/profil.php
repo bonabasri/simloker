@@ -49,40 +49,40 @@
                    
                 <form class="" role="form" style="margin: 10px 30px 20px 20px" action="?p=perusahaan.action" id="defaultForm" method="post" enctype="multipart/form-data">
                 
-                <input type="hidden" name="id" value="<?php echo $GetID; ?>">         
+                <input type="hidden" name="user_id" value="<?php echo $GetID; ?>">         
                     <div class="form-group">
                     <label> Username</label>
                         <input type="text" class="form-control" name="user_id" value="<?php echo $data['user_id']; ?>" disabled/>
                     </div>
                     <div class="form-group">
+                    <label> Email</label>
+                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>" disabled/>
+                    </div>
+                    <div class="form-group">
                     <label> Nama Perusahaan</label>
-                        <input type="text" class="form-control" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>"/>
+                        <input type="text" class="form-control" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>"/>
+                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="kota" value="<?php echo $data['kota']; ?>"/>
+                        <input type="text" class="form-control" name="kota" value="<?php echo $data['kota']; ?>" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="prov" value="<?php echo $data['prov']; ?>"/>
-                    </div>
-                    <div class="form-group">
-                    <label> Email</label>
-                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>"/>
+                        <input type="text" class="form-control" name="prov" value="<?php echo $data['prov']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Nomor Telepon</label>
-                        <input type="text" class="form-control" name="no_telp" value="<?php echo $data['no_telp']; ?>"/>
+                        <input type="text" class="form-control" name="no_telp" value="<?php echo $data['no_telp']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Logo Perusahaan</label>
-                        <input type="file" name="logo"><img src="../dist/images/logo/<?php echo $data['logo'];?>" width="90" height="90">
+                        <input type="file" name="logo"><img src="dist/images/logo/<?php echo $data['logo'];?>" width="90" height="90" required/>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
-                        <textarea id="editor" name="ket_perusahaan"><?php echo $data['ket_perusahaan'];?>
+                        <textarea id="editor" name="ket_perusahaan" required/><?php echo $data['ket_perusahaan'];?>
                         </textarea>
                     </div>
                     <div class="form-group">

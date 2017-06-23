@@ -61,23 +61,23 @@
                     </div>
                     <div class="form-group">
                     <label> Nama Depan</label>
-                        <input type="text" class="form-control" name="nama_depan" value="<?php echo $data['nama_depan']; ?>"/>
+                        <input type="text" class="form-control" name="nama_depan" value="<?php echo $data['nama_depan']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Nama Belakang</label>
-                        <input type="text" class="form-control" name="nama_belakang" value="<?php echo $data['nama_belakang']; ?>"/>
+                        <input type="text" class="form-control" name="nama_belakang" value="<?php echo $data['nama_belakang']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Tempat Lahir</label>
-                        <input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data['tempat_lahir']; ?>"/>
+                        <input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data['tempat_lahir']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Tanggal Lahir</label>
-                        <input type="text" class="form-control" name="tgl_lahir" id="datepicker" value="<?php echo $data['tgl_lahir']; ?>">
+                        <input type="text" class="form-control" name="tgl_lahir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_lahir']), 'd-m-Y'); ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Jenis Kelamin</label>
-                        <select class="form-control" name="jk"/>
+                        <select class="form-control" name="jk" required/>
                             <option value="<?php echo $data['jk']; ?>"><?php echo $data['jk']; ?></option>
                             <option value="P">Pria</option>
                             <option value="W">Wanita</option>
@@ -86,39 +86,39 @@
 
                     <div class="form-group">
                     <label> Agama</label>
-                        <input type="text" class="form-control" name="agama" value="<?php echo $data['agama']; ?>"/>
+                        <input type="text" class="form-control" name="agama" value="<?php echo $data['agama']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>"/>
+                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Lulusan</label>
-                        <input type="text" class="form-control" name="lulusan" value="<?php echo $data['lulusan']; ?>"/>
+                        <input type="text" class="form-control" name="lulusan" value="<?php echo $data['lulusan']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Usia</label>
-                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>"/>
+                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Nomor Telepon</label>
-                        <input type="text" class="form-control" name="no_hp" value="<?php echo $data['no_hp']; ?>"/>
+                        <input type="text" class="form-control" name="no_hp" value="<?php echo $data['no_hp']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Pengalaman</label>
-                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>"/>
+                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Tinggi Badan</label>
-                        <input type="text" class="form-control" name="tinggi_badan" value="<?php echo $data['tinggi_badan']; ?>"/>
+                        <input type="text" class="form-control" name="tinggi_badan" value="<?php echo $data['tinggi_badan']; ?>" required/>
                     </div>
                     <div class="form-group">
                     <label> Foto</label>
-                        <input type="file" name="foto"/><img src="../dist/images/foto/<?php echo $data['foto'];?>" width="90" height="90">
+                        <input type="file" name="foto"/><img src="dist/images/foto/<?php echo $data['foto'];?>" width="90" height="90" required/>
                     </div>
                     <div class="form-group">
                     <label> Kelebihan</label>
-                        <textarea id="editor" name="kelebihan"><?php echo $data['kelebihan']; ?></textarea>
+                        <textarea id="editor" name="kelebihan" required/><?php echo $data['kelebihan']; ?></textarea>
                     </div>
                     <div class="form-group">
                     <label></label>

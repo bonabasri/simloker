@@ -92,7 +92,7 @@
 
 	if ( isset($_POST['edit']) ) 
 	{
-		$getId	= $_GET['user_id'];
+		$getId		= $_GET['user_id'];
 		$v_user_id	= $_POST['user_id'];
 		$cek   	= "SELECT * FROM tb_pelamar WHERE user_id = '".$getId."' "; 
 		$res    = $conn->query($cek);
