@@ -1,7 +1,7 @@
 <?php
 	if ( isset($_POST['save']) ) 
 	{
-		$v_id_perusahaan 			= $_SESSION['id_user'];
+		$v_user_id 					= $_SESSION['user_id'];
 		$v_id_kategori_pekerjaan 	= $_POST['id_kategori_pekerjaan'];
 		$v_posisi 					= $_POST['posisi'];
 		$v_jk_require 				= $_POST['jk_require'];
@@ -15,7 +15,7 @@
 		$v_deskripsi				= $_POST['deskripsi'];
 
 		$sql = "INSERT INTO tb_lowongan (
-										id_perusahaan,
+										user_id,
 										id_kategori_pekerjaan,
 										posisi,
 										jk_require,
@@ -26,7 +26,7 @@
 										tgl_akhir,
 										deskripsi
 										) VALUES (
-												'$v_id_perusahaan',
+												'$v_user_id',
 												'$v_id_kategori_pekerjaan',
 												'$v_posisi',
 												'$v_jk_require',

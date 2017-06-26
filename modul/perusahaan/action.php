@@ -141,17 +141,17 @@
 		{
 			if ( $fileSize < 1044070 ) 
 			{
-				$sqlCek = "SELECT * 
-							FROM tb_perusahaan 
-						WHERE nama_perusahaan = '$v_nama_perusahaan' ";
+				// $sqlCek = "SELECT * 
+				// 			FROM tb_perusahaan 
+				// 		WHERE nama_perusahaan = '$v_nama_perusahaan' ";
 
-		    	$result = $conn->query($sqlCek);
+		  //   	$result = $conn->query($sqlCek);
 			    
-			    if ($result->num_rows > 0) 
-			    {
-			        echo '<script>alert("nama perusahaan sudah terdaftar"); </script>';
- 					echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
-			    } else {
+			 //    if ($result->num_rows > 0) 
+			 //    {
+			 //        echo '<script>alert("nama perusahaan sudah terdaftar"); </script>';
+ 			// 		echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
+			 //    } else {
 
 					if ( move_uploaded_file( $fileTemp,$upload_dir.$v_logo) ) 
 					{
@@ -178,7 +178,7 @@
 					} else {
 						echo '<script>alert("gagal upload file"); </script>';
 						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
-					}
+					// }
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';

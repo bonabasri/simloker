@@ -11,3 +11,59 @@ body {
 footer {
     margin: 50px 0;
 }
+
+.navbar-brand {
+	font-family: 'Roboto Slab';
+	/*font-style: oblique;*/
+	color: #DADADA;
+}
+
+.nav {
+	font-family: 'Roboto Slab';
+}
+
+.navbar-nav {
+	font-family: 'Open Sans', sans-serif;
+	color: #fff;
+}
+
+.page-header {
+	margin: 0px 0px 15px 0px; 
+	font-family: "Lucida Console", sans-serif; 
+	font-size: 36px;
+	font-style: normal;
+	font-color: #000000;
+}
+
+.title {
+	/*margin: 0; */
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 15px;
+	text-decoration: none;
+}
+
+#crop {
+    width: 120px;
+    height: 90px;
+    overflow: hidden;
+}
+
+#crop img {
+    width: 180px;
+    height: 135px;
+    margin: -10px 0 0 -10px;
+}
+
+#conten {
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 14px;
+	text-decoration: none;
+	margin: 0px 0px 15px 0px;
+}
+
+.form {
+	margin: 10px 30px 20px 20px;
+}
+/*.bg-white {
+    background-color: #fff;
+}*/

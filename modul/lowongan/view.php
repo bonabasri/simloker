@@ -42,13 +42,16 @@
                 </thead>
                 <tbody>
                     <?php
+                        $getID = $_SESSION['user_id'];
                         $sql = "SELECT *FROM tb_lowongan 
-                        INNER JOIN tb_kategori_pekerjaan ON 
+                    INNER JOIN tb_kategori_pekerjaan ON 
                         (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
-                        INNER JOIN tb_kategori_pendidikan ON 
+                    INNER JOIN tb_kategori_pendidikan ON 
                         (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
-                        INNER JOIN tb_user ON 
-                        (tb_lowongan.id_perusahaan=tb_user.id) ORDER BY tb_lowongan.id_lowongan DESC";
+                    INNER JOIN tb_perusahaan ON 
+                        (tb_lowongan.user_id=tb_perusahaan.user_id) 
+                    WHERE tb_perusahaan.user_id= '$getID' 
+                    ORDER BY tb_lowongan.id_lowongan DESC";
 
                         $res = $conn->query($sql);
                         $no  = 0;
@@ -58,9 +61,9 @@
                     ?>
                     <tr class="odd gradeX">
                         <td style="text-align:center;"><?php echo $no; ?></td>
-                        <td ><?php echo $data['uname']; ?></td>
+                        <td ><?php echo $data['nama_perusahaan']; ?></td>
                         <td ><?php echo $data['nama_kategori_kerja']; ?></td>
-                        <td style="text-align:center;"><?php echo $data['posisi'];?></td>
+                        <td ><?php echo $data['posisi'];?></td>
                         <td style="text-align:center;"><?php echo $data['nama_pendidikan'];?></td>
                         <td style="text-align:center;"><?php echo $data['tgl_posting']. ' - ' .$data['tgl_akhir'];?></td>
                         <td style="text-align:center;">

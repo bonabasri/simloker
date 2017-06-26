@@ -48,6 +48,9 @@
     <!-- Custom CSS -->
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <!-- <link href="css/blog-home.css" rel="stylesheet"> -->
+
     <!-- Bootstrap datetimepicker CSS -->
     <link href="dist/bootstrap-datepicker/bootstrap-datepicker3.min.css" rel="stylesheet">
 
@@ -132,7 +135,7 @@
                         <a href="?p=lowongan.view">Postingan</a>
                     </li>
                     <li>
-                        <a href="?p=lowongan.view">Pasang Lowongan</a>
+                        <a href="?p=lowongan.add">Pasang Lowongan</a>
                     </li>
                     <li>
                         <a href="?p=perusahaan.profil">Profil</a>
@@ -162,10 +165,10 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container bg-white col-lg-11 col-lg-offset-1">
 
         <div class="row">
-        
+        <div class="col-lg-10">
             <?php
                 if ($_SESSION['uac'] === 'PERUSAHAAN') 
                 {

@@ -32,6 +32,9 @@
     <!-- Custom Fonts -->
     <link href="bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Custom CSS -->
+    <!-- <link href="dist/css/sb-admin-2.css" rel="stylesheet"> -->
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,7 +69,7 @@
                         <a href="#">Lowongan Kerja</a>
                     </li>
                     <li>
-                        <a href="#">Pasang Lowongan</a>
+                        <a href="?p=add-job">Pasang Lowongan</a>
                     </li>
                     <li>
                         <a href="?p=register">Registrasi</a>

@@ -1,7 +1,7 @@
 <!-- Blog Entries Column -->
-            <div class="col-md-9">
+            <div class="col-md-8">
 
-                <h1 class="page-header" style="margin: 0; font-family: 'Open Sans', sans-serif; font-size: 36px;">
+                <h1 class="page-header" >
                     
                     <small>Lowongan Terbaru</small>
                 </h1>
@@ -14,31 +14,33 @@
                         INNER JOIN tb_kategori_pendidikan ON 
                         (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
                         INNER JOIN tb_perusahaan ON 
-                        (tb_lowongan.id_perusahaan=tb_perusahaan.id_perusahaan) ORDER BY tb_lowongan.id_lowongan DESC";
+                        (tb_lowongan.user_id=tb_perusahaan.user_id) ORDER BY tb_lowongan.id_lowongan DESC LIMIT 10";
                         $res = $conn->query($sql);
                         foreach ($res as $row => $data) {
                 ?>
                 <!-- First Blog Post -->
                 
-                <br>
-                <div class="col-md-2">
-                <img class="img-responsive" src="dist/payung.jpg" alt="" sizes="{max-width: 150px} 100vw, 150px" height="110" width="110">
+                <!-- <br> -->
+                <div class="col-md-2" id="crop">
+                <img class="img-responsive" src="dist/images/logo/<?php echo $data['logo']; ?>" alt="" sizes="{max-width: 110px} 100vw, 110px" height="110" width="110">
                 </div>
                 <!-- <p> -->
                 <h4>
-                    <a href="#" style="font-family: 'Open Sans', sans-serif; font-size: 15px;><?php echo $data['posisi']; ?></a>
+                    <a href="#" class="title"><?php echo $data['posisi']; ?></a>
                 </h4>
                 <h5>
                 <!-- <p> -->
-                    <a href="index.php"><span class="glyphicon glyphicon-list-alt"></span> <?php echo $data['nama_perusahaan'].' <span class="glyphicon glyphicon-map-marker"></span> '. $data['kota']; ?></a>
-                </p>
+                    <a href="index.php" id="conten"><span class="glyphicon glyphicon-list-alt"></span> <?php echo $data['nama_perusahaan'].' <span class="glyphicon glyphicon-map-marker"></span> '. $data['kota']; ?></a>
+                
+                    <span class="glyphicon glyphicon-calendar"></span><a id=conten> <?php echo date_format(date_create($data['tgl_posting']), 'd-m-Y').' - '. date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?></a>
+                    <?php echo $data['nama_kategori_kerja'].' '.$data['jk_require']; ?>
                 </h5>
-                <p><span class="glyphicon glyphicon-calendar"></span> <?php echo $data['tgl_posting'].' - '. $data['tgl_akhir']; ?></p>
-                <?php echo $data['nama_kategori_kerja'].' '.$data['jk_require']; ?></p>
-                <!-- <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a> -->
+                <br>
+                <!-- <a class="btn btn-primary btn-sm" href="#">View More </a> -->
 
-                <!-- <hr> -->
+                <hr>
                 <?php } ?>
+                <!-- <hr> -->
                 <!-- First Blog Post -->
                 <!-- <h4>
                     <a href="#">Blog Post Title</a>

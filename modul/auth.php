@@ -22,6 +22,8 @@
 			header('location:?p=member');
 		}
 	} else {
-		header('location:login.php?act=error');
+		// header('location:login.php?action=error');
+		echo('<script>alert("username dan password tidak cocok"); </script>');
+	 	echo '<meta http-equiv="refresh" content="0;URL=?p=login">';
 	}
 ?>

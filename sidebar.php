@@ -1,5 +1,5 @@
         <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-3">
+            <div class="col-md-4">
 
                 <!-- Blog Search Well -->
                 <div class="well">
@@ -19,17 +19,19 @@
                 <div class="well">
                     <h4>Kategori Lowongan</h4>
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-8">
+                        <?php
+                            $sql = "SELECT *FROM tb_kategori_pekerjaan";
+                            $res = $conn->query($sql);
+                            foreach ($res as $row => $data) {
+                        ?>
                             <ul class="list-unstyled">
-                                <li><a href="#">PHP</a>
-                                </li>
-                                <li><a href="#">JavaScrpit</a>
-                                </li>
-                                <li><a href="#">HTML</a>
-                                </li>
-                                <li><a href="#">CSS</a>
+                                <li><a href="#"><?php echo $data['nama_kategori_kerja']; ?></a>
                                 </li>
                             </ul>
+                        <?php 
+                        }
+                        ?>
                         </div>
                         
                     </div>

@@ -5,7 +5,7 @@
         </div>
     </div> -->
     <div class="row">
-    <div class="col-lg-10">
+    <!-- <div class="col-lg-10"> -->
         <div class="alert alert-info alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             Lengkapi profil perusahaan anda, sebelum posting lowongan pekerjaan <a href="#" class="alert-link"></a>
@@ -47,7 +47,7 @@
                 }
     ?>    
                    
-                <form class="" role="form" style="margin: 10px 30px 20px 20px" action="?p=perusahaan.action" id="defaultForm" method="post" enctype="multipart/form-data">
+                <form class="form" role="form" action="?p=perusahaan.action" id="defaultForm" method="post" enctype="multipart/form-data">
                 
                 <input type="hidden" name="user_id" value="<?php echo $GetID; ?>">         
                     <div class="form-group">

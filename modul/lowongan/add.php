@@ -1,6 +1,6 @@
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10 col-offset-2">
             <h3 class="page-header"> Pasang Lowongan</h3>
         </div>
     </div>
@@ -10,7 +10,7 @@
             <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                     
     <?php
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
@@ -37,7 +37,7 @@
                     <label> Judul</label>
                         <input type="text" class="form-control" name="judul" placeholder="Judul Lowongan" required/>
                     </div> -->
-                    <input type="hidden" name="id_perusahaan" value="<?php echo $_SESSION['id_user'] ?>">
+                    <input type="hidden" name="id_perusahaan" value="<?php echo $_SESSION['user_id'] ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
                         <select class="form-control" name="id_kategori_pekerjaan" required/>
