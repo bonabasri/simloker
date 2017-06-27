@@ -46,6 +46,13 @@
                         </select>
                     </div>
                     <div class="form-group">
+                    <label> Jenis Pekerjaan</label>
+                        <select class="form-control" name="id_jenis" required/>
+                            <option value="">- Pilih -</option>
+                            <?php echo $jenis_kerja; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                     <label> Posisi</label>
                         <input type="text" class="form-control" name="posisi" placeholder="Nama Lengkap" required/>
                     </div>
@@ -76,6 +83,10 @@
                     <div class="form-group">
                     <label> Tanggal Akhir Lowongan</label>
                             <input type="text" name="tgl_akhir" id="datepicker" class="form-control" placeholder="Tanggal Lahir" required/>
+                    </div>
+                    <div class="form-group">
+                    <label> Keterangan Gambar</label>
+                            <input type="file" name="img" required/>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>
