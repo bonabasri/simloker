@@ -35,7 +35,7 @@
                                 </div>
                                 
                                 <input type="submit" name="daftar" value="Register" class="btn btn-md btn-primary btn-block"><br/>Punya Akun?
-                                <a style="text-decoration:none;" href="?ref=login"> Masuk</a>
+                                <a style="text-decoration:none;" href="?p=login"> Masuk</a>
                         
                             </fieldset>
                         </form>
