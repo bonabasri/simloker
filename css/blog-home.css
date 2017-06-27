@@ -20,11 +20,12 @@ footer {
 
 .nav {
 	font-family: 'Roboto Slab';
+	color: #DADADA;
 }
 
 .navbar-nav {
 	font-family: 'Open Sans', sans-serif;
-	color: #fff;
+	color: #DADADA;
 }
 
 .page-header {

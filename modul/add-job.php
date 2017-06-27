@@ -10,7 +10,7 @@
 Hi, Employers! Jika anda mencari talenta IT terbaik, daftarkan lowongan pekerjaan perusahaan anda di NusantaraHub.com
 
 Ikuti petunjuk berikut:
-<p>
+<ul>
 <li>
     Silakan <a href="?p=login" class="btn btn-primary">Login</a>
 
@@ -31,7 +31,7 @@ Lowongan akan ditampilkan maksimal 2×24 jam.
 <li>
 It’s totally FREE!
 </li>
-</p>
+</ul>
 </div>
 </div>
 </div>
