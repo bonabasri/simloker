@@ -88,9 +88,9 @@
 	{
 		$getId		= $_GET['user_id'];
 		$v_user_id	= $_POST['user_id'];
-		$cek   	= "SELECT * FROM tb_perusahaan WHERE user_id = '".$getId."' "; 
-		$res    = $conn->query($cek);
-		$data   = $res->fetch_array();
+		$cek   		= "SELECT * FROM tb_perusahaan WHERE user_id = '".$getId."' "; 
+		$res    	= $conn->query($cek);
+		$data   	= $res->fetch_array();
 
 		$allowExt 			= array( 'png', 'jpg', 'jpeg' );
 

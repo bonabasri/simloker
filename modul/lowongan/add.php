@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-group">
                     <label> Posisi</label>
-                        <input type="text" class="form-control" name="posisi" placeholder="Nama Lengkap" required/>
+                        <input type="text" class="form-control" name="posisi" placeholder="Judul Pekerjaan" required/>
                     </div>
                     <div class="form-group">
                     <label> Jenis Kelamin</label>

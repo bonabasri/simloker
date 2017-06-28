@@ -16,6 +16,8 @@
         $GetID  = $_GET['id'];
         $sql = "SELECT *FROM tb_lowongan 
                 INNER JOIN tb_kategori_pekerjaan ON (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
+                INNER JOIN tb_jenis_pekerjaan ON (tb_lowongan.id_jenis=
+                    tb_jenis_pekerjaan.id_jenis)
                 INNER JOIN tb_kategori_pendidikan ON (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan) 
                 WHERE tb_lowongan.id_lowongan = '$GetID'";
         $res = $conn->query($sql);
@@ -54,6 +56,13 @@
                         </select>
                     </div>
                     <div class="form-group">
+                    <label> Jenis Pekerjaan</label>
+                        <select class="form-control" name="id_jenis" required/>
+                            <option value="<?php echo $data['id_jenis']; ?>"><?php echo $data['nama_jenis_kerja']; ?></option>
+                            <?php echo $jenis_kerja; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                     <label> Posisi</label>
                         <input type="text" class="form-control" name="posisi" value="<?php echo $data['posisi']; ?>"/>
                     </div>
@@ -83,7 +92,11 @@
                     </div>
                     <div class="form-group">
                     <label> Tanggal Akhir Lowongan</label>
-                            <input type="text" name="tgl_akhir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?>" class="form-control"/>
+                        <input type="text" name="tgl_akhir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?>" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                    <label> Keterangan Gambar</label>
+                        <input type="file" name="img" /><img src="dist/images/img/<?php echo $data['img'];?>" width="120" height="90">
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>

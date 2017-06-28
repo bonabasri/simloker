@@ -26,7 +26,7 @@
                 </div>
                 <!-- <p> -->
                 <h4>
-                    <a href="#" class="title"><?php echo $data['posisi']; ?></a>
+                    <a href="?p=job&id=<?php echo $data['id_lowongan']; ?>" class="title"><?php echo $data['posisi']; ?></a>
                 </h4>
                 <h5>
                 <!-- <p> -->
