@@ -13,7 +13,7 @@
                             ?>
                         </div>
                     
-                    <div class="panel-body" style="height: 300px;">
+                    <div class="panel-body" style="height: 320px;">
                         <form role="form" method="post" action="?p=auth">
                             <fieldset>
                                 <div class="form-group">

@@ -14,7 +14,7 @@
                             ?>
                         </div>
                     
-                    <div class="panel-body">
+                    <div class="panel-body" style="height: 320px;">
                         <form role="form" method="post" action="?p=reg-proses">
                             <fieldset>
                                 <div class="form-group">
