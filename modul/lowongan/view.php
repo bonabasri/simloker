@@ -1,17 +1,3 @@
-<?php
-
-/**
- * PSB Online - SMK Kosgoro Nganjuk
- * ------------------------------------------------------------------------
- * @package     PSB Online
- * @author      Luqman Hakim <luckman.heckem@gmail.com>
- * @copyright   Copyright (c) 2016
- * @link        github.com/luqmanhakim1
- * ------------------------------------------------------------------------
- * Template by www.startbootstrap.com
- */
-
-?>
 
 <div class="row">
     <div class="col-lg-12">
@@ -36,6 +22,7 @@
                         <th>Kategori Kerja</th>
                         <th style="width:15%;">Posisi</th> 
                         <th style="text-align:center;">Pendidikan</th>
+                        <th style="text-align:center;">Ket Gambar</th>
                         <th style="text-align:center;">Tanggal Post/Akhir</th>
                         <th style="text-align:center;">Control</th>
                     </tr>
@@ -65,7 +52,8 @@
                         <td ><?php echo $data['nama_kategori_kerja']; ?></td>
                         <td ><?php echo $data['posisi'];?></td>
                         <td style="text-align:center;"><?php echo $data['nama_pendidikan'];?></td>
-                        <td style="text-align:center;"><?php echo $data['tgl_posting']. ' - ' .$data['tgl_akhir'];?></td>
+                        <td style="text-align:center;"><img src="dist/images/img/<?php echo $data['img'];?> " width="30" height="30"/></td>
+                        <td style="text-align:center;"><?php echo $data['tgl_posting']. ' - ' .$data['tgl_akhir'];?> </td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">

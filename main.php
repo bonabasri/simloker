@@ -46,7 +46,7 @@
     <link href="dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- <link href="dist/css/sb-admin-2.css" rel="stylesheet"> -->
 
     <!-- Custom CSS -->
     <!-- <link href="css/blog-home.css" rel="stylesheet"> -->
@@ -165,10 +165,10 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container bg-white col-lg-11 col-lg-offset-1">
+    <div class="container">
 
         <div class="row">
-        <div class="col-lg-10">
+        <!-- <div class="col-lg-12"> -->
             <?php
                 if ($_SESSION['uac'] === 'PERUSAHAAN') 
                 {
@@ -207,12 +207,12 @@
 
         <!-- Footer -->
         <!-- <footer> -->
-            <!-- <div class="row"> -->
+            <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Your Website 2014</p>
                 </div>
                 <!-- /.col-lg-12 -->
-            <!-- </div> -->
+            </div>
             <!-- /.row -->
         <!-- </footer> -->
 

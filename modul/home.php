@@ -13,6 +13,8 @@
                         (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
                         INNER JOIN tb_kategori_pendidikan ON 
                         (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
+                        INNER JOIN tb_jenis_pekerjaan ON
+                        (tb_lowongan.id_jenis=tb_jenis_pekerjaan.id_jenis)
                         INNER JOIN tb_perusahaan ON 
                         (tb_lowongan.user_id=tb_perusahaan.user_id) ORDER BY tb_lowongan.id_lowongan DESC LIMIT 10";
                         $res = $conn->query($sql);
@@ -30,10 +32,10 @@
                 </h4>
                 <h5>
                 <!-- <p> -->
-                    <a href="index.php" id="conten"><span class="glyphicon glyphicon-list-alt"></span> <?php echo $data['nama_perusahaan'].' <span class="glyphicon glyphicon-map-marker"></span> '. $data['kota']; ?></a>
+                    <a href="index.php" id="conten"><span class="glyphicon glyphicon-list-alt"></span> <?php echo $data['nama_perusahaan'].' <span class="fa fa-bookmark fa-fw"></span> '. $data['nama_jenis_kerja'] .' <span class="glyphicon glyphicon-map-marker"></span> '. $data['kota']; ?></a>
                 
-                    <span class="glyphicon glyphicon-calendar"></span><a id=conten> <?php echo date_format(date_create($data['tgl_posting']), 'd-m-Y').' - '. date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?></a>
-                    <?php echo $data['nama_kategori_kerja'].' '.$data['jk_require']; ?>
+                    <span class="fa fa-calendar fa-fw"></span><span id=conten> <?php echo date_format(date_create($data['tgl_posting']), 'd-m-Y').' - '. date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?>
+                    <?php echo $data['nama_kategori_kerja'].' '.$data['jk_require']; ?></span>
                 </h5>
                 <br>
                 <!-- <a class="btn btn-primary btn-sm" href="#">View More </a> -->

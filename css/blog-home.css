@@ -30,16 +30,26 @@ footer {
 
 .page-header {
 	margin: 0px 0px 15px 0px; 
-	font-family: "Lucida Console", sans-serif; 
+	font-family: "Roboto Slab", serif; 
 	font-size: 36px;
-	font-style: normal;
+	font-weight: 700;
+	/*font-style: normal;*/
 	font-color: #000000;
+	/*border: 600;*/
 }
 
 .title {
 	/*margin: 0; */
 	font-family: 'Open Sans', sans-serif; 
 	font-size: 15px;
+	text-decoration: none;
+}
+
+.title-entry {
+	/*margin: 0; */
+	font-family: 'Roboto Slab', serif; 
+	font-size: 15px;
+	font-weight: 600;
 	text-decoration: none;
 }
 

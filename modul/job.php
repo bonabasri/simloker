@@ -15,14 +15,18 @@
                 foreach ($res as $row => $data) {
     ?>
 
-    <h5 class="page-header" >
+    <h5 class="title-entry" >
                     
-                    <small> <?php echo $data['posisi']; ?></small>
-                </h5>
-				<img class="img-responsive" src="dist/images/img/<?php echo $data['img']; ?>" alt="">
-				<p><span class="glyphicon glyphicon-calendar"></span> <?php echo date_format(date_create($data['tgl_posting']), 'd/m/Y').' <span class="glyphicon glyphicon-user"></span> '.$data['nama_perusahaan']; ?></p>
+                   <?php echo $data['posisi']; ?>
+                </h5><br>
+				<img class="img-responsive" src="dist/images/img/<?php echo $data['img']; ?>" alt="" sizes="{max-width: 750px} 100vw, 750px" width="750">
+				<p><span class="fa fa-calendar fa-fw"></span> <?php echo date_format(date_create($data['tgl_posting']), 'd/m/Y').'  <span class="glyphicon glyphicon-user"></span> '.$data['nama_perusahaan']; ?></p>
 				<hr>
-				<h5 class="title"> <?php echo $data['posisi']; ?></h5>
+				<h5 class="title-entry"> Posisi</h5>
+				<?php echo $data['posisi']; ?>
+                <hr>
+                <h5 class="title-entry"> Deadline</h5>
+				<?php echo date_format(date_create($data['tgl_akhir']), 'd/m/Y'); ?>
                 <hr>
                 <?php } ?>
 
