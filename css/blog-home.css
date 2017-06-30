@@ -30,8 +30,8 @@ footer {
 
 .page-header {
 	margin: 0px 0px 15px 0px; 
-	font-family: "Roboto Slab", serif; 
-	font-size: 36px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; 
+	font-size: 26px;
 	font-weight: 700;
 	/*font-style: normal;*/
 	font-color: #000000;
@@ -47,9 +47,11 @@ footer {
 
 .title-entry {
 	/*margin: 0; */
-	font-family: 'Roboto Slab', serif; 
-	font-size: 15px;
-	font-weight: 600;
+	/*font-family: 'Roboto Slab', serif;*/
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height: 1.42857143;
+	font-size: 14px;
+	font-weight: 900;
 	text-decoration: none;
 }
 

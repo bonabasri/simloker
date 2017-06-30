@@ -72,7 +72,7 @@
                 <a class="navbar-brand" href="#">LOWONGAN KERJA</a>
             </div>
     <?php
-    if ($_SESSION['uac'] === 'ADM') {
+        if ($_SESSION['uac'] === 'ADM') {
     ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -84,7 +84,10 @@
                         <a href="#">Lowongan Kerja</a>
                     </li>
                     <li>
-                        <a href="?p=lowongan.view">Pasang Lowongan</a>
+                        <a href="?p=perusahaan.view">Data Perusahaan</a>
+                    </li>
+                    <li>
+                        <a href="?p=pelamar.view">Data Pelamar</a>
                     </li>
                     <li>
                         <a href="?p=logout">Logout</a>
@@ -144,7 +147,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
@@ -170,7 +173,21 @@
         <div class="row">
         <!-- <div class="col-lg-12"> -->
             <?php
-                if ($_SESSION['uac'] === 'PERUSAHAAN') 
+                if ($_SESSION['uac'] === 'ADM')
+                {
+                    if( isset($_GET['p']) && strlen($_GET['p']) > 0 )
+                    {
+                        $p = str_replace(".","/",$_GET['p']).".php";
+                    } else {
+                        $p = "home.php";    
+                    } if( file_exists("modul/".$p) )
+                    {
+                        include("modul/".$p);
+                    } else {
+                        include("home.php");
+                    }
+                }
+                else if($_SESSION['uac'] === 'PERUSAHAAN') 
                 {
                     if( isset($_GET['p']) && strlen($_GET['p']) > 0 )
                     {

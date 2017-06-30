@@ -1,16 +1,16 @@
 
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
             <h3 class="page-header"> Profil Perusahaan</h3>
         </div>
     </div>
     <div class="row"> 
-        <div class="col-lg-12">
+        <div class="col-lg-10">
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Perusahaan</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                     
     <?php
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
