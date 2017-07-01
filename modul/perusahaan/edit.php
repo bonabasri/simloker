@@ -13,10 +13,19 @@
                         <div class="col-lg-10">
                     
     <?php
-        $GetID  = $_GET['id'];
-        $sql = "SELECT *FROM tb_perusahaan WHERE id_perusahaan = '$GetID'";
+        $GetID  = $_GET['user_id'];
+        $sql = "SELECT *FROM tb_perusahaan 
+                INNER JOIN tb_user ON (tb_perusahaan.user_id=tb_user.user_id) 
+                WHERE tb_perusahaan.user_id = '$GetID'";
         $res = $conn->query($sql);
         $data = $res->fetch_assoc();
+
+        // $GetID  = $_SESSION['user_id'];
+        // $sql = "SELECT *FROM tb_perusahaan 
+        //         INNER JOIN tb_user ON (tb_perusahaan.user_id=tb_user.user_id) 
+        //         WHERE tb_perusahaan.user_id = '$GetID'";
+        // $res = $conn->query($sql);
+        // $data = $res->fetch_assoc();
 
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
                 $res = $conn->query($sql);
@@ -38,7 +47,15 @@
     ?>    
                    
                 <form class="" role="form" style="margin-top: 10px;" action="?p=perusahaan.action" id="defaultForm" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?php echo $GetID; ?>">          
+                <input type="hidden" name="user_id" value="<?php echo $GetID; ?>">          
+                    <div class="form-group">
+                    <label> Username</label>
+                        <input type="text" class="form-control" name="user_id" value="<?php echo $data['user_id']; ?>" disabled/>
+                    </div>
+                    <div class="form-group">
+                    <label> Email</label>
+                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>" disabled/>
+                    </div>
                     <div class="form-group">
                     <label> Nama Perusahaan</label>
                         <input type="text" class="form-control" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>"/>
@@ -59,7 +76,7 @@
                     </div>
                     <div class="form-group">
                     <label> Logo Perusahaan</label>
-                        <input type="file" name="logo"><img src="../dist/images/logo/<?php echo $data['logo'];?>" width="90" height="90">
+                        <input type="file" name="logo"><img src="dist/images/logo/<?php echo $data['logo'];?>" width="90" height="90">
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Perusahaan</label>
@@ -69,7 +86,7 @@
                     <div class="form-group">
                     <label></label>
                         <a class="btn btn-default" href="?p=perusahaan.view">Batal</a>
-                        <button class="btn btn-primary" type="submit" name="edit">Ubah</button>
+                        <button class="btn btn-primary" type="submit" name="update">Ubah</button>
                     </div>                   
                 </form>
             </div>

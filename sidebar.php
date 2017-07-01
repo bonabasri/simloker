@@ -21,14 +21,14 @@
                     <div class="row">
                         <div class="col-lg-8">
                         <?php
-                            $sql = "SELECT a.*, b.id_kategori_pekerjaan 
+                            $sql = "SELECT a.*, b.id_lowongan, b.id_kategori_pekerjaan 
                                         FROM tb_kategori_pekerjaan a
                                     LEFT JOIN tb_lowongan b ON a.id_kategori_kerja = b.id_kategori_pekerjaan";
                             $res = $conn->query($sql);
                             foreach ($res as $row => $data) {
                         ?>
                             <ul class="list-unstyled">
-                                <li><a href="#"><?php echo $data['nama_kategori_kerja']; ?></a>
+                                <li><a href="?p=category&id=<?php echo $data['id_kategori_pekerjaan']; ?>"><?php echo $data['nama_kategori_kerja']; ?></a>
                                 </li>
                             </ul>
                         <?php 
@@ -49,7 +49,7 @@
                         foreach ($res as $row => $data) {
                     ?>
                         <ul class="list-unstyled">
-                            <li><a href="#"><?php echo $data['posisi']; ?></a>
+                            <li><a href="?p=job&id=<?php echo $data['id_lowongan']; ?>"><?php echo $data['posisi']; ?></a>
                             </li>
                         </ul>
                     <?php 
