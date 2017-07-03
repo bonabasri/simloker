@@ -4,14 +4,16 @@
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Cari Lowongan</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search Job">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
+                    <form role="search" class="navbar-form-custom" action="?p=search" method="post">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Search Job">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit" name="cari">
+                                    <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                            </span>
+                        </div>
+                    </form>
                     <!-- /.input-group -->
                 </div>
 
@@ -26,12 +28,11 @@
                                     LEFT JOIN tb_lowongan b ON a.id_kategori_kerja = b.id_kategori_pekerjaan";
                             $res = $conn->query($sql);
                             foreach ($res as $row => $data) {
-                        ?>
+                            echo'
                             <ul class="list-unstyled">
-                                <li><a href="?p=category&id=<?php echo $data['id_kategori_pekerjaan']; ?>"><?php echo $data['nama_kategori_kerja']; ?></a>
+                                <li><a href="?p=category&id='.$data["id_kategori_pekerjaan"].'"> '.$data['nama_kategori_kerja'].'</a>
                                 </li>
-                            </ul>
-                        <?php 
+                            </ul>'; 
                             }
                         ?>
                         </div>
@@ -47,12 +48,12 @@
                         $sql = "SELECT id_lowongan,posisi from tb_lowongan order by id_lowongan DESC";
                         $res = $conn->query($sql);
                         foreach ($res as $row => $data) {
-                    ?>
+                        echo'
                         <ul class="list-unstyled">
-                            <li><a href="?p=job&id=<?php echo $data['id_lowongan']; ?>"><?php echo $data['posisi']; ?></a>
+                            <li><a href="?p=job&id='.$data["id_lowongan"].'"> ' .$data["posisi"].'</a>
                             </li>
-                        </ul>
-                    <?php 
+                        </ul>';
+                     
                         }
                     ?>
                 </div>
