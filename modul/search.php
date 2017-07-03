@@ -41,16 +41,19 @@
 		                    <a href="index.php" id="conten">
 		                    <span class="glyphicon glyphicon-list-alt"></span>
 		                '.$data['nama_perusahaan'].' 
-                    	<span class="fa fa-bookmark fa-fw"></span> '. $data['nama_jenis_kerja'] .' 
-                    	<span class="glyphicon glyphicon-map-marker"></span> '. $data['kota'].' </a>
+                    	<span class="fa fa-bookmark fa-fw"></span> '.$data['nama_jenis_kerja'] .' 
+                    	<span class="glyphicon glyphicon-map-marker"></span> '.$data['kota'].' </a>
                 
                     	<span class="fa fa-calendar fa-fw"></span><span id=conten> '.
                     	date_format(date_create($data['tgl_posting']), 'd-m-Y').' - '. 
                     	date_format(date_create($data['tgl_akhir']), 'd-m-Y').' 
                      	<span class="glyphicon glyphicon-tags"></span> '. 
                      	$data['nama_kategori_kerja'].' '.$data['jk_require'].'
+                     	<span class="fa fa-graduation-cap fa-fw"></span> '. 
+                     	$data['nama_pendidikan'].'
                 
                 		</h5>
+                		<br>
                 		<hr>
 		                ';
                     }
@@ -63,3 +66,4 @@
             }
         echo "</div>";
                 
+        require('sidebar.php');
