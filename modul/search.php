@@ -3,7 +3,7 @@
 	echo '<div class="col-md-8">
 
             <h1 class="page-header" >  
-                <small>Lowongan Terbaru</small>
+                <small>Find Job</small>
             </h1>';
 
             if ((isset($_POST['cari'])) AND ($_POST['search'] <> "")) {

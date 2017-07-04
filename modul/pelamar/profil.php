@@ -6,16 +6,17 @@
     </div> -->
 
     <div class="row">
-    <div class="col-lg-10">
+    <div class="col-md-8">
         <div class="alert alert-info alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             Lengkapi profil data diri anda <a href="#" class="alert-link"></a>
         </div>
-    </div>
-    </div>
+    <!-- </div>
+    </div> -->
+    
 
-    <div class="row"> 
-        <div class="col-lg-10">
+    <!-- <div class="row"> 
+        <div class="col-lg-8"> -->
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Pelamar</div>
                 <div class="panel-body">
@@ -53,7 +54,7 @@
                     <input type="hidden" name="user_id" value="<?php echo $GetID; ?>">
                     <div class="form-group">
                     <label> Username</label>
-                        <input type="text" class="form-control" name="user_id" value="<?php echo $data['user_id']; ?>"/>
+                        <input type="text" class="form-control" name="user_id" value="<?php echo $data['user_id']; ?>" disabled/> <i>username tidak dapat diubah</i>
                     </div>
                     <div class="form-group">
                     <label> Email</label>
@@ -131,4 +132,7 @@
     </div>
 </div>
 </div>
+
+
+<?php require('./sidebar.php'); ?>
 
