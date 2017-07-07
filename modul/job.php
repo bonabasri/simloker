@@ -45,7 +45,9 @@
         <hr>
 	<?php } ?>
 
+	<a href="?p=apply&id=<?php echo $data['id_lowongan']; ?>" class="btn btn-primary btn-md" >Apply for this Job</a>
 		</div>
 	</div>
+
 </div>
 <?php require('sidebar.php'); ?>

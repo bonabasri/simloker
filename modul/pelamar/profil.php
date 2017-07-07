@@ -80,8 +80,8 @@
                     <label> Jenis Kelamin</label>
                         <select class="form-control" name="jk" required/>
                             <option value="<?php echo $data['jk']; ?>"><?php echo $data['jk']; ?></option>
-                            <option value="P">Pria</option>
-                            <option value="W">Wanita</option>
+                            <option value="Pria">Pria</option>
+                            <option value="Wanita">Wanita</option>
                         </select>
                     </div>
 
