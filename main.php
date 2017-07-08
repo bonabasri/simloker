@@ -1,10 +1,10 @@
 <?php     
     session_start();
     require_once ('core.php');
-    if  ( empty($_SESSION['uname']))  
+    if  ( empty($_SESSION['uname']) )  
     {
         header('location:./');
-    } else {
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,12 +78,11 @@
             <?php
                 if ($_SESSION['uac'] === 'ADM') {
             ?>
-
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
                     <li>
-                        <a href="#">Lowongan Kerja</a>
+                        <a href="?p=lowongan.views">Lowongan Kerja</a>
                     </li>
                     <li>
                         <a href="?p=perusahaan.view">Data Perusahaan</a>
@@ -91,11 +90,9 @@
                     <li>
                         <a href="?p=pelamar.view">Data Pelamar</a>
                     </li>
-        
             <?php
                 } else if($_SESSION['uac'] === 'PELAMAR') {
             ?>
-
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
@@ -108,11 +105,9 @@
                     <li>
                         <a href="?p=pelamar.profil">Profile</a>
                     </li>
-
             <?php 
                 } else if ($_SESSION['uac'] === 'PERUSAHAAN') {
             ?>
-    
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
@@ -123,31 +118,32 @@
                         <a href="?p=lowongan.add">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="?p=perusahaan.profil">Profil</a>
+                        <a href="#">Inbox Resume</a>
                     </li>
-                
+                    <li>
+                        <a href="?p=perusahaan.profil">Profil</a>
+                    </li>  
             <?php 
                 } 
             ?>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    <li>
-                        <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Edit Profile</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Edit Profile</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li>
-                    </ul>
-            </li>
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-
     </nav>
 
     <!-- Page Content -->
@@ -268,4 +264,3 @@
 </body>
 
 </html>
-<?php }

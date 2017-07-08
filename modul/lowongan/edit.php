@@ -1,11 +1,8 @@
 
     <div class="row">
-        <div class="col-lg-12">
-            <h3 class="page-header"> Pasang Lowongan</h3>
-        </div>
-    </div>
-    <div class="row"> 
-        <div class="col-lg-12">
+        <div class="col-lg-8">
+            <h3 class="page-header"><small>Edit Lowongan</small></h3>
+        
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">

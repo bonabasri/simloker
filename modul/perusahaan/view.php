@@ -1,31 +1,15 @@
-<?php
-
-/**
- * PSB Online - SMK Kosgoro Nganjuk
- * ------------------------------------------------------------------------
- * @package     PSB Online
- * @author      Luqman Hakim <luckman.heckem@gmail.com>
- * @copyright   Copyright (c) 2016
- * @link        github.com/luqmanhakim1
- * ------------------------------------------------------------------------
- * Template by www.startbootstrap.com
- */
-
-?>
 
 <div class="row">
-    <div class="col-lg-12">
-        <h3 class="page-header">Data Perusahaan</h3>
-    </div>
-</div>
+    <div class="col-md-8">
+        <h3 class="page-header"><small>Data Perusahaan</small></h3>
 
 <div class="btn-group" role="group" aria-label="...">
     <a class="btn btn-default" title="New Data" href="?p=perusahaan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
     <a href="?p=perusahaan.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
-<div class="row">
 <div class="panel-body">
+<div class="row">
     <div class="dataTable_wrapper">
         <div class="table-responsive">
             <table class="table table-bordered table-hover" id="dataTables-example">
@@ -71,8 +55,6 @@
 
                         </td>
                     </tr>
-
-                
                     <?php
                         }
                     ?>
@@ -80,5 +62,6 @@
             </table>
         </div>
     </div>
+</div>
 </div>
 </div>

@@ -1,11 +1,8 @@
 
     <div class="row">
-        <div class="col-lg-10 col-offset-2">
-            <h5 class="page-header"> Pasang Lowongan</h5>
-        </div>
-    </div>
-    <div class="row"> 
-        <div class="col-lg-10">
+        <div class="col-lg-8">
+            <h5 class="page-header"><small>Pasang Lowongan</small></h5>
+    
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">

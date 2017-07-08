@@ -5,15 +5,14 @@
         </div>
     </div> -->
     <div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-8">
         <div class="alert alert-info alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             Lengkapi profil perusahaan anda, sebelum posting lowongan pekerjaan <a href="#" class="alert-link"></a>
         </div>
-    </div>
-    </div>
+    <!-- </div>
     <div class="row"> 
-        <div class="col-lg-10">
+        <div class="col-lg-8"> -->
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Perusahaan</div>
                 <div class="panel-body">

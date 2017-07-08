@@ -2,7 +2,6 @@
 <div class="row">
     <div class="col-md-8">
         <h3 class="page-header">Resume</h3>
-    <!-- </div> -->
 
 <div class="btn-group" role="group" aria-label="...">
     <a class="btn btn-default" title="New Data" href="?p=lowongan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>

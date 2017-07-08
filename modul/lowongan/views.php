@@ -34,7 +34,6 @@
                         (a.id_pendidikan=c.id_pendidikan)
                     INNER JOIN tb_perusahaan d ON 
                         (a.user_id=d.user_id) 
-                    WHERE d.user_id= '$getID' 
                     ORDER BY a.id_lowongan DESC";
 
                         $res = $conn->query($sql);

@@ -2,8 +2,8 @@
             <div class="col-md-8">
                 <div class="login-panel panel panel">
                     <div class="panel-heading" style="text-align: center;">
-                        <h1 class="panel-title" style="padding-top:13px;">Login</h1><hr>
-
+                        <h1 class="panel-title" style="padding-top:13px;">Login</h1>
+                        <br>
                         <div style="color: rgba(102,117,127,0.6);">
                             <?php
                             error_reporting(0);
