@@ -70,21 +70,21 @@
 											";
 					if ( $conn->query($sql) === TRUE ) {
 						echo '<script>alert("data berhasil disimpan"); </script>';
-	 					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.view">';
+	 					echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.view">';
 					} else {
 						echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 					}
 				} else {
 					echo '<script>alert("gagal upload file"); </script>';
-					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+					echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.add">';
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.add">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.add">';
 		}
 		$conn->close();
 	}
@@ -149,7 +149,7 @@
 			if ($conn->query($sql) === TRUE) {
 
 				echo '<script>alert("profil berhasil diupdate"); </script>';
- 				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';	    	
+ 				echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.profil">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 			}
@@ -186,21 +186,21 @@
 
 					if ( $conn->query($sql) === TRUE ) {
 						echo '<script>alert("profil berhasil diupdate"); </script>';
-	 					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+	 					echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.profil">';
 					} else {
 						echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 					}
 				} else {
 					echo '<script>alert("gagal upload file"); </script>';
-					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+					echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.profil">';
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.profil">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=applicant.profil">';
 			}
 		}
 		$conn->close();

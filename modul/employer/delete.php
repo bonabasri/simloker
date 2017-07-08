@@ -12,9 +12,9 @@
 
 		if ($conn->query($sql)) {
 			echo '<script>alert("data berhasil dihapus"); </script>';
-	 		echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+	 		echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 		}else{
             echo '<script>alert("data gagal dihapus' .$sql. "<br>" .$conn->error. '"); </script>';
-	 		echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+	 		echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 	}
 ?>

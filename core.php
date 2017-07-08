@@ -1,16 +1,6 @@
 <?php
 
-/**
- * siMAYA
- * ------------------------------------------------------------------------
- * @package     siMAYA
- * @author      Luqman Hakim <luckman.heckem@gmail.com>
- * @copyright   Copyright (c) 2016
- * @link        github.com/luqmanhakim1
- * ------------------------------------------------------------------------
- * Template     INSPINIA+ Admin Theme.
- */
-
+    /*file core aplikasi*/
     define('TIME', 'Asia/Jakarta');
     define('HOST', 'localhost');
     define('USER', 'root');

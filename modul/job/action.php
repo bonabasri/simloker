@@ -60,23 +60,23 @@
 												'$v_deskripsi' ) ";
 					if ( $conn->query($sql) === TRUE ) {
 						echo '<script>alert("data berhasil disimpan"); </script>';
-			 			echo '<meta http-equiv="refresh" content="0;URL=?p=lowongan.view">';
+			 			echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					} else {
 					// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 					echo '<script>alert("data gagal disimpan disimpan"); </script>';
-			 		echo '<meta http-equiv="refresh" content="0;URL=?p=lowongan.view">';
+			 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.add">';
 					}
 				} else {
 					echo '<script>alert("gagal upload file"); </script>';
-					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+					echo '<meta http-equiv="refresh" content="0;URL=?p=job.add">';
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=job.add">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.add">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=job.add">';
 		}
 		$conn->close();
 	}
@@ -133,11 +133,11 @@
 
 			if ( $conn->query($sql) === TRUE ) {
 				echo '<script>alert("data berhasil diubah"); </script>';
-		 		echo '<meta http-equiv="refresh" content="0;URL=?p=lowongan.view">';
+		 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 			} else {
 				// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 				echo '<script>alert("data gagal diubah"); </script>';
-		 		echo '<meta http-equiv="refresh" content="0;URL=?p=lowongan.view">';
+		 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 			}
 		}
 		// jika foto diubah
@@ -168,23 +168,23 @@
 
 					if ( $conn->query($sql) === TRUE ) {
 						echo '<script>alert("data berhasil diubah"); </script>';
-				 		echo '<meta http-equiv="refresh" content="0;URL=?p=lowongan.view">';
+				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					} else {
 						// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 						echo '<script>alert("data gagal diubah"); </script>';
-				 		echo '<meta http-equiv="refresh" content="0;URL=?p=lowongan.view">';
+				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					}
 				} else {
 					echo '<script>alert("gagal upload file"); </script>';
-					echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+					echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=pelamar.profil">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 			}
 		}
 		$conn->close();

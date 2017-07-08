@@ -1,38 +1,35 @@
 
     <div class="row">
-        <div class="col-lg-10">
-            <h3 class="page-header"> Profil Perusahaan</h3>
-        </div>
-    </div>
-    <div class="row"> 
-        <div class="col-lg-10">
-            <div class="panel panel-default">
+        <div class="col-lg-8">
+            <h3 class="page-header"><small> Profil Perusahaan</small></h3>
+        
+        <div class="panel panel-default">
             <div class="panel-heading">Informasi Perusahaan</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
                     
-    <?php
+        <?php
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
-                $res = $conn->query($sql);
+            $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
                     $jenis_kerja .= "<option value='{$row['id_jenis']}'> {$row['nama_jenis_kerja']} </option>";
                 }
 
             $sql = "SELECT * FROM tb_kategori_pekerjaan";
-                $res = $conn->query($sql);
+            $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
                     $kategori_kerja .= "<option value='{$row['id_kategori_kerja']}'> {$row['nama_kategori_kerja']} </option>";
                 }
 
             $sql = "SELECT * FROM tb_kategori_pendidikan";
-                $res = $conn->query($sql);
+            $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
                     $kategori_pendidikan .= "<option value='{$row['id_pendidikan']}'> {$row['nama_pendidikan']} </option>";
                 }
-    ?>    
+        ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?p=perusahaan.action" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?p=employer.action" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <div class="form-group">
                     <label> Nama Perusahaan</label>
                         <input type="text" class="form-control" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>
@@ -65,7 +62,7 @@
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <a class="btn btn-default" href="?p=perusahaan.view">Batal</a>
+                        <a class="btn btn-default" href="?p=employer.view">Batal</a>
                         <button class="btn btn-primary" type="submit" name="save">Simpan</button>
                     </div>                   
                 </form>

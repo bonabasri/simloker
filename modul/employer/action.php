@@ -34,7 +34,7 @@
 			    if ($result->num_rows > 0) 
 			    {
 			        echo '<script>alert("nama perusahaan sudah terdaftar"); </script>';
- 					echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+ 					echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 			    } else {
 
 					if ( move_uploaded_file( $fileTemp,$upload_dir.$v_logo) ) 
@@ -63,22 +63,22 @@
 						if ( $conn->query($sql) === TRUE ) {
 							// echo "berhasil simpan";
 							echo '<script>alert("data berhasil disimpan"); </script>';
-	 						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+	 						echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 						} else {
 							echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 						}
 					} else {
 						echo '<script>alert("gagal upload file"); </script>';
-						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.add">';
+						echo '<meta http-equiv="refresh" content="0;URL=?p=employer.add">';
 					}
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.add">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.add">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.add">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=employer.add">';
 		}
 		$conn->close();
 	}
@@ -127,7 +127,7 @@
 			if ($conn->query($sql) === TRUE) {
 
 				echo '<script>alert("data berhasil diubah"); </script>';
- 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';	    	
+ 				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.profil">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 			}
@@ -171,22 +171,22 @@
 						if ($conn->query($sql) === TRUE) {
 
 							echo '<script>alert("data berhasil diubah"); </script>';
-			 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';	    	
+			 				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.profil">';	    	
 						}else{
 							echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 						}
 					} else {
 						echo '<script>alert("gagal upload file"); </script>';
-						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
+						echo '<meta http-equiv="refresh" content="0;URL=?p=employer.profil">';
 					// }
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.profil">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.profil">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=employer.profil">';
 			}
 		}
 		$conn->close();
@@ -235,7 +235,7 @@
 			if ($conn->query($sql) === TRUE) {
 
 				echo '<script>alert("data berhasil diubah"); </script>';
- 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';	    	
+ 				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 			}
@@ -279,22 +279,22 @@
 						if ($conn->query($sql) === TRUE) {
 
 							echo '<script>alert("data berhasil diubah"); </script>';
-			 				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';	    	
+			 				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';	    	
 						}else{
 							echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 						}
 					} else {
 						echo '<script>alert("gagal upload file"); </script>';
-						echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+						echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 					// }
 				}
 			} else {
 				echo '<script>alert("ukuran file maks 1 mb"); </script>';
-				echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 			}
 		} else {
 			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
-			echo '<meta http-equiv="refresh" content="0;URL=?p=perusahaan.view">';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=employer.view">';
 			}
 		}
 		$conn->close();

@@ -1,12 +1,11 @@
 
-
 <div class="row">
     <div class="col-lg-8">
         <h3 class="page-header"><small>Data Pelamar</small></h3>
 
 <div class="btn-group" role="group" aria-label="...">
-    <a class="btn btn-default" title="New Data" href="?p=pelamar.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
-    <a href="?p=pelamar.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
+    <a class="btn btn-default" title="New Data" href="?p=applicant.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
+    <a href="?p=applicant.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
 <div class="panel-body">
@@ -45,7 +44,7 @@
 
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=pelamar.edit&id=<?php echo $data['id_pelamar']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=applicant.edit&id=<?php echo $data['id_pelamar']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                         </div>
 
                         </td>

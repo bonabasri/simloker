@@ -4,8 +4,8 @@
         <h3 class="page-header"><small>Data Lowongan</small></h3>
     
 <div class="btn-group" role="group" aria-label="...">
-    <a class="btn btn-default" title="New Data" href="?p=lowongan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
-    <a href="?p=lowongan.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
+    <a class="btn btn-default" title="New Data" href="?p=job.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
+    <a href="?p=job.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
 <div class="panel-body">
@@ -28,14 +28,13 @@
                     <?php
                         $getID = $_SESSION['user_id'];
                         $sql = "SELECT *FROM tb_lowongan a
-                    INNER JOIN tb_kategori_pekerjaan b ON 
-                        (a.id_kategori_pekerjaan=b.id_kategori_kerja)
-                    INNER JOIN tb_kategori_pendidikan c ON 
-                        (a.id_pendidikan=c.id_pendidikan)
-                    INNER JOIN tb_perusahaan d ON 
-                        (a.user_id=d.user_id) 
-                    WHERE d.user_id= '$getID' 
-                    ORDER BY a.id_lowongan DESC";
+                                LEFT JOIN tb_kategori_pekerjaan b ON 
+                                    (a.id_kategori_pekerjaan=b.id_kategori_kerja)
+                                LEFT JOIN tb_kategori_pendidikan c ON 
+                                    (a.id_pendidikan=c.id_pendidikan)
+                                LEFT JOIN tb_perusahaan d ON 
+                                    (a.user_id=d.user_id) 
+                                ORDER BY a.id_lowongan DESC";
 
                         $res = $conn->query($sql);
                         $no  = 0;
@@ -54,8 +53,8 @@
 
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=lowongan.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
-                            <a href="?p=lowongan.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
+                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=job.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
                         </div>
 
                         </td>

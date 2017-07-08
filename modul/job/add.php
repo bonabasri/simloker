@@ -1,72 +1,62 @@
 
     <div class="row">
         <div class="col-lg-8">
-            <h3 class="page-header"><small>Edit Lowongan</small></h3>
-        
+            <h5 class="page-header"><small>Pasang Lowongan</small></h5>
+    
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                     
-    <?php
-        $GetID  = $_GET['id'];
-        $sql = "SELECT *FROM tb_lowongan 
-                INNER JOIN tb_kategori_pekerjaan ON (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
-                INNER JOIN tb_jenis_pekerjaan ON (tb_lowongan.id_jenis=
-                    tb_jenis_pekerjaan.id_jenis)
-                INNER JOIN tb_kategori_pendidikan ON (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan) 
-                WHERE tb_lowongan.id_lowongan = '$GetID'";
-        $res = $conn->query($sql);
-        $data = $res->fetch_assoc();
-
+        <?php
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
-                $res = $conn->query($sql);
+            $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
                     $jenis_kerja .= "<option value='{$row['id_jenis']}'> {$row['nama_jenis_kerja']} </option>";
                 }
 
             $sql = "SELECT * FROM tb_kategori_pekerjaan";
-                $res = $conn->query($sql);
+            $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
                     $kategori_kerja .= "<option value='{$row['id_kategori_kerja']}'> {$row['nama_kategori_kerja']} </option>";
                 }
 
             $sql = "SELECT * FROM tb_kategori_pendidikan";
-                $res = $conn->query($sql);
+            $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
                     $kategori_pendidikan .= "<option value='{$row['id_pendidikan']}'> {$row['nama_pendidikan']} </option>";
                 }
-    ?>    
+        ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?p=lowongan.action" id="defaultForm" method="post" enctype="multipart/form-data">              
+                <form class="" role="form" style="margin-top: 10px;" action="?p=job.action" id="defaultForm" method="post" enctype="multipart/form-data">              
                     <!-- <div class="form-group">
                     <label> Judul</label>
                         <input type="text" class="form-control" name="judul" placeholder="Judul Lowongan" required/>
                     </div> -->
-                    <input type="hidden" name="id" value="<?php echo $GetID; ?>">
+                    <input type="hidden" name="id_perusahaan" value="<?php echo $_SESSION['user_id'] ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
-                        <select class="form-control" name="id_kategori_pekerjaan"/>
-                            <option value="<?php echo $data['id_kategori_pekerjaan']; ?>"><?php echo $data['nama_kategori_kerja']; ?></option>
+                        <select class="form-control" name="id_kategori_pekerjaan" required/>
+                            <option value="">- Pilih -</option>
                             <?php echo $kategori_kerja; ?>
                         </select>
                     </div>
                     <div class="form-group">
                     <label> Jenis Pekerjaan</label>
                         <select class="form-control" name="id_jenis" required/>
-                            <option value="<?php echo $data['id_jenis']; ?>"><?php echo $data['nama_jenis_kerja']; ?></option>
+                            <option value="">- Pilih -</option>
                             <?php echo $jenis_kerja; ?>
                         </select>
                     </div>
                     <div class="form-group">
                     <label> Posisi</label>
-                        <input type="text" class="form-control" name="posisi" value="<?php echo $data['posisi']; ?>"/>
+                        <input type="text" class="form-control" name="posisi" placeholder="Judul Pekerjaan" required/>
                     </div>
                     <div class="form-group">
                     <label> Jenis Kelamin</label>
-                        <select class="form-control" name="jk_require"/>
-                            <option value="<?php echo $data['jk_require']; ?>"><?php echo $data['jk_require']; ?></option>
+                        <select class="form-control" name="jk_require" required/>
+                            <option value="">- Pilih -</option>
                             <option value="Pria">Pria</option>
                             <option value="Wanita">Wanita</option>
                             <option value="Pria & Wanita">Pria & Wanita</option>
@@ -74,36 +64,35 @@
                     </div>
                     <div class="form-group">
                     <label> Usia</label>
-                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>"/>
+                        <input type="text" class="form-control" name="usia" placeholder="Usia" required/>
                     </div>
                     <div class="form-group">
                     <label> Lulusan</label>
-                        <select class="form-control" name="id_pendidikan" value="<?php echo $data['id_pendidikan']; ?>"/>
-                            <option value="<?php echo $data['id_pendidikan']; ?>"><?php echo $data['nama_pendidikan']; ?></option>
+                        <select class="form-control" name="id_pendidikan" required/>
+                            <option value="">- Pilih -</option>
                             <?php echo $kategori_pendidikan; ?>
                         </select>
                     </div>
                     <div class="form-group">
                     <label> Pengalaman</label>
-                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>" />
+                        <input type="text" class="form-control" name="pengalaman" placeholder="Pengalaman" required/>
                     </div>
                     <div class="form-group">
                     <label> Tanggal Akhir Lowongan</label>
-                        <input type="text" name="tgl_akhir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_akhir']), 'd-m-Y'); ?>" class="form-control"/>
+                            <input type="text" name="tgl_akhir" id="datepicker" class="form-control" placeholder="Tanggal Lahir" required/>
                     </div>
                     <div class="form-group">
                     <label> Keterangan Gambar</label>
-                        <input type="file" name="img" /><img src="dist/images/img/<?php echo $data['img'];?>" width="120" height="90">
+                            <input type="file" name="img" required/>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>
-                        <textarea id="editor" name="deskripsi"><?php echo $data['deskripsi'];?>
-                        </textarea>
+                        <textarea id="editor" name="deskripsi" required=""></textarea>
                     </div>
                     <div class="form-group">
                     <label></label>
-                        <a class="btn btn-default" href="?p=lowongan.view">Batal</a>
-                        <button class="btn btn-primary" type="submit" name="edit">Ubah</button>
+                        <a class="btn btn-default" href="?p=job.view">Batal</a>
+                        <input type="submit" name="save" value="Terbitkan" class="btn btn-primary">
                     </div>                   
                 </form>
             </div>

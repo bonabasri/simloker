@@ -82,13 +82,13 @@
                         <a href="?p=home">Beranda</a>
                     </li>
                     <li>
-                        <a href="?p=lowongan.views">Lowongan Kerja</a>
+                        <a href="?p=job.views">Lowongan Kerja</a>
                     </li>
                     <li>
-                        <a href="?p=perusahaan.view">Data Perusahaan</a>
+                        <a href="?p=employer.view">Data Perusahaan</a>
                     </li>
                     <li>
-                        <a href="?p=pelamar.view">Data Pelamar</a>
+                        <a href="?p=applicant.view">Data Pelamar</a>
                     </li>
             <?php
                 } else if($_SESSION['uac'] === 'PELAMAR') {
@@ -103,7 +103,7 @@
                         <a href="?p=resume.view">Resume</a>
                     </li>
                     <li>
-                        <a href="?p=pelamar.profil">Profile</a>
+                        <a href="?p=applicant.profil">Profile</a>
                     </li>
             <?php 
                 } else if ($_SESSION['uac'] === 'PERUSAHAAN') {
@@ -112,16 +112,16 @@
                         <a href="?p=home">Beranda</a>
                     </li>
                     <li>
-                        <a href="?p=lowongan.view">Postingan</a>
+                        <a href="?p=job.view">Postingan</a>
                     </li>
                     <li>
-                        <a href="?p=lowongan.add">Pasang Lowongan</a>
+                        <a href="?p=job.add">Pasang Lowongan</a>
                     </li>
                     <li>
                         <a href="#">Inbox Resume</a>
                     </li>
                     <li>
-                        <a href="?p=perusahaan.profil">Profil</a>
+                        <a href="?p=employer.profil">Profil</a>
                     </li>  
             <?php 
                 } 
@@ -129,9 +129,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li>
+                            <!-- <li>
                                 <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Edit Profile</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
                             </li>
@@ -172,12 +172,12 @@
                     {
                         $p = str_replace(".","/",$_GET['p']).".php";
                     } else {
-                        $p = "perusahaan/profil.php";    
+                        $p = "employer/profil.php";    
                     } if( file_exists("modul/".$p) )
                     {
                         include("modul/".$p);
                     } else {
-                        include("perusahaan/profil.php");
+                        include("employer/profil.php");
                     }
                 } 
                 else if($_SESSION['uac'] === 'PELAMAR') 
@@ -186,12 +186,12 @@
                     {
                         $p = str_replace(".","/",$_GET['p']).".php";
                     } else {
-                        $p = "pelamar/profil.php";    
+                        $p = "applicant/profil.php";    
                     } if( file_exists("modul/".$p) )
                     {
                         include("modul/".$p);
                     } else {
-                        include("pelamar/profil.php");
+                        include("applicant/profil.php");
                     }
                 }  
             /* sidebar */

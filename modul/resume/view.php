@@ -1,15 +1,13 @@
 
 <div class="row">
     <div class="col-md-8">
-        <h3 class="page-header">Resume</h3>
+        <h3 class="page-header"><small> Resume</small></h3>
 
 <div class="btn-group" role="group" aria-label="...">
-    <a class="btn btn-default" title="New Data" href="?p=lowongan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
+    <a class="btn btn-default" title="New Data" href="?p=job.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
     <a href="?p=resume.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
-<!-- <div class="row">
-<div class="col-lg-8"> -->
 <div class="panel-body">
 <div class="row">
     <div class="dataTable_wrapper">
@@ -50,8 +48,8 @@
 
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=lowongan.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
-                            <a href="?p=lowongan.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
+                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=job.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
                         </div>
 
                         </td>

@@ -45,7 +45,8 @@
                 <div class="well">
                     <h4>Recent Jobs</h4>
                     <?php 
-                        $sql = "SELECT id_lowongan,posisi from tb_lowongan order by id_lowongan DESC";
+                        $sql = "SELECT id_lowongan,posisi from tb_lowongan 
+                                order by id_lowongan DESC";
                         $res = $conn->query($sql);
                         foreach ($res as $row => $data) {
                         echo'

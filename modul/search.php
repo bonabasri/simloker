@@ -8,19 +8,19 @@
 
             if ((isset($_POST['cari'])) AND ($_POST['search'] <> "")) {
                 $search = $_POST['search'];
-                $sql = "SELECT *FROM tb_lowongan 
-                        INNER JOIN tb_kategori_pekerjaan ON 
-                        (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
-                        INNER JOIN tb_kategori_pendidikan ON 
-                        (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
-                        INNER JOIN tb_jenis_pekerjaan ON
-                        (tb_lowongan.id_jenis=tb_jenis_pekerjaan.id_jenis)
-                        INNER JOIN tb_perusahaan ON 
-                        (tb_lowongan.user_id=tb_perusahaan.user_id) 
-                        WHERE tb_lowongan.posisi LIKE '%$search' OR
-                        		tb_kategori_pekerjaan.nama_kategori_kerja LIKE '%$search' OR
-                        			tb_kategori_pendidikan.nama_pendidikan LIKE '%$search' OR
-                        				tb_jenis_pekerjaan.nama_jenis_kerja LIKE '%$search' ";
+                $sql = "SELECT *FROM tb_lowongan a
+                        LEFT JOIN tb_kategori_pekerjaan b ON 
+                        (a.id_kategori_pekerjaan=b.id_kategori_kerja)
+                        LEFT JOIN tb_kategori_pendidikan c ON 
+                        (a.id_pendidikan=c.id_pendidikan)
+                        LEFT JOIN tb_jenis_pekerjaan d ON
+                        (a.id_jenis=d.id_jenis)
+                        LEFT JOIN tb_perusahaan e ON 
+                        (a.user_id=e.user_id) 
+                        WHERE a.posisi LIKE '%$search' OR
+                        		b.nama_kategori_kerja LIKE '%$search' OR
+                        		c.nama_pendidikan LIKE '%$search' OR
+                        		d.nama_jenis_kerja LIKE '%$search' ";
 
                 $res = $conn->query($sql);
                 $hasil = mysqli_num_rows($res);

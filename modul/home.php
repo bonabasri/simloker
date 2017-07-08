@@ -7,18 +7,18 @@
                 </h1>
                 <?php
                     include 'core.php';
-
-                    $sql = "SELECT *FROM tb_lowongan 
-                        INNER JOIN tb_kategori_pekerjaan ON 
-                        (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
-                        INNER JOIN tb_kategori_pendidikan ON 
-                        (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
-                        INNER JOIN tb_jenis_pekerjaan ON
-                        (tb_lowongan.id_jenis=tb_jenis_pekerjaan.id_jenis)
-                        INNER JOIN tb_perusahaan ON 
-                        (tb_lowongan.user_id=tb_perusahaan.user_id) ORDER BY tb_lowongan.id_lowongan DESC LIMIT 10";
-                        $res = $conn->query($sql);
-                        foreach ($res as $row => $data) {
+                    $sql = "SELECT *FROM tb_lowongan a
+                                LEFT JOIN tb_kategori_pekerjaan b ON 
+                                (a.id_kategori_pekerjaan=b.id_kategori_kerja)
+                                LEFT JOIN tb_kategori_pendidikan c ON 
+                                (a.id_pendidikan=c.id_pendidikan)
+                                LEFT JOIN tb_jenis_pekerjaan d ON
+                                (a.id_jenis=d.id_jenis)
+                                LEFT JOIN tb_perusahaan e ON 
+                                (a.user_id=e.user_id)
+                            ORDER BY a.id_lowongan DESC LIMIT 10";
+                    $res = $conn->query($sql);
+                    foreach ($res as $row => $data) {
                 ?>
                 <!-- First Blog Post -->
                 

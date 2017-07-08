@@ -8,17 +8,18 @@
                 <?php
                     include 'core.php';
                     $getID = $_GET['id'];
-                    $sql = "SELECT *FROM tb_lowongan 
-                        INNER JOIN tb_kategori_pekerjaan ON 
-                        (tb_lowongan.id_kategori_pekerjaan=tb_kategori_pekerjaan.id_kategori_kerja)
-                        INNER JOIN tb_kategori_pendidikan ON 
-                        (tb_lowongan.id_pendidikan=tb_kategori_pendidikan.id_pendidikan)
-                        INNER JOIN tb_jenis_pekerjaan ON
-                        (tb_lowongan.id_jenis=tb_jenis_pekerjaan.id_jenis)
-                        INNER JOIN tb_perusahaan ON 
-                        (tb_lowongan.user_id=tb_perusahaan.user_id) WHERE tb_lowongan.id_kategori_pekerjaan = '$getID' ";
-                        $res = $conn->query($sql);
-                        foreach ($res as $row => $data) {
+                    $sql = "SELECT *FROM tb_lowongan a
+                                LEFT JOIN tb_kategori_pekerjaan b ON 
+                                (a.id_kategori_pekerjaan=b.id_kategori_kerja)
+                                LEFT JOIN tb_kategori_pendidikan c ON 
+                                (a.id_pendidikan=c.id_pendidikan)
+                                LEFT JOIN tb_jenis_pekerjaan d ON
+                                (a.id_jenis=d.id_jenis)
+                                LEFT JOIN tb_perusahaan e ON 
+                                (a.user_id=e.user_id)
+                            WHERE a.id_kategori_pekerjaan = '$getID' ";
+                    $res = $conn->query($sql);
+                    foreach ($res as $row => $data) {
                 ?>
                 <!-- First Blog Post -->
                 
@@ -50,13 +51,13 @@
                 <?php } ?>
                 
                 <!-- Pager -->
-                <ul class="pager">
+                <!-- <ul class="pager">
                     <li class="previous">
                         <a href="#">&larr; Older</a>
                     </li>
                     <li class="next">
                         <a href="#">Newer &rarr;</a>
                     </li>
-                </ul>
+                </ul> -->
 
             </div>

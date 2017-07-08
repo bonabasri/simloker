@@ -4,8 +4,8 @@
         <h3 class="page-header"><small>Data Perusahaan</small></h3>
 
 <div class="btn-group" role="group" aria-label="...">
-    <a class="btn btn-default" title="New Data" href="?p=perusahaan.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
-    <a href="?p=perusahaan.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
+    <a class="btn btn-default" title="New Data" href="?p=employer.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
+    <a href="?p=employer.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
 <div class="panel-body">
@@ -27,9 +27,9 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM tb_perusahaan
-                                INNER JOIN tb_user ON tb_perusahaan.user_id = tb_user.user_id
-                                ORDER BY tb_user.user_id DESC";
+                        $sql = "SELECT * FROM tb_perusahaan a
+                                INNER JOIN tb_user b ON a.user_id = b.user_id
+                                ORDER BY b.user_id DESC";
                         $res = $conn->query($sql);
                         $no  = 0;
                         foreach ($res as $row => $data) {
@@ -48,7 +48,7 @@
 
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=perusahaan.edit&user_id=<?php echo $data['user_id']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=employer.edit&user_id=<?php echo $data['user_id']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                             <!-- <a href="?p=perusahaan.delete&id=<?php echo $data['id_perusahaan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data <?php echo $data['nama_perusahaan']; ?>')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a> -->
 
                         </div>
