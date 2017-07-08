@@ -119,6 +119,9 @@
                         <a href="#">Lowongan Kerja</a>
                     </li>
                     <li>
+                        <a href="?p=resume.view">Resume</a>
+                    </li>
+                    <li>
                         <a href="?p=pelamar.profil">Profile</a>
                     </li>
                     <li class="dropdown">
@@ -228,11 +231,12 @@
                         include("pelamar/profil.php");
                     }
                 }  
+            /* sidebar */
+                include_once 'sidebar.php';
+            /* sidebar */
             ?>
-
         </div>
         <!-- /.row -->
-
         <hr>
 
         <!-- Footer -->

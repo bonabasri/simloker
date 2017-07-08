@@ -65,5 +65,3 @@
                 echo '<h2>Not Found! </h2>Silahkan masukkan kata kunci yang kamu cari dengan benar.';
             }
         echo "</div>";
-                
-        require('sidebar.php');

@@ -100,7 +100,11 @@
                     include("modul/".$p);
                 } else {
                     include("home.php");
-                }  
+                }
+
+            /* sidebar */
+                include_once 'sidebar.php';
+            /* sidebar */
             ?>
 
         </div>

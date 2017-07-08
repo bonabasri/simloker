@@ -60,4 +60,3 @@
                 </ul>
 
             </div>
-            <?php require('sidebar.php'); ?>

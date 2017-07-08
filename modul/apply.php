@@ -47,4 +47,3 @@
 		</div>
 	</div>
 	<?php }
-	require('sidebar.php');
