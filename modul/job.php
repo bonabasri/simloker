@@ -40,12 +40,22 @@
     	<!-- <br> -->
 			<img class="img-responsive" src="dist/images/logo/<?php echo $data['logo']; ?>" alt="" sizes="{max-width: 397px} 100vw, 397px" width="397">
 		<hr>
-		<h5 class="title-entry"><?php echo $data['nama_perusahaan']; ?> </h5>
-			<?php echo $data['ket_perusahaan']; ?>
+		<h5 class="title-entry"><?php echo $data['nama_perusahaan'].' </h5>
+			'.$data['ket_perusahaan']; ?>
         <hr>
-	<?php } ?>
+	<?php
+		$tgl_akhir = $data['tgl_akhir'];
+		$tgl_skr=date("Y-m-d");
+		
+		if ($tgl_skr >= $tgl_akhir)
+		{
+			echo '<div class="alert alert-danger">This job is expired</div>';	
+		} else {
+			echo '<a href="?p=apply&id='.$data["id_lowongan"].'" class="btn btn-primary btn-md" >Apply for this Job</a>';
+		}
+	}
+	?>
 
-	<a href="?p=apply&id=<?php echo $data['id_lowongan']; ?>" class="btn btn-primary btn-md" >Apply for this Job</a>
 		</div>
 	</div>
 

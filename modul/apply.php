@@ -1,9 +1,13 @@
-	<div class="row">
-        <div class="col-lg-12">
-            <h5 class="page-header"> Apply for job</h5>
-        </div>
-    </div>
     <?php 
+    	session_start();
+	    require_once ('core.php');
+	    if  ( empty($_SESSION['uname']))  
+	    {
+	    	echo '<script>alert("Harap login untuk melamar pekerjaan");</script>';
+	    	echo '<meta http-equiv="refresh" content="0;URL=?p=login">';
+	        // header('location:./');
+	    } else {
+
     	$getID = $_GET['id'];
     	$sql = "SELECT *FROM tb_lowongan 
 	            INNER JOIN tb_kategori_pekerjaan ON 
@@ -15,6 +19,12 @@
 	            $res = $conn->query($sql);
 	            foreach ($res as $row => $data) {
     ?>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="page-header"> Apply for job</h5>
+        </div>
+    </div>
     <div class="row"> 
         <div class="col-lg-8">
             <div class="panel panel-default">
@@ -46,4 +56,5 @@
 	    	</div>
 		</div>
 	</div>
-	<?php }
+	<?php } 
+		}
