@@ -95,7 +95,8 @@
                     $p = str_replace(".","/",$_GET['p']).".php";
                 } else {
                     $p = "home.php";    
-                } if( file_exists("modul/".$p) )
+                } 
+                if( file_exists("modul/".$p) )
                 {
                     include("modul/".$p);
                 } else {

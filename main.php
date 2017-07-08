@@ -4,7 +4,7 @@
     if  ( empty($_SESSION['uname']))  
     {
         header('location:./');
-    }
+    } else {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,12 +71,14 @@
                 </button>
                 <a class="navbar-brand" href="#">LOWONGAN KERJA</a>
             </div>
-    <?php
-        if ($_SESSION['uac'] === 'ADM') {
-    ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+    
+            <?php
+                if ($_SESSION['uac'] === 'ADM') {
+            ?>
+
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
@@ -89,29 +91,11 @@
                     <li>
                         <a href="?p=pelamar.view">Data Pelamar</a>
                     </li>
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Edit Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="?p=logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         
-    <?php 
-        } elseif($_SESSION['uac'] === 'PELAMAR') {
-    ?>
-            <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+            <?php
+                } else if($_SESSION['uac'] === 'PELAMAR') {
+            ?>
+
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
@@ -124,29 +108,11 @@
                     <li>
                         <a href="?p=pelamar.profil">Profile</a>
                     </li>
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="?p=pelamar.profil"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="?p=logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </ul>
-            </div>
 
-    <?php 
-        } elseif ($_SESSION['uac'] === 'PERUSAHAAN') {
-    ?>
+            <?php 
+                } else if ($_SESSION['uac'] === 'PERUSAHAAN') {
+            ?>
     
-            <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
@@ -159,28 +125,29 @@
                     <li>
                         <a href="?p=perusahaan.profil">Profil</a>
                     </li>
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
+                
+            <?php 
+                } 
+            ?>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['uname']; ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="?p=logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
+                    <li>
+                        <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Edit Profile</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    </li>
                     </ul>
-                </li>
-                </ul>
-            </div>
+            </li>
+            </ul>
         </div>
-        <!-- /.container -->
-    <?php 
-        }
-    ?>
+    </div>
+
     </nav>
 
     <!-- Page Content -->
@@ -301,3 +268,4 @@
 </body>
 
 </html>
+<?php }
