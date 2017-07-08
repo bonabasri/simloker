@@ -134,5 +134,3 @@
 </div>
 
 
-<?php require('./sidebar.php'); ?>
-

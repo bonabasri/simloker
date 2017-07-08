@@ -21,8 +21,8 @@ if (isset($_POST['apply-save']))
 			{
 				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_file) )
 				{
-					$sql = "INSERT INTO tb_lamaran (id_lowongan,user_id,file)
-							VALUES ('$v_id_lowongan','$v_user_id','$v_file')";
+					$sql = "INSERT INTO tb_lamaran (id_lowongan,user_id,file,tgl_lamar)
+							VALUES ('$v_id_lowongan','$v_user_id','$v_file',NOW())";
 
 					if ( $conn->query($sql) === TRUE ) {
 						echo '<script>alert("data berhasil disimpan"); </script>';

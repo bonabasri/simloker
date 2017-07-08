@@ -1,5 +1,5 @@
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-8">
                 <div class="login-panel panel panel">
                     <div class="panel-heading" style="text-align: center;">
                         <h1 class="panel-title" style="padding-top:13px;">Login</h1><hr>
@@ -14,6 +14,7 @@
                         </div>
                     
                     <div class="panel-body" style="height: 320px;">
+                        <div class="col-md-6 col-md-offset-3">
                         <form role="form" method="post" action="?p=auth">
                             <fieldset>
                                 <div class="form-group">
@@ -33,6 +34,7 @@
                         
                             </fieldset>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>
