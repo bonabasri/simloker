@@ -4,7 +4,7 @@
         <h3 class="page-header"><small> Resume</small></h3>
 
 <div class="btn-group" role="group" aria-label="...">
-    <a class="btn btn-default" title="New Data" href="?p=job.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
+    <!-- <a class="btn btn-default" title="New Data" href="?p=job.add"><i class="fa fa-plus fa-fw"></i> New Data</a> -->
     <a href="?p=resume.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 

@@ -118,7 +118,7 @@
                         <a href="?p=job.add">Pasang Lowongan</a>
                     </li>
                     <li>
-                        <a href="#">Inbox Resume</a>
+                        <a href="?p=recruit.view">Inbox Resume</a>
                     </li>
                     <li>
                         <a href="?p=employer.profil">Profil</a>

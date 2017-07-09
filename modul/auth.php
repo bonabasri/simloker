@@ -19,7 +19,7 @@
 			$_SESSION['upsw']	= $v_upsw;  
 			$_SESSION['uac'] 	= $row['uac']; 
 
-			header('location:?p=member');
+			header('location:./main.php');
 		}
 	} else {
 		// header('location:login.php?action=error');
