@@ -97,9 +97,6 @@
                         <a href="?p=home">Beranda</a>
                     </li>
                     <li>
-                        <a href="#">Lowongan Kerja</a>
-                    </li>
-                    <li>
                         <a href="?p=resume.view">Resume</a>
                     </li>
                     <li>

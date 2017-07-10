@@ -47,8 +47,8 @@
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
-                            <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=employer.edit&user_id=<?php echo $data['user_id']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-xs" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
+                            <a class="btn btn-default btn-xs" title="Edit Data" href="?p=employer.edit&user_id=<?php echo $data['user_id']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                             <!-- <a href="?p=perusahaan.delete&id=<?php echo $data['id_perusahaan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data <?php echo $data['nama_perusahaan']; ?>')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a> -->
 
                         </div>

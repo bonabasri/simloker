@@ -116,6 +116,7 @@
 
 		$v_deskripsi				= $_POST['deskripsi'];
 
+		/*jika foto tidak diubah*/
 		if ( empty($fileTemp) ) 
 		{
 			$sql = "UPDATE tb_lowongan

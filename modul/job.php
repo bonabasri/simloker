@@ -12,7 +12,7 @@
                         (a.id_jenis=d.id_jenis)
                         LEFT JOIN tb_perusahaan e ON 
                         (a.user_id=e.user_id)
-                    WHERE a.id_kategori_pekerjaan = '$getID' ";
+                    WHERE a.id_lowongan = '$getID' ";
 	        $res = $conn->query($sql);
 	        foreach ($res as $row => $data) {
 	    ?>
@@ -47,7 +47,7 @@
         <hr>
 	<?php
 		$tgl_akhir = $data['tgl_akhir'];
-		$tgl_skr=date("Y-m-d");
+		$tgl_skr = date("Y-m-d");
 		
 		if ($tgl_skr >= $tgl_akhir)
 		{

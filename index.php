@@ -57,7 +57,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="?ref=home">LOWONGAN KERJA</a>
+                <a class="navbar-brand" href="#">LOWONGAN KERJA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,9 +65,9 @@
                     <li>
                         <a href="?p=home">Beranda</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">Lowongan Kerja</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="?p=add-job">Pasang Lowongan</a>
                     </li>

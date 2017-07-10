@@ -43,8 +43,8 @@
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
-                            <a class="btn btn-default btn-sm" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-sm" title="Edit Data" href="?p=applicant.edit&id=<?php echo $data['id_pelamar']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-xs" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
+                            <a class="btn btn-default btn-xs" title="Edit Data" href="?p=applicant.edit&id=<?php echo $data['id_pelamar']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                         </div>
 
                         </td>

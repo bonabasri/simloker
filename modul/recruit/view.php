@@ -15,11 +15,11 @@
             <table class="table table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr>                  
-                        <th style="width:7%;">No</th>
+                        <th style="width:5%;">No</th>
                         <th >Pelamar</th>
                         <th >Email</th>
                         <th style="width:15%;">Posisi</th> 
-                        <th style="text-align:center;">CV</th>
+                        <th style="width: 15%;">CV</th>
                         <th style="text-align:center;">Tanggal Lamar</th>
                         <th style="text-align:center;">Control</th>
                     </tr>
@@ -45,7 +45,7 @@
                         <td ><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                         <td ><?php echo $data['email'];?></td>
                         <td ><?php echo $data['posisi'];?></td>
-                        <td style="text-align:center;"><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file'];?></a></td>
+                        <td style="text-align:center; width: 15%;"><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file'];?></a></td>
                         <td style="text-align:center;"><?php echo date_format(date_create($data['tgl_lamar']), 'd/m/Y');?> </td>
                         <td style="text-align:center;">
 

@@ -5,7 +5,7 @@
         <small> Pasang Lowongan</small>
     </h1>
 
-Hi, Employers! Jika anda mencari talenta IT terbaik, daftarkan lowongan pekerjaan perusahaan anda di loker.com
+Hi, Employers! Jika anda mencari talenta terbaik, daftarkan lowongan pekerjaan perusahaan anda di loker.com
 
 Ikuti petunjuk berikut:
 <ul>
