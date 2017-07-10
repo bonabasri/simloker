@@ -38,9 +38,9 @@
                 
                     <span class="fa fa-calendar fa-fw"></span><span id=conten> '.
                     date_format(date_create($data['tgl_posting']), 'd-m-Y').' - '. 
-                    date_format(date_create($data['tgl_akhir']), 'd-m-Y').' 
+                    date_format(date_create($data['tgl_akhir']), 'd-m-Y'). ' 
                      <span class="glyphicon glyphicon-tags"></span> '. 
-                     $data['nama_kategori_kerja'].' '.$data['jk_require'].' 
+                      $data['nama_kategori_kerja'].' '.$data['jk_require'].' 
                      <span class="fa fa-graduation-cap fa-fw"></span> '. 
                      $data['nama_pendidikan']; 
                 ?>

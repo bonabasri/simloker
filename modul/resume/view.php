@@ -20,6 +20,7 @@
                         <th style="width:15%;">Posisi</th> 
                         <th style="text-align:center;">CV</th>
                         <th style="text-align:center;">Tanggal Lamar</th>
+                        <th style="text-align:center;">Status</th>
                         <th style="text-align:center;">Control</th>
                     </tr>
                 </thead>
@@ -35,7 +36,14 @@
                         $res = $conn->query($sql);
                         $no  = 0;
                         foreach ($res as $row => $data) {
-
+                            $status = $data['status'];
+                            if ($status === '0') {
+                                $status = '<span class="label label-default">Terkirim</span>';
+                            } elseif ($status === '1') {
+                                $status = '<span class="label label-primary">Proses Interview</span>';
+                            } elseif ($status === '2') {
+                                $status = '<span class="label label-success">Diterima</span>';
+                            }
                         $no++;
                     ?>
                     <tr class="odd gradeX">
@@ -43,7 +51,8 @@
                         <td ><img src="dist/images/logo/<?php echo $data['logo'];?> " width="30" height="30"/> <?php echo $data['nama_perusahaan']; ?></td>
                         <td ><?php echo $data['posisi'];?></td>
                         <td style="text-align:center;"><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file'];?></a></td>
-                        <td style="text-align:center;"><?php echo date_format(date_create($data['tgl_posting']), 'd/m/Y'). ' - ' .date_format(date_create($data['tgl_akhir']), 'd/m/Y');?> </td>
+                        <td style="text-align:center;"><?php echo date_format(date_create($data['tgl_lamar']), 'd/m/Y');?> </td>
+                        <td ><?php echo $status;?></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
