@@ -5,7 +5,7 @@
     
 <div class="btn-group" role="group" aria-label="...">
     <a class="btn btn-default" title="New Data" href="?p=job.add"><i class="fa fa-plus fa-fw"></i> New Data</a>
-    <a href="?p=job.view" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
+    <a href="?p=job.views" type="button" title="Refresh" class="btn btn-default"><i class="fa fa-refresh"></i> Refresh</a>
 </div>
 
 <div class="panel-body">
@@ -54,7 +54,7 @@
                         <div class="btn-group" role="group" aria-label="...">
                             <a class="btn btn-default btn-xs" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
                             <a class="btn btn-default btn-xs" title="Edit Data" href="?p=job.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
-                            <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
+                            <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-xs" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
                         </div>
 
                         </td>
