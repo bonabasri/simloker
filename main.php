@@ -146,7 +146,7 @@
                                 <a href="?p=perusahaan.profil"><i class="fa fa-fw fa-user"></i> Edit Profile</a>
                             </li> -->
                             <li>
-                                <a href="#"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
+                                <a href="?p=password"><i class="fa fa-fw fa-gear"></i> Ganti Password</a>
                             </li>
                             <li class="divider"></li>
                             <li>

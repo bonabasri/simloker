@@ -56,7 +56,7 @@
 
                         <div class="btn-group" role="group" aria-label="...">
                             
-                            <a class="btn btn-default btn-xs" title="Edit Data" href="?p=job.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-xs" title="Edit Data" href="?p=resume.review&id=<?php echo $data['id_lamaran']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                             <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-xs" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
                         </div>
 
