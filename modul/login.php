@@ -29,7 +29,7 @@
                                     </label>
                                 </div>
                                 
-                                <input type="submit" value="Masuk" class="btn btn-md btn-primary btn-block"><br/>Belum Punya Akun?
+                                <input type="submit" name="login" value="Masuk" class="btn btn-md btn-primary btn-block"><br/>Belum Punya Akun?
                                 <a style="text-decoration:none;" href="?p=register"> Daftar</a>
                         
                             </fieldset>

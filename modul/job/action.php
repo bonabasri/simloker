@@ -59,11 +59,11 @@
 												'$v_img',
 												'$v_deskripsi' ) ";
 					if ( $conn->query($sql) === TRUE ) {
-						echo '<script>alert("data berhasil disimpan"); </script>';
+						echo '<script>alert("data lowongan berhasil dipublis"); </script>';
 			 			echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					} else {
 					// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
-					echo '<script>alert("data gagal disimpan disimpan"); </script>';
+					echo '<script>alert("data gagal dipublis"); </script>';
 			 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.add">';
 					}
 				} else {
@@ -133,11 +133,11 @@
 							WHERE id_lowongan 			= '".$getId."' ";
 
 			if ( $conn->query($sql) === TRUE ) {
-				echo '<script>alert("data berhasil diubah"); </script>';
+				echo '<script>alert("data lowongan berhasil diupdate"); </script>';
 		 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 			} else {
 				// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
-				echo '<script>alert("data gagal diubah"); </script>';
+				echo '<script>alert("data lowongan gagal diupdate"); </script>';
 		 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 			}
 		}
@@ -168,11 +168,11 @@
 							WHERE id_lowongan 			= '".$getId."' ";
 
 					if ( $conn->query($sql) === TRUE ) {
-						echo '<script>alert("data berhasil diubah"); </script>';
+						echo '<script>alert("data lowongan berhasil diupdate"); </script>';
 				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					} else {
 						// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
-						echo '<script>alert("data gagal diubah"); </script>';
+						echo '<script>alert("data lowongan gagal diupdate"); </script>';
 				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					}
 				} else {

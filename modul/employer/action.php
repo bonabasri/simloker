@@ -126,7 +126,7 @@
 
 			if ($conn->query($sql) === TRUE) {
 
-				echo '<script>alert("data berhasil diubah"); </script>';
+				echo '<script>alert("data berhasil diperbarui"); </script>';
  				echo '<meta http-equiv="refresh" content="0;URL=?p=employer.profil">';	    	
 			}else{
 				echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;

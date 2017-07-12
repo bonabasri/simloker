@@ -17,16 +17,15 @@
 	            INNER JOIN tb_perusahaan ON 
 	            (tb_lowongan.user_id=tb_perusahaan.user_id) WHERE tb_lowongan.id_lowongan = '$getID' ";
 	            $res = $conn->query($sql);
-	            foreach ($res as $row => $data) {
+	            foreach ($res as $row => $data);
     ?>
 
     <div class="row">
-        <div class="col-lg-12">
-            <h5 class="page-header"> Apply for job</h5>
-        </div>
-    </div>
-    <div class="row"> 
         <div class="col-lg-8">
+            <h5 class="page-header"><small> Apply for job</small></h5>
+    <!-- </div> -->
+    <!-- <div class="row"> 
+        <div class="col-lg-8"> -->
             <div class="panel panel-default">
             <div class="panel-heading">Informasi Lowongan</div>
                 <div class="panel-body">
@@ -53,8 +52,9 @@
 	                </form>
 	            </div>
 	        </div>
-	    	</div>
-		</div>
+	    </div>
 	</div>
-	<?php } 
-		}
+</div>
+	
+	<?php 
+	}

@@ -55,13 +55,13 @@
                     </div>
                     <div class="form-group">
                     <label> Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" required/>
+                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" placeholder="Alamat" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="kota" value="<?php echo $data['kota']; ?>" required/>
+                        <input type="text" class="form-control" name="kota" value="<?php echo $data['kota']; ?>" placeholder="Kota" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="prov" value="<?php echo $data['prov']; ?>" required/>
+                        <input type="text" class="form-control" name="prov" value="<?php echo $data['prov']; ?>" placeholder="Propinsi" required/>
                     </div>
                     <div class="form-group">
                     <label> Nomor Telepon</label>

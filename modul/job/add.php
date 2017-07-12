@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group">
                     <label> Tanggal Akhir Lowongan</label>
-                            <input type="text" name="tgl_akhir" id="datepicker" class="form-control" placeholder="Tanggal Lahir" required/>
+                            <input type="text" name="tgl_akhir" id="datepicker" class="form-control" placeholder="Tanggal Akhir" required/>
                     </div>
                     <div class="form-group">
                     <label> Keterangan Gambar</label>

@@ -20,9 +20,9 @@ Ikuti petunjuk berikut:
 	<li>
 		loker.com berhak menolak untuk mem-publish lowongan.
 	</li>
-	<li>
+	<!-- <li>
 		Lowongan akan ditampilkan maksimal 2×24 jam.
-	</li>
+	</li> -->
 	<li>
 		It’s totally FREE!
 	</li>

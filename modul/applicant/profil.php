@@ -50,19 +50,19 @@
                     </div>
                     <div class="form-group">
                     <label> Nama Depan</label>
-                        <input type="text" class="form-control" name="nama_depan" value="<?php echo $data['nama_depan']; ?>" required/>
+                        <input type="text" class="form-control" name="nama_depan" value="<?php echo $data['nama_depan']; ?>" placeholder="Nama Depan" required/>
                     </div>
                     <div class="form-group">
                     <label> Nama Belakang</label>
-                        <input type="text" class="form-control" name="nama_belakang" value="<?php echo $data['nama_belakang']; ?>" required/>
+                        <input type="text" class="form-control" name="nama_belakang" value="<?php echo $data['nama_belakang']; ?>" placeholder="Nama Belakang" required/>
                     </div>
                     <div class="form-group">
                     <label> Tempat Lahir</label>
-                        <input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data['tempat_lahir']; ?>" required/>
+                        <input type="text" class="form-control" name="tempat_lahir" value="<?php echo $data['tempat_lahir']; ?>" placeholder="Tempat Lahir" required/>
                     </div>
                     <div class="form-group">
                     <label> Tanggal Lahir</label>
-                        <input type="text" class="form-control" name="tgl_lahir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_lahir']), 'd-m-Y'); ?>" required/>
+                        <input type="text" class="form-control" name="tgl_lahir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_lahir']), 'd-m-Y'); ?>" placeholder="Tanggal Lahir" required/>
                     </div>
                     <div class="form-group">
                     <label> Jenis Kelamin</label>
@@ -75,31 +75,31 @@
 
                     <div class="form-group">
                     <label> Agama</label>
-                        <input type="text" class="form-control" name="agama" value="<?php echo $data['agama']; ?>" required/>
+                        <input type="text" class="form-control" name="agama" value="<?php echo $data['agama']; ?>" placeholder="Agama" required/>
                     </div>
                     <div class="form-group">
                     <label> Alamat</label>
-                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" required/>
+                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" placeholder="Alamat" required/>
                     </div>
                     <div class="form-group">
                     <label> Lulusan</label>
-                        <input type="text" class="form-control" name="lulusan" value="<?php echo $data['lulusan']; ?>" required/>
+                        <input type="text" class="form-control" name="lulusan" value="<?php echo $data['lulusan']; ?>" placeholder="Lulusan" required/>
                     </div>
                     <div class="form-group">
                     <label> Usia</label>
-                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>" required/>
+                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>" placeholder="Usia" required/>
                     </div>
                     <div class="form-group">
                     <label> Nomor Telepon</label>
-                        <input type="text" class="form-control" name="no_hp" value="<?php echo $data['no_hp']; ?>" required/>
+                        <input type="text" class="form-control" name="no_hp" value="<?php echo $data['no_hp']; ?>" placeholder="Nomor Telepon" required/>
                     </div>
                     <div class="form-group">
                     <label> Pengalaman</label>
-                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>" required/>
+                        <input type="text" class="form-control" name="pengalaman" value="<?php echo $data['pengalaman']; ?>" placeholder="Pengalaman" required/>
                     </div>
                     <div class="form-group">
                     <label> Tinggi Badan</label>
-                        <input type="text" class="form-control" name="tinggi_badan" value="<?php echo $data['tinggi_badan']; ?>" required/>
+                        <input type="text" class="form-control" name="tinggi_badan" value="<?php echo $data['tinggi_badan']; ?>" name="Tinggi Badan" required/>
                     </div>
                     <div class="form-group">
                     <label> Foto</label>

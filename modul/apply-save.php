@@ -25,7 +25,7 @@ if (isset($_POST['apply-save']))
 							VALUES ('$v_id_lowongan','$v_user_id','$v_file',NOW())";
 
 					if ( $conn->query($sql) === TRUE ) {
-						echo '<script>alert("data berhasil disimpan"); </script>';
+						echo '<script>alert("lamaran berhasil dikirim"); </script>';
 			 			echo '<meta http-equiv="refresh" content="0;URL=?p=home">';
 					} else {
 					// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;

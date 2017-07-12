@@ -16,6 +16,7 @@
                 <thead>
                     <tr>                  
                         <th style="width:7%;">No</th>
+                        <th >Username</th>
                         <th style="width:15%;">Nama Lengkap</th>
                         <th>Alamat</th>
                         <th style="width:15%;">No Telepon</th> 
@@ -26,7 +27,9 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM tb_pelamar ORDER BY id_pelamar DESC";
+                        $sql = "SELECT * FROM tb_pelamar a
+                                LEFT JOIN tb_user b ON a.user_id = b.user_id
+                                ORDER BY a.id_pelamar DESC";
                         $res = $conn->query($sql);
                         $no  = 0;
                         foreach ($res as $row => $data) {
@@ -35,11 +38,12 @@
                     ?>
                     <tr class="odd gradeX">
                         <td style="text-align:center;"><?php echo $no; ?></td>
+                        <td style="text-align:center;"><?php echo $data['uname']; ?></td>
                         <td ><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                         <td ><?php echo $data['alamat']; ?></td>
                         <td style="text-align:center;"><?php echo $data['no_hp'];?></td>
                         <td style="text-align:center;"><?php echo $data['email'];?></td>
-                        <td style="text-align:center;"><img src="../dist/images/foto/<?php echo $data['foto'];?>" width="30" height="30"></td>
+                        <td style="text-align:center;"><img src="dist/images/foto/<?php echo $data['foto'];?>" width="30" height="30"></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">

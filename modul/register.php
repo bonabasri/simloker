@@ -15,7 +15,7 @@
                     
                     <div class="panel-body" style="height: 320px;">
                         <div class="col-md-6 col-md-offset-3">
-                        <form role="form" method="post" action="?p=reg-proses">
+                        <form role="form" method="post" action="?p=auth">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" name="uname" type="text" placeholder="Username" autocomplete="off" maxlength="32" autofocus required/>
