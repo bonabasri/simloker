@@ -6,7 +6,7 @@
                     <h4>Cari Lowongan</h4>
                     <form role="search" class="navbar-form-custom" action="?p=search" method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search Job">
+                            <input type="text" class="form-control" name="search" placeholder="Search">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit" name="cari">
                                     <span class="glyphicon glyphicon-search"></span>

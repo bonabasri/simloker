@@ -40,7 +40,7 @@ if (isset($_POST['ubah'])) {
     <div class="col-lg-8">
         <h3 class="page-header"><small>Ganti Password</small></h3>
 
-        <div class="panel panel-default">
+        <div class="panel panel-info">
             <div class="panel-heading"></div> 
             <div class="panel-body">
                 <div class="row">

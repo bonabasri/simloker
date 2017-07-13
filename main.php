@@ -69,7 +69,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">LOWONGAN KERJA</a>
+                <a class="navbar-brand" href="#">Lokercilacap.com</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse pull-right navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -219,7 +219,7 @@
         <!-- <footer> -->
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; loker 2017</p>
+                    <p>Copyright &copy; lokercilacap.com 2017</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

@@ -1,7 +1,20 @@
 <!-- Blog Entries Column -->
             <div class="col-md-8">
 
-                <h1 class="page-header">
+                <div class="row" style="margin-left: 2px;">
+                    <div class="col-md-6">
+                        <a href="?p=add-job">
+                            <img class="img-responsive" src="dist/banner-employers.png">
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="?p=home">
+                            <img class="img-responsive" src="dist/banner-jobseekers.png">
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <h1 class="page-header" style="margin-left: 17px">
                     
                     <small>Lowongan Terbaru</small>
                 </h1>
@@ -34,7 +47,7 @@
                     <span class="glyphicon glyphicon-list-alt"></span>
                 <?php echo $data['nama_perusahaan'].' 
                     <span class="fa fa-bookmark fa-fw"></span> '. $data['nama_jenis_kerja'] .' 
-                    <span class="glyphicon glyphicon-map-marker"></span> '. $data['kota'].' </a>
+                    <span class="glyphicon glyphicon-map-marker"></span> '. $data['kota'].' 
                 
                     <span class="fa fa-calendar fa-fw"></span><span id=conten> '.
                     date_format(date_create($data['tgl_posting']), 'd-m-Y').' - '. 
@@ -42,7 +55,7 @@
                      <span class="glyphicon glyphicon-tags"></span> '. 
                       $data['nama_kategori_kerja'].' '.$data['jk_require'].' 
                      <span class="fa fa-graduation-cap fa-fw"></span> '. 
-                     $data['nama_pendidikan']; 
+                     $data['nama_pendidikan'].' </a>' ; 
                 ?>
                 </h5>
                 <br>

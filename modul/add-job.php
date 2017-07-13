@@ -10,7 +10,7 @@ Hi, Employers! Jika anda mencari talenta terbaik, daftarkan lowongan pekerjaan p
 Ikuti petunjuk berikut:
 <ul>
 	<li>
-	    Silakan <a href="?p=login" class="btn btn-primary">Login</a>atau <a href="?p=register" class="btn btn-success">Register</a>terlebih dahulu untuk dapat mem-posting lowongan pekerjaan.
+	    Silakan <a href="?p=login" class="btn btn-primary">Login</a> atau <a href="?p=register" class="btn btn-success">Register</a> terlebih dahulu untuk dapat mem-posting lowongan pekerjaan.
 	</li>
 	<li>
 		Jika ini kali pertama anda mendaftar sebagai perusahaan, segera lengkapi.</li>
