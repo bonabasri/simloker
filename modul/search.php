@@ -6,7 +6,7 @@
                 <small>Find Job</small>
             </h1>';
 
-            if ((isset($_POST['cari'])) AND ($_POST['search'] <> "")) {
+            if ($_POST['search'] <> '') {
                 $search = $_POST['search'];
                 $sql = "SELECT *FROM tb_lowongan a
                         LEFT JOIN tb_kategori_pekerjaan b ON 
@@ -17,16 +17,13 @@
                         (a.id_jenis=d.id_jenis)
                         LEFT JOIN tb_perusahaan e ON 
                         (a.user_id=e.user_id) 
-                        WHERE a.posisi LIKE '%$search' OR
-                        		b.nama_kategori_kerja LIKE '%$search' OR
-                        		c.nama_pendidikan LIKE '%$search' OR
-                        		d.nama_jenis_kerja LIKE '%$search' ";
+                        WHERE a.posisi LIKE '%$search'";
 
                 $res = $conn->query($sql);
                 $hasil = mysqli_num_rows($res);
 
                 if ($hasil > 0){
-                    echo '<h2>'.$hasil.' results lowongan found for: <span class="text-navy">"'.$search.'"</span></h2>';
+                    echo '<h3>'.$hasil.' lowongan ditemukan dengan kata kunci: <span class="text-navy">"'.$search.'"</span></h3>';
                 
                 foreach ($res as $row => $data) {
                     
@@ -59,9 +56,9 @@
                     }
                 }
                 else{
-                    echo "<h2>Not Found! </h2> <h5>Data yang kamu cari tidak ada pada database.</h5>";
+                    echo "<h3>Not Found! </h3> Data yang kamu cari tidak ada pada database.";
                 }
             }else{
-                echo '<h2>Not Found! </h2>Silahkan masukkan kata kunci yang kamu cari dengan benar.';
+                echo '<h3>Not Found! </h3>Silahkan masukkan kata kunci yang kamu cari dengan benar.';
             }
         echo "</div>";
