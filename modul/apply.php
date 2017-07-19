@@ -41,7 +41,13 @@
 	                    <div class="form-group">
 	                    <label> Upload CV</label>
 	                            <input type="file" name="file" required/><br>
-	                            <i>Maximum upload file size: 8 MB <br>
+	                            <i>Maximum upload file size: 1 MB <br>
+	                            Allowed file: .pdf, .doc, .docx</i>
+	                    </div>
+	                    <div class="form-group">
+	                    <label> Upload Ijazah</label>
+	                            <input type="file" name="files" required/><br>
+	                            <i>Maximum upload file size: 1 MB <br>
 	                            Allowed file: .pdf, .doc, .docx</i>
 	                    </div>
 	                    <div class="form-group">
