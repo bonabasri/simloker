@@ -27,7 +27,7 @@
     <!-- <div class="row"> 
         <div class="col-lg-8"> -->
             <div class="panel panel-default">
-            <div class="panel-heading">Informasi Lowongan</div>
+            <div class="panel-heading">Apply Lowongan</div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
@@ -40,15 +40,15 @@
 	                    <input type="hidden" name="id_lowongan" value="<?php echo $data['id_lowongan']; ?>">
 	                    <div class="form-group">
 	                    <label> Upload CV</label>
-	                            <input type="file" name="file" required/><br>
-	                            <i>Maximum upload file size: 1 MB <br>
-	                            Allowed file: .pdf, .doc, .docx</i>
+	                            <input type="file" name="file" required/>
+	                            <i style="color:red;">* File max 1 MB, 
+	                            File tipe .pdf, .doc, .docx</i>
 	                    </div>
 	                    <div class="form-group">
 	                    <label> Upload Ijazah</label>
-	                            <input type="file" name="files" required/><br>
-	                            <i>Maximum upload file size: 1 MB <br>
-	                            Allowed file: .pdf, .doc, .docx</i>
+	                            <input type="file" name="files" required/>
+	                            <i style="color:red;">* File max 1 MB, 
+	                            File tipe .pdf</i>
 	                    </div>
 	                    <div class="form-group">
 	                    <label></label>
