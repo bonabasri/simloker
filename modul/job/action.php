@@ -190,3 +190,26 @@
 		}
 		$conn->close();
 	}
+
+
+	/* update iklan */
+
+	if (isset($_POST['update'])) 
+	{
+		// $getId			= $_REQUEST['id'];
+		$v_id_lowongan 	= $_POST['id_lowongan'];
+		$v_bayar		= $_POST['bayar'];
+		$v_status		= $_POST['stat'];
+
+		$sql = "UPDATE tb_lowongan SET
+					bayar = '$v_bayar',
+					stat = '$v_status'
+				WHERE id_lowongan = '$v_id_lowongan'";
+
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>alert("data lowongan berhasil diproses"); </script>';
+ 			echo '<meta http-equiv="refresh" content="0;URL=?p=job.views">';
+		}else{
+			echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
+		}
+	}

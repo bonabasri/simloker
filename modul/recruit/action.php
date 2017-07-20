@@ -7,7 +7,6 @@
 		$v_status 	  	 = $_POST['status'];
 		$date	         = explode('-',$_POST['tgl_interview']);
 		$v_tgl_interview = $date['2'].'-'.$date['1'].'-'.$date['0'];
-		// $v_tgl_interview = $_POST['tgl_interview'];
 
 		$sql = "UPDATE tb_lamaran SET 
 					message = '$v_message',

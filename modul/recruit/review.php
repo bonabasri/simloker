@@ -12,7 +12,6 @@
                         <th>Nama Lowongan</th>
                         <th>Nama Pelamar</th>
                         <th>Email</th>
-                        <th>File CV</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,8 +40,6 @@
                     <td><?php echo $data['posisi']; ?></td>
                     <td><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                     <td><?php echo $data['email']; ?></td>
-                    <td><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file']; ?></a></td>
-                    
                 </tr>
                 </tbody>
                 </table>
@@ -52,14 +49,32 @@
                 <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>File CV</th>
+                        <th>File Ijazah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file']; ?></a></td>
+                        <td><a href="dist/file/ijazah/<?php echo $data['files']; ?>"><?php echo $data['files']; ?></a></td>
+                        <input type="hidden" name="id" value="<?php echo $GetID; ?>">
+                        <input type="hidden" name="id_lamaran" value="<?php echo $data['id_lamaran']; ?>"><br>
+                        
+                    </tr>
+                </tbody>
+                </table>
+
+                <table class="table table-bordered">
+                <thead>
+                    <tr>
                         <th>Message</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td >
                         <input type="hidden" name="id" value="<?php echo $GetID; ?>">
                         <input type="hidden" name="id_lamaran" value="<?php echo $data['id_lamaran']; ?>">
+                        <td>
                             <textarea name="message" class="form-control" placeholder="Tulis pesan disini"><?php echo $data['message'];?></textarea>
                         </td><br>
                         

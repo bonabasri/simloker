@@ -83,7 +83,8 @@
                     </div>
                     <div class="form-group">
                     <label> Keterangan Gambar</label>
-                            <input type="file" name="img" required/>
+                            <input type="file" name="img" required/><i style="color:red;">* 
+                            File tipe .png, .jpg/jpeg</i>
                     </div>
                     <div class="form-group">
                     <label> Deskripsi Lowongan</label>

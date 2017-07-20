@@ -15,13 +15,12 @@
             <table class="table table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr>                  
-                        <th style="width:7%;">No</th>
-                        <th style="width:7%;">Username</th>
-                        <th style="width:20%;">Nama Perusahaan</th>
+                        <th>No</th>
+                        <th style="width:5%;">Username</th>
+                        <th style="width:30%;">Nama Perusahaan</th>
                         <th>Alamat</th>
-                        <th style="width:15%;">No Telepon</th> 
-                        <th style="text-align:center;">Email</th>
-                        <th style="text-align:center;">Logo</th>               
+                        <th style="width:15%;">Telepon</th> 
+                        <th style="text-align:center;">Email</th>              
                         <th style="text-align:center;">Control</th>
                     </tr>
                 </thead>
@@ -39,15 +38,13 @@
                     <tr class="odd gradeX">
                         <td style="text-align:center;"><?php echo $no; ?></td>
                         <td ><?php echo $data['user_id']; ?></td>
-                        <td ><?php echo $data['nama_perusahaan']; ?></td>
+                        <td ><img src="dist/images/logo/<?php echo $data['logo'];?>" width="30" height="30"> <?php echo $data['nama_perusahaan']; ?></td>
                         <td ><?php echo $data['alamat']; ?></td>
                         <td ><?php echo $data['no_telp'];?></td>
                         <td ><?php echo $data['email'];?></td>
-                        <td style="text-align:center;"><img src="dist/images/logo/<?php echo $data['logo'];?>" width="35" height="35"></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
-                            <a class="btn btn-default btn-xs" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
                             <a class="btn btn-default btn-xs" title="Edit Data" href="?p=employer.edit&user_id=<?php echo $data['user_id']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                             <!-- <a href="?p=perusahaan.delete&id=<?php echo $data['id_perusahaan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data <?php echo $data['nama_perusahaan']; ?>')" class="btn btn-default btn-sm" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a> -->
 

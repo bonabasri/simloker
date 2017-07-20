@@ -91,7 +91,7 @@
                     </div>
                     <div class="form-group">
                     <label> Foto</label>
-                        <input type="file" name="foto"/><img src="../dist/images/foto/<?php echo $data['foto'];?>" width="90" height="90">
+                        <input type="file" name="foto"/><img src="dist/images/foto/<?php echo $data['foto'];?>" width="90" height="90">
                     </div>
                     <div class="form-group">
                     <label> Kelebihan</label>

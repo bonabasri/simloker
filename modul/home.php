@@ -3,7 +3,7 @@
 
                 <div class="row" style="margin-left: 2px;">
                     <div class="col-md-6">
-                        <a href="?p=add-job">
+                        <a href="#">
                             <img class="img-responsive" src="dist/banner-employers.png">
                         </a>
                     </div>
@@ -29,6 +29,7 @@
                                 (a.id_jenis=d.id_jenis)
                                 LEFT JOIN tb_perusahaan e ON 
                                 (a.user_id=e.user_id)
+                            WHERE a.stat = 1 
                             ORDER BY a.id_lowongan DESC LIMIT 10";
                     $res = $conn->query($sql);
                     foreach ($res as $row => $data) {

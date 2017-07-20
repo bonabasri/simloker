@@ -17,10 +17,10 @@
                     <tr>                  
                         <th style="width:7%;">No</th>
                         <th >Username</th>
-                        <th style="width:15%;">Nama Lengkap</th>
-                        <th>Alamat</th>
-                        <th style="width:15%;">No Telepon</th> 
-                        <th style="text-align:center;">Email</th>
+                        <th >Nama</th>
+                        <th >Alamat</th>
+                        <th >No Telepon</th> 
+                        <th >Email</th>
                         <th style="text-align:center;">Foto</th>               
                         <th style="text-align:center;">Control</th>
                     </tr>
@@ -38,16 +38,15 @@
                     ?>
                     <tr class="odd gradeX">
                         <td style="text-align:center;"><?php echo $no; ?></td>
-                        <td style="text-align:center;"><?php echo $data['uname']; ?></td>
+                        <td ><?php echo $data['uname']; ?></td>
                         <td ><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                         <td ><?php echo $data['alamat']; ?></td>
-                        <td style="text-align:center;"><?php echo $data['no_hp'];?></td>
-                        <td style="text-align:center;"><?php echo $data['email'];?></td>
+                        <td ><?php echo $data['no_hp'];?></td>
+                        <td ><?php echo $data['email'];?></td>
                         <td style="text-align:center;"><img src="dist/images/foto/<?php echo $data['foto'];?>" width="30" height="30"></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
-                            <a class="btn btn-default btn-xs" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
                             <a class="btn btn-default btn-xs" title="Edit Data" href="?p=applicant.edit&id=<?php echo $data['id_pelamar']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                         </div>
 

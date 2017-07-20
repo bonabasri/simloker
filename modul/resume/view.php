@@ -49,7 +49,7 @@
                         <td style="text-align:center;"><?php echo $no; ?></td>
                         <td ><img src="dist/images/logo/<?php echo $data['logo'];?> " width="30" height="30"/> <?php echo $data['nama_perusahaan']; ?></td>
                         <td ><?php echo $data['posisi'];?></td>
-                        <td style="text-align:center;"><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file'];?></a></td>
+                        <td ><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file'];?></a></td>
                         <td style="text-align:center;"><?php echo date_format(date_create($data['tgl_lamar']), 'd/m/Y');?> </td>
                         <td ><?php echo $status;?></td>
                         <td style="text-align:center;">
@@ -57,7 +57,7 @@
                         <div class="btn-group" role="group" aria-label="...">
                             
                             <a class="btn btn-default btn-xs" title="Edit Data" href="?p=resume.review&id=<?php echo $data['id_lamaran']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
-                            <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-xs" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
+                            <!-- <a href="?p=resume.delete&id=<?php echo $data['id_lamaran']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lamaran?')" class="btn btn-default btn-xs" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a> -->
                         </div>
 
                         </td>

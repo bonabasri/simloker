@@ -13,7 +13,6 @@
                         <th>Nama Pelamar</th>
                         <th>Nama Perusahaan</th>
                         <th>Email</th>
-                        <th>File CV</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,13 +42,28 @@
                     <td><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                     <td><?php echo $data['nama_perusahaan']; ?></td>
                     <td><?php echo $data['email']; ?></td>
-                    <td><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file']; ?></a></td>
                     
                 </tr>
                 </tbody>
                 </table>
                    
-                <form class="" role="form" action="?p=recruit.action" id="defaultForm" method="post" enctype="multipart/form-data">
+                <form class="" role="form" action="" id="defaultForm" method="post" enctype="multipart/form-data">
+
+                <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>File CV</th>
+                        <th>File Ijazah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="dist/file/cv/<?php echo $data['file']; ?>"><?php echo $data['file']; ?></a></td>
+                        <td><a href="dist/file/ijazah/<?php echo $data['files']; ?>"><?php echo $data['files']; ?></a></td>
+                        
+                    </tr>
+                </tbody>
+                </table>
 
                 <table class="table table-bordered">
                 <thead>
@@ -80,8 +94,8 @@
                     </tr>
                 </tbody>
                 </table>
-                    <button class="btn btn-primary pull-right" type="submit" name="update">Kirim
-                        </button>
+                    <!-- <button class="btn btn-primary pull-right" type="submit" name="update">Kirim
+                        </button> -->
                     </form>
                 </div>
             </div>

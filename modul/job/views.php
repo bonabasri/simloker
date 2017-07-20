@@ -16,11 +16,10 @@
                 <thead>
                     <tr>                  
                         <th style="width:7%;">No</th>
-                        <th style="width:15%;">Perusahaan</th>
-                        <th>Kategori Kerja</th>
+                        <th style="width:25%;">Perusahaan</th>
                         <th style="width:15%;">Posisi</th>
-                        <th style="text-align:center;">Ket Gambar</th>
-                        <th style="text-align:center;">Tanggal Post/Akhir</th>
+                        <th style="text-align:center;">Tanggal Post-Akhir</th>
+                        <th style="text-align:center;">Status</th>
                         <th style="text-align:center;">Control</th>
                     </tr>
                 </thead>
@@ -39,21 +38,25 @@
                         $res = $conn->query($sql);
                         $no  = 0;
                         foreach ($res as $row => $data) {
+                            $status = $data['stat'];
+                            if ($status === '0') {
+                                $status = '<span class="label label-default">Belum Bayar</span>';
+                            } elseif ($status === '1') {
+                                $status = '<span class="label label-primary">Sudah Bayar</span>';
+                            } 
 
                         $no++;
                     ?>
                     <tr class="odd gradeX">
                         <td style="text-align:center;"><?php echo $no; ?></td>
-                        <td ><?php echo $data['nama_perusahaan']; ?></td>
-                        <td ><?php echo $data['nama_kategori_kerja']; ?></td>
+                        <td ><img src="dist/images/logo/<?php echo $data['logo'];?>" width="30" height="30"/> <?php echo $data['nama_perusahaan']; ?></td>
                         <td ><?php echo $data['posisi'];?></td>
-                        <td style="text-align:center;"><img src="dist/images/img/<?php echo $data['img'];?> " width="30" height="30"/></td>
                         <td style="text-align:center;"><?php echo date_format(date_create($data['tgl_posting']), 'd/m/Y'). ' - ' .date_format(date_create($data['tgl_akhir']), 'd/m/Y');?> </td>
+                        <td ><?php echo $status;?></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
-                            <a class="btn btn-default btn-xs" title="Detail Pendaftar" data-toggle="modal" data-target="#detail<?php echo $data['no_reg']; ?>"><span class="fa fa-search fa-fw" aria-hidden="true"></span></a>
-                            <a class="btn btn-default btn-xs" title="Edit Data" href="?p=job.edit&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
+                            <a class="btn btn-default btn-xs" title="Edit Data" href="?p=job.review&id=<?php echo $data['id_lowongan']; ?>" ><i class="fa fa-pencil fa-fw"></i></a>
                             <a href="?p=job.delete&id=<?php echo $data['id_lowongan']; ?>" onclick="return confirm('Apakah anda yakin menghapus data lowongan?')" class="btn btn-default btn-xs" title="Delete Data"><span class="fa fa-trash fa-fw"></span></a>
                         </div>
 

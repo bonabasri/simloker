@@ -82,7 +82,7 @@
                         <a href="?p=home">Beranda</a>
                     </li>
                     <li>
-                        <a href="?p=job.views">Lowongan Kerja</a>
+                        <a href="?p=job.views">Data Lowongan</a>
                     </li>
                     <li>
                         <a href="?p=employer.view">Data Perusahaan</a>
