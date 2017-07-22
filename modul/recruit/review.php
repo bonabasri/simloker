@@ -12,6 +12,7 @@
                         <th>Nama Lowongan</th>
                         <th>Nama Pelamar</th>
                         <th>Email</th>
+                        <th>Foto Pelamar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,7 @@
                     <td><?php echo $data['posisi']; ?></td>
                     <td><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                     <td><?php echo $data['email']; ?></td>
+                    <td style="text-align: center;"><img src="dist/images/foto/<?php echo $data['foto']; ?>" width="80" height="80"></td>
                 </tr>
                 </tbody>
                 </table>
