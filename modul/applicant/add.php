@@ -65,7 +65,20 @@
                     </div>
                     <div class="form-group">
                     <label> Lulusan</label>
-                        <input type="text" class="form-control" name="lulusan" placeholder="Lulusan" required/>
+                        <select class="form-control" name="lulusan" required/>
+                            <option value="">- Pilih -</option>
+                            <option value="SD">SD</option>
+                            <option value="SMP">SMP</option>
+                            <option value="SMA">SMA</option>
+                            <option value="SMK">SMK</option>
+                            <option value="D1">D1</option>
+                            <option value="D2">D2</option>
+                            <option value="D3">D3</option>
+                            <option value="D4">D4</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                        </select>
                     </div>
                     <div class="form-group">
                     <label> Usia</label>

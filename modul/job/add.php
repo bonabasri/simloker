@@ -29,11 +29,7 @@
                 }
         ?>    
                    
-                <form class="" role="form" style="margin-top: 10px;" action="?p=job.action" id="defaultForm" method="post" enctype="multipart/form-data">              
-                    <!-- <div class="form-group">
-                    <label> Judul</label>
-                        <input type="text" class="form-control" name="judul" placeholder="Judul Lowongan" required/>
-                    </div> -->
+                <form class="" role="form" style="margin-top: 10px;" action="?p=job.action" id="defaultForm" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_perusahaan" value="<?php echo $_SESSION['user_id'] ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
