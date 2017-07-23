@@ -1,4 +1,5 @@
 <?php
+	
 	if ( isset($_POST['save']) ) 
 	{
 		$v_user_id 					= $_SESSION['user_id'];
@@ -198,18 +199,84 @@
 	{
 		// $getId			= $_REQUEST['id'];
 		$v_id_lowongan 	= $_POST['id_lowongan'];
-		$v_bayar		= $_POST['bayar'];
 		$v_status		= $_POST['stat'];
 
 		$sql = "UPDATE tb_lowongan SET
-					bayar = '$v_bayar',
-					stat = '$v_status'
+					stat = 2
 				WHERE id_lowongan = '$v_id_lowongan'";
 
 		if ($conn->query($sql) === TRUE) {
-			echo '<script>alert("data lowongan berhasil diproses"); </script>';
+			echo '<script>alert("data lowongan berhasil diaktifkan"); </script>';
  			echo '<meta http-equiv="refresh" content="0;URL=?p=job.views">';
 		}else{
 			echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 		}
+		$conn->close();
+	}
+
+
+	/* update bayar */
+	// require ('mail.php');
+	if (isset($_POST['confirm'])) 
+	{
+		$id 		 	= $_POST['id_lowongan'];
+		$v_status		= $_POST['stat'];
+
+		$posisi 			= $_POST['posisi'];
+		$nama_perusahaan 	= $_POST['nama_perusahaan'];
+		$email 				= $_POST['email'];
+		$alamat 		 	= $_POST['alamat'];
+	  	$from 				= "$email";
+	  	// $subject 		= "Konfirmasi Pembayaran Iklan lokercilacap.com";
+	  	// $body 			= "Halooo $nama, Terima kasih sudah mengirim pesan!!";
+	  
+		$sql = "UPDATE tb_lowongan SET
+					stat = 1
+				WHERE id_lowongan = '$id'";
+
+		if ($conn->query($sql) === TRUE) {
+			echo '<script>alert("Email Berhasil Dikirim"); </script>';
+	 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+	 		
+	 		date_default_timezone_set('Etc/UTC');
+			require 'PHPMailer/PHPMailerAutoload.php';
+			$mail = new PHPMailer;
+			$mail->isSMTP();
+			// $mail->SMTPDebug = 2;
+			// $mail->Debugoutput = 'html';
+			$mail->Host = 'smtp.gmail.com';
+			$mail->Port = 587;
+			$mail->SMTPSecure = 'tls';
+			$mail->SMTPAuth = true;
+			$mail->Username = "amaliyanasithotul@gmail.com";
+			$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
+			$mail->setFrom('luckman.heckem@gmail.com', 'Nasithotul Amaliya');
+			$mail->addAddress('amaliyanasithotul@gmail.com', 'Nasithotul Amaliya');
+			$mail->Subject = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
+			$mail->msgHTML("<body style='margin: 10px;'>
+			        <div style='width: 640px; font-family: Helvetica, sans-serif; font-size: 13px; padding:10px; line-height:150%; border:#eaeaea solid 10px;'>
+			        <br>
+			        <strong>Konfirmasi Pembayaran iklan di lokercilacap</strong><br>
+			        <b>Judul Lowongan : </b>".$posisi."<br>
+			        <b>Nama Perusahaan : </b>".$nama_perusahaan."<br>
+			        <b>Alamat Perusahaan : </b>".$alamat."<br>
+			        <b>Telah Membayar : </b>Rp. 25.000,-<br>
+			        <b>URL Konfirmasi : </b>http://localhost/simloker/main.php?p=job.review&id=".$id."<br>
+			        </div>
+			        </body>");
+			$mail->AltBody = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
+
+			if (!$mail->send()) {
+			    echo "Mailer Error: " . $mail->ErrorInfo;
+			} else {
+			    // echo "Message sent!";
+			}
+
+			// mail($email,$nama_perusahaan);
+ 		
+		}else{
+			echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
+		}
+	 		
+		$conn->close();
 	}

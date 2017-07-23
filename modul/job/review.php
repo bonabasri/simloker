@@ -30,11 +30,14 @@
                 $data = $res->fetch_assoc();
 
                 $status = $data['stat'];
-                    if ($status === '0') {
-                        $status = '<span class="label label-default">Belum Bayar</span>';
-                    } elseif ($status === '1') {
-                        $status = '<span class="label label-primary">Sudah Bayar</span>';
-                    } 
+                    $status = $data['stat'];
+                            if ($status === '0') {
+                                $status = '<span class="label label-default">Belum Aktif</span>';
+                            } elseif ($status === '1') {
+                                $status = '<span class="label label-primary">Proses Konfirmasi Pembayaran</span>';
+                            } elseif ($status === '2') {
+                                $status = '<span class="label label-success">Sudah Aktif</span>';
+                            } 
             ?>
                 <tr>
                     <td><?php echo $data['posisi']; ?></td>
@@ -70,26 +73,26 @@
                 <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Bayar</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 50%;">
-                            <input type="text" name="bayar" value="<?php echo $data['bayar']; ?>" class="form-control"/>
-                        </td>
-                        <td>
-                            <select class="form-control" name="stat">
-                                <option value="<?php echo $data['stat']; ?>" name="stat"><?php echo $status; ?></option>
-                                <option value="0">Belum Bayar</option>
-                                <option value="1">Sudah Bayar</option>
-                            </select>
+                        <td style="width: 10%;">
+                            <!-- <select class="form-control" name="stat">
+                                <option value="<?php echo $data['stat']; ?>" name="stat"> -->
+                                <?php echo $status; ?>
+                                    <!-- 
+                                </option>
+                                <option value="0">Belum Aktif</option>
+                                <option value="1">Menunggu Konfirmasi</option>
+                                <option value="2">Sudah Aktif</option>
+                            </select> -->
                         </td>
                     </tr>
                 </tbody>
                 </table>
-                    <button class="btn btn-primary pull-right" type="submit" name="update">Kirim
+                    <button class="btn btn-primary pull-right" type="submit" name="update">Konfirmasi
                         </button>
                     </form>
                 </div>

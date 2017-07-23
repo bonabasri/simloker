@@ -1,6 +1,7 @@
 <?php     
     session_start();
     require_once ('core.php');
+    // require_once ('mail.php');
     if  ( empty($_SESSION['uname']) )  
     {
         header('location:./');
@@ -105,6 +106,9 @@
                                 <a href="#">Data Kategori Pendidikan</a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="?p=report.view">Report</a>
                     </li>
             <?php
                 } else if($_SESSION['uac'] === 'PELAMAR') {
@@ -270,6 +274,61 @@
                 changeYear: true
             });
 
+            $('#datepicker1').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+
+            $('#datepicker2').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+
+            $('#datepicker3').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+
+            $('#datepicker4').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+
+            $('#datepicker5').datepicker({
+                //dateFormat: "dd/MM/yy",
+                //autoclose:true
+                changeMonth: true,
+                yearRange: "-30:+0",
+                format: "dd-mm-yyyy",
+                calendarWeeks: true,
+                todayBtn: "linked",
+                changeYear: true
+            });
+            
             CKEDITOR.replace( 'editor' );
             
     </script>
