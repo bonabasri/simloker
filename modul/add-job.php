@@ -22,8 +22,8 @@ Ikuti petunjuk berikut:
 		xxxxxxx-xxxxx-xx-xx
 	</li>
 	<li>
-		Silahkan konfirmasi melalui SMS : +62xxxxxxxxx | Email: admin@lokercilacap.com.
-		Sebutkan Nama Perusahaan, Judul Lowongan/Job Description.
+		Silahkan konfirmasi melalui lokercilacap.com.
+		Sebutkan Jumlah biaya dan No Rekening
 	</li>
 	<li>
 		Kami selanjutnya akan mengaktifkan iklan lowongan anda dan mempublish di website lokercilacap.com. Setelah aktif lowongan anda maka para pencari kerja dapat melakukan Apply Job online.
@@ -42,7 +42,10 @@ Ikuti petunjuk berikut:
 	<ul>
 		
 		<li>
-			Paket iklan lowongan kerja di web Lokercilacap.com. <b>(Rp. 25.000,-)</b>
+			Paket iklan lowongan kerja di web Lokercilacap.com. <b>(Rp. 25.000,-) untuk 1 bulan tayang</b>
+		</li>
+		<li>
+			Paket iklan lowongan kerja di web Lokercilacap.com. <b>(Rp. 15.000,-) untuk 2 minggu tayang</b>
 		</li>
 		<li>
 			Pelamar dapat Apply Online dan upload CV.

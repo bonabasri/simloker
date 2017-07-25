@@ -73,22 +73,16 @@
                 <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Rekening</th>
+                        <th>Harga</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 10%;">
-                            <!-- <select class="form-control" name="stat">
-                                <option value="<?php echo $data['stat']; ?>" name="stat"> -->
-                                <?php echo $status; ?>
-                                    <!-- 
-                                </option>
-                                <option value="0">Belum Aktif</option>
-                                <option value="1">Menunggu Konfirmasi</option>
-                                <option value="2">Sudah Aktif</option>
-                            </select> -->
-                        </td>
+                        <td><?php echo $data['rekening']; ?></td>
+                        <td><?php echo 'Rp.'.$data['harga'].',-'; ?></td>
+                        <td><?php echo $status; ?></td>
                     </tr>
                 </tbody>
                 </table>

@@ -29,9 +29,9 @@
                                     </label>
                                 </div>
                                 
-                                <input type="submit" name="login" value="Masuk" class="btn btn-md btn-primary btn-block"><br/>Belum Punya Akun?
-                                <a style="text-decoration:none;" href="?p=register"> Daftar</a>
-                        
+                                <input type="submit" name="login" value="Masuk" class="btn btn-md btn-primary btn-block"><br/>
+                                <a style="text-decoration:none;" href="?p=register"> Daftar</a> |
+                                <a style="text-decoration:none;" href="?p=forgot"> Lupa Pasword?</a>
                             </fieldset>
                         </form>
                         </div>

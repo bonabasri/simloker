@@ -28,6 +28,7 @@
 			echo('<script>alert("username dan password tidak cocok"); </script>');
 		 	echo '<meta http-equiv="refresh" content="0;URL=?p=login">';
 		}
+		$conn->close();
 	}
 
 	if (isset($_POST['daftar'])) 
@@ -90,5 +91,35 @@
 			echo('<script>alert("username belum diisi"); </script>');
 	 		echo '<meta http-equiv="refresh" content="0;URL=?p=register">';
 		}
+		$conn->close();
+	}
+
+
+	if (isset($_POST['reset'])) 
+	{
+	$uname = $conn->real_escape_string($_POST['uname']);
+
+	$sql = "SELECT *FROM tb_user WHERE uname='".$v_uname."'";
+	$res = $conn->query($sql);
+	$row = $res->fetch_assoc();
+	$email = $row['email'];
+
+		// if ($res->num_rows === 1 ) {
+		// 	foreach ($row as $key => $value) {
+		// 		# code...
+		// 		$_SESSION[$key] = $value;
+		// 		//session_start();
+		// 		$_SESSION['user_id']= $row['user_id'];
+		// 		$_SESSION['uname'] 	= $v_uname;
+		// 		$_SESSION['upsw']	= $v_upsw;  
+		// 		$_SESSION['uac'] 	= $row['uac']; 
+
+		// 		header('location:./main.php');
+		// 	}
+		// } else {
+		// 	// header('location:login.php?action=error');
+		// 	echo('<script>alert("username dan password tidak cocok"); </script>');
+		//  	echo '<meta http-equiv="refresh" content="0;URL=?p=login">';
+		// }
 	}
 ?>

@@ -226,11 +226,15 @@
 		$nama_perusahaan 	= $_POST['nama_perusahaan'];
 		$email 				= $_POST['email'];
 		$alamat 		 	= $_POST['alamat'];
+		$rekening 		 	= $_POST['rekening'];
+		$harga 			 	= $_POST['harga'];
 	  	$from 				= "$email";
 	  	// $subject 		= "Konfirmasi Pembayaran Iklan lokercilacap.com";
 	  	// $body 			= "Halooo $nama, Terima kasih sudah mengirim pesan!!";
 	  
 		$sql = "UPDATE tb_lowongan SET
+					rekening = '$rekening',
+					harga 	 = '$harga',
 					stat = 1
 				WHERE id_lowongan = '$id'";
 
@@ -248,10 +252,10 @@
 			$mail->Port = 587;
 			$mail->SMTPSecure = 'tls';
 			$mail->SMTPAuth = true;
-			$mail->Username = "amaliyanasithotul@gmail.com";
-			$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
+			$mail->Username = "luckman.heckem@gmail.com";
+			$mail->Password = "heckem93";  /*Tulis Password Gmail Anda Disini*/
 			$mail->setFrom('luckman.heckem@gmail.com', 'Nasithotul Amaliya');
-			$mail->addAddress('amaliyanasithotul@gmail.com', 'Nasithotul Amaliya');
+			$mail->addAddress('luckman.heckem@gmail.com', 'Nasithotul Amaliya');
 			$mail->Subject = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
 			$mail->msgHTML("<body style='margin: 10px;'>
 			        <div style='width: 640px; font-family: Helvetica, sans-serif; font-size: 13px; padding:10px; line-height:150%; border:#eaeaea solid 10px;'>
@@ -260,7 +264,8 @@
 			        <b>Judul Lowongan : </b>".$posisi."<br>
 			        <b>Nama Perusahaan : </b>".$nama_perusahaan."<br>
 			        <b>Alamat Perusahaan : </b>".$alamat."<br>
-			        <b>Telah Membayar : </b>Rp. 25.000,-<br>
+			        <b>No Rekening : </b>".$rekening."<br>
+			        <b>Telah Membayar : </b>Rp. ".$harga.",-<br>
 			        <b>URL Konfirmasi : </b>http://localhost/simloker/main.php?p=job.review&id=".$id."<br>
 			        </div>
 			        </body>");

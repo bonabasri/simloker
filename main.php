@@ -94,16 +94,16 @@
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data Master</a>
                         <ul class="dropdown-menu alert-dropdown">
-                            <li>
+                            <!-- <li>
                                 <a href="#">Data Jenis Pekerjaan</a>
                             </li>
-                            <li class="divider"></li>
+                            <li class="divider"></li> -->
                             <li>
-                                <a href="#">Data Kategori Pekerjaan</a>
+                                <a href="?p=kategorikerja.view">Data Kategori Pekerjaan</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="#">Data Kategori Pendidikan</a>
+                                <a href="?p=pendidikan.view">Data Kategori Pendidikan</a>
                             </li>
                         </ul>
                     </li>

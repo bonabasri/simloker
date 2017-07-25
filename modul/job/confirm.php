@@ -31,13 +31,21 @@
 	                    <label> Nama Perusahaan</label>
 	                        <input type="text" class="form-control" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>"/>
 	                    </div>
-	                    <div class="form-group">
+	                    <!-- <div class="form-group">
 	                    <label> Email</label>
 	                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>" disabled/>
-	                    </div>
+	                    </div> -->
 	                    <div class="form-group">
 	                    <label> Alamat</label>
 	                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>"/>
+	                    </div>
+	                    <div class="form-group">
+	                    <label> No Rekening</label>
+	                        <input type="text" class="form-control" placeholder="No Rekening" name="rekening" value="<?php echo $data['rekening']; ?>" required/>
+	                    </div>
+	                    <div class="form-group">
+	                    <label> Jumlah pembayaran</label>
+	                        <input type="text" class="form-control" placeholder="Harga" name="harga" value="<?php echo $data['harga']; ?>" maxlength="5" onkeypress="return num(event)" required/>
 	                    </div>
 	                    <div class="form-group">
 	                    <label></label>
@@ -50,3 +58,13 @@
 	    </div>
 	</div>
 </div>
+
+	<script>
+		function num(evt) {
+		  var charCode = (evt.which) ? evt.which : event.keyCode
+		   if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+		    return false;
+		  return true;
+		}
+	</script>

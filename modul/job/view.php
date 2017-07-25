@@ -57,7 +57,7 @@
                         <td ><?php echo $data['posisi'];?></td>
                         <td style="text-align:center;"><img src="dist/images/img/<?php echo $data['img'];?> " width="30" height="30"/></td>
                         <td ><?php echo date_format(date_create($data['tgl_posting']), 'd/m/Y'). ' - ' .date_format(date_create($data['tgl_akhir']), 'd/m/Y');?> </td>
-                        <td ><?php echo $status;?></td>
+                       <td ><?php echo $status.' '.'Rp.'.$data['harga'].',-';?></td>
                         <td style="text-align:center;">
 
                         <div class="btn-group" role="group" aria-label="...">
