@@ -3,6 +3,8 @@
 	if ( isset($_POST['save']) ) 
 	{
 		$v_user_id 					= $_SESSION['user_id'];
+		$id 						= $_POST['id_lowongan'];
+		$nama_perusahaan 			= $_POST['nama_perusahaan'];
 		$v_id_kategori_pekerjaan 	= $_POST['id_kategori_pekerjaan'];
 		$v_id_jenis_kerja			= $_POST['id_jenis'];
 		$v_posisi 					= $_POST['posisi'];
@@ -60,8 +62,44 @@
 												'$v_img',
 												'$v_deskripsi' ) ";
 					if ( $conn->query($sql) === TRUE ) {
-						echo '<script>alert("data lowongan berhasil dipublis"); </script>';
+						echo '<script>alert("data lowongan berhasil disimpan silahkan cek email untuk Konfirmasi"); </script>';
 			 			echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+
+			 			date_default_timezone_set('Etc/UTC');
+						require 'PHPMailer/PHPMailerAutoload.php';
+						$mail = new PHPMailer;
+						$mail->isSMTP();
+						// $mail->SMTPDebug = 2;
+						// $mail->Debugoutput = 'html';
+						$mail->Host = 'smtp.gmail.com';
+						$mail->Port = 587;
+						$mail->SMTPSecure = 'tls';
+						$mail->SMTPAuth = true;
+						$mail->Username = "luckman.heckem@gmail.com";
+						$mail->Password = "heckem93";  /*Tulis Password Gmail Anda Disini*/
+						$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
+						$mail->addAddress('luckman.heckem@gmail.com', 'Luqman Hakim');
+						$mail->Subject = 'Selamat Datang di lokercilacap.com';
+						$mail->msgHTML("<body style='margin: 20px;'>
+						        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>
+						        <br>
+						        Hallo ".$nama_perusahaan.", <br>
+						        Terima Kasih Telah Memasang Lowongan di lokercilacap<br>
+						        Selanjutnya untuk mengaktifkan iklan anda, <br> 
+						        Klik link
+						        <a class='btn btn-primary' href='http://localhost/simloker/main.php?p=job.confirm&id=".$id."'>VISIT PAGE</a><br>
+						        Selamat berkreasi dengan lokercilacap!
+						        <hr>
+						        Salam Hangat, <br>
+						        Admin lokercilacap
+						        </div>
+						        </body>");
+						$mail->AltBody = 'Selamat Datang di lokercilacap.com';
+
+						if (!$mail->send()) {
+						    echo "Mailer Error: " . $mail->ErrorInfo;
+						}
+
 					} else {
 					// echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
 					echo '<script>alert("data gagal dipublis"); </script>';
@@ -242,40 +280,40 @@
 			echo '<script>alert("Email Berhasil Dikirim"); </script>';
 	 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 	 		
-	 		date_default_timezone_set('Etc/UTC');
-			require 'PHPMailer/PHPMailerAutoload.php';
-			$mail = new PHPMailer;
-			$mail->isSMTP();
-			// $mail->SMTPDebug = 2;
-			// $mail->Debugoutput = 'html';
-			$mail->Host = 'smtp.gmail.com';
-			$mail->Port = 587;
-			$mail->SMTPSecure = 'tls';
-			$mail->SMTPAuth = true;
-			$mail->Username = "luckman.heckem@gmail.com";
-			$mail->Password = "heckem93";  /*Tulis Password Gmail Anda Disini*/
-			$mail->setFrom('luckman.heckem@gmail.com', 'Nasithotul Amaliya');
-			$mail->addAddress('luckman.heckem@gmail.com', 'Nasithotul Amaliya');
-			$mail->Subject = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
-			$mail->msgHTML("<body style='margin: 10px;'>
-			        <div style='width: 640px; font-family: Helvetica, sans-serif; font-size: 13px; padding:10px; line-height:150%; border:#eaeaea solid 10px;'>
-			        <br>
-			        <strong>Konfirmasi Pembayaran iklan di lokercilacap</strong><br>
-			        <b>Judul Lowongan : </b>".$posisi."<br>
-			        <b>Nama Perusahaan : </b>".$nama_perusahaan."<br>
-			        <b>Alamat Perusahaan : </b>".$alamat."<br>
-			        <b>No Rekening : </b>".$rekening."<br>
-			        <b>Telah Membayar : </b>Rp. ".$harga.",-<br>
-			        <b>URL Konfirmasi : </b>http://localhost/simloker/main.php?p=job.review&id=".$id."<br>
-			        </div>
-			        </body>");
-			$mail->AltBody = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
+	 	// 	date_default_timezone_set('Etc/UTC');
+			// require 'PHPMailer/PHPMailerAutoload.php';
+			// $mail = new PHPMailer;
+			// $mail->isSMTP();
+			// // $mail->SMTPDebug = 2;
+			// // $mail->Debugoutput = 'html';
+			// $mail->Host = 'smtp.gmail.com';
+			// $mail->Port = 587;
+			// $mail->SMTPSecure = 'tls';
+			// $mail->SMTPAuth = true;
+			// $mail->Username = "amaliyanasithotul@gmail.com";
+			// $mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
+			// $mail->setFrom('amaliyanasithotul@gmail.com', 'Nasithotul Amaliya');
+			// $mail->addAddress('amaliyanasithotul@gmail.com', 'Nasithotul Amaliya');
+			// $mail->Subject = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
+			// $mail->msgHTML("<body style='margin: 10px;'>
+			//         <div style='width: 640px; font-family: Helvetica, sans-serif; font-size: 13px; padding:10px; line-height:150%; border:#eaeaea solid 10px;'>
+			//         <br>
+			//         <strong>Konfirmasi Pembayaran iklan di lokercilacap</strong><br>
+			//         <b>Judul Lowongan : </b>".$posisi."<br>
+			//         <b>Nama Perusahaan : </b>".$nama_perusahaan."<br>
+			//         <b>Alamat Perusahaan : </b>".$alamat."<br>
+			//         <b>No Rekening : </b>".$rekening."<br>
+			//         <b>Telah Membayar : </b>Rp. ".$harga.",-<br>
+			//         <b>URL Konfirmasi : </b>http://localhost/simloker/main.php?p=job.review&id=".$id."<br>
+			//         </div>
+			//         </body>");
+			// $mail->AltBody = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
 
-			if (!$mail->send()) {
-			    echo "Mailer Error: " . $mail->ErrorInfo;
-			} else {
-			    // echo "Message sent!";
-			}
+			// if (!$mail->send()) {
+			//     echo "Mailer Error: " . $mail->ErrorInfo;
+			// } else {
+			//     // echo "Message sent!";
+			// }
 
 			// mail($email,$nama_perusahaan);
  		

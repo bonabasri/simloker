@@ -5,7 +5,7 @@
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASS', 'root');
-    define('DB',   'loker_db');
+    define('DB',   'lokerclp_db');
     define('DB_CHARSET', 'utf8');    
 
     ini_set('display_errors', 0);

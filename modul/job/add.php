@@ -10,6 +10,18 @@
                         <div class="col-lg-12">
                     
         <?php
+            $Id     = "SELECT max(id_lowongan) AS data FROM tb_lowongan";
+            $res    = $conn->query($Id);
+            $row    = $res->fetch_assoc();
+            $id     = $row['data']+1;
+
+            $getID = $_SESSION['user_id'];
+            $sql = "SELECT *FROM tb_lowongan a
+                        LEFT JOIN tb_perusahaan b ON (a.user_id=b.user_id) 
+                    WHERE b.user_id= '$getID'";
+            $res = $conn->query($sql);
+            foreach ($res as $row => $data);
+
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
             $res = $conn->query($sql);
                 while ($row = $res->fetch_assoc()) {
@@ -30,7 +42,8 @@
         ?>    
                    
                 <form class="" role="form" style="margin-top: 10px;" action="?p=job.action" id="defaultForm" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_perusahaan" value="<?php echo $_SESSION['user_id'] ?>">
+                    <input type="hidden" name="id_lowongan" value="<?php echo $id; ?>">
+                    <input type="hidden" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
                         <select class="form-control" name="id_kategori_pekerjaan" required/>
