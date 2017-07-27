@@ -5,6 +5,9 @@
 		$v_user_id 					= $_SESSION['user_id'];
 		$id 						= $_POST['id_lowongan'];
 		$nama_perusahaan 			= $_POST['nama_perusahaan'];
+		$alamat 					= $_POST['alamat'];
+		$no_telp 					= $_POST['no_telp'];
+		$tgl_posting 				= $_POST['tgl_posting'];
 		$v_id_kategori_pekerjaan 	= $_POST['id_kategori_pekerjaan'];
 		$v_id_jenis_kerja			= $_POST['id_jenis'];
 		$v_posisi 					= $_POST['posisi'];
@@ -62,7 +65,7 @@
 												'$v_img',
 												'$v_deskripsi' ) ";
 					if ( $conn->query($sql) === TRUE ) {
-						echo '<script>alert("data lowongan berhasil disimpan silahkan cek email untuk Konfirmasi"); </script>';
+						echo '<script>alert("Lowongan berhasil disimpan, Silahkan cek email untuk konfirmasi"); </script>';
 			 			echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 
 			 			date_default_timezone_set('Etc/UTC');
@@ -75,19 +78,27 @@
 						$mail->Port = 587;
 						$mail->SMTPSecure = 'tls';
 						$mail->SMTPAuth = true;
-						$mail->Username = "luckman.heckem@gmail.com";
-						$mail->Password = "heckem93";  /*Tulis Password Gmail Anda Disini*/
+						$mail->Username = "amaliyanasithotul@gmail.com";
+						$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
 						$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
-						$mail->addAddress('luckman.heckem@gmail.com', 'Luqman Hakim');
+						$mail->addAddress('amaliyanasithotul@gmail.com', 'lokercilacapcom');
 						$mail->Subject = 'Selamat Datang di lokercilacap.com';
 						$mail->msgHTML("<body style='margin: 20px;'>
 						        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>
 						        <br>
-						        Hallo ".$nama_perusahaan.", <br>
+						        Hallo ".$v_user_id.", <br>
 						        Terima Kasih Telah Memasang Lowongan di lokercilacap<br>
+						        <p> Detail </p>
+						        <ul>
+							        <li>Nama Perusahaan : ".$nama_perusahaan." </li>
+							        <li>Judul Lowongan : ".$v_posisi." </li>
+							        <li>Nomor Telepon : ".$no_telp." </li>
+							        <li>Alamat : ".$alamat." </li>
+						        </ul>
 						        Selanjutnya untuk mengaktifkan iklan anda, <br> 
 						        Klik link
 						        <a class='btn btn-primary' href='http://localhost/simloker/main.php?p=job.confirm&id=".$id."'>VISIT PAGE</a><br>
+						        Untuk batas waktu pembayaran iklan selama 2x24 jam.<br>
 						        Selamat berkreasi dengan lokercilacap!
 						        <hr>
 						        Salam Hangat, <br>
@@ -254,72 +265,55 @@
 
 
 	/* update bayar */
-	// require ('mail.php');
-	if (isset($_POST['confirm'])) 
+
+	if (isset($_POST['confirm']))
 	{
-		$id 		 	= $_POST['id_lowongan'];
-		$v_status		= $_POST['stat'];
+		$getId		= $_REQUEST['id'];
+		$allowExt 			= array( 'png', 'jpg', 'jpeg' );
 
-		$posisi 			= $_POST['posisi'];
-		$nama_perusahaan 	= $_POST['nama_perusahaan'];
-		$email 				= $_POST['email'];
-		$alamat 		 	= $_POST['alamat'];
-		$rekening 		 	= $_POST['rekening'];
-		$harga 			 	= $_POST['harga'];
-	  	$from 				= "$email";
-	  	// $subject 		= "Konfirmasi Pembayaran Iklan lokercilacap.com";
-	  	// $body 			= "Halooo $nama, Terima kasih sudah mengirim pesan!!";
+		$fileName 			= $_FILES['transfer']['name'];
+		$fileExt			= strtolower(end(explode('.', $fileName)));
+		$fileSize			= $_FILES['transfer']['size'];
+		$fileTemp 			= $_FILES['transfer']['tmp_name'];
+
+		$upload_dir 		= "dist/file/transfer/";
+		$img 				= basename ($fileName);
+		$v_img 				= str_replace(' ','_',$img);
+
+		$id 		= $_POST['id_lowongan'];
+		// $transfer 	= $_POST['transfer'];
 	  
-		$sql = "UPDATE tb_lowongan SET
-					rekening = '$rekening',
-					harga 	 = '$harga',
-					stat = 1
-				WHERE id_lowongan = '$id'";
+		if ( in_array( $fileExt, $allowExt ) === TRUE ) 
+		{
+			if ( $fileSize < 1044070 ) 
+			{
+				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_img) ) 
+				{
+					$sql = "UPDATE tb_lowongan SET
+								transfer = '$v_img',
+								stat = 1
+							WHERE id_lowongan = '$getId'";
 
-		if ($conn->query($sql) === TRUE) {
-			echo '<script>alert("Email Berhasil Dikirim"); </script>';
-	 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
-	 		
-	 	// 	date_default_timezone_set('Etc/UTC');
-			// require 'PHPMailer/PHPMailerAutoload.php';
-			// $mail = new PHPMailer;
-			// $mail->isSMTP();
-			// // $mail->SMTPDebug = 2;
-			// // $mail->Debugoutput = 'html';
-			// $mail->Host = 'smtp.gmail.com';
-			// $mail->Port = 587;
-			// $mail->SMTPSecure = 'tls';
-			// $mail->SMTPAuth = true;
-			// $mail->Username = "amaliyanasithotul@gmail.com";
-			// $mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
-			// $mail->setFrom('amaliyanasithotul@gmail.com', 'Nasithotul Amaliya');
-			// $mail->addAddress('amaliyanasithotul@gmail.com', 'Nasithotul Amaliya');
-			// $mail->Subject = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
-			// $mail->msgHTML("<body style='margin: 10px;'>
-			//         <div style='width: 640px; font-family: Helvetica, sans-serif; font-size: 13px; padding:10px; line-height:150%; border:#eaeaea solid 10px;'>
-			//         <br>
-			//         <strong>Konfirmasi Pembayaran iklan di lokercilacap</strong><br>
-			//         <b>Judul Lowongan : </b>".$posisi."<br>
-			//         <b>Nama Perusahaan : </b>".$nama_perusahaan."<br>
-			//         <b>Alamat Perusahaan : </b>".$alamat."<br>
-			//         <b>No Rekening : </b>".$rekening."<br>
-			//         <b>Telah Membayar : </b>Rp. ".$harga.",-<br>
-			//         <b>URL Konfirmasi : </b>http://localhost/simloker/main.php?p=job.review&id=".$id."<br>
-			//         </div>
-			//         </body>");
-			// $mail->AltBody = 'Konfirmasi Pembayaran Iklan lokercilacap.com';
-
-			// if (!$mail->send()) {
-			//     echo "Mailer Error: " . $mail->ErrorInfo;
-			// } else {
-			//     // echo "Message sent!";
-			// }
-
-			// mail($email,$nama_perusahaan);
- 		
-		}else{
-			echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
+					if ($conn->query($sql) === TRUE) 
+					{
+						echo '<script>alert("Lowongan berhasil dikonfirmasi"); </script>';
+				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+					}else{
+						echo "terjadi kesalahan fatal" .$sql.' <br> ' .$conn->error;
+						echo '<script>alert("data lowongan gagal diupdate"); </script>';
+				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+					}
+				} else {
+					echo '<script>alert("gagal upload file"); </script>';
+					echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+				}
+			} else {
+				echo '<script>alert("ukuran file maks 1 mb"); </script>';
+				echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+			}
+		} else {
+			echo '<script>alert("ekstensi file tidak diijinkan"); </script>';
+			echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 		}
-	 		
 		$conn->close();
 	}

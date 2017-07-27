@@ -1,6 +1,4 @@
     <?php 
-    	
-
     	$getID = $_GET['id'];
     	$sql = "SELECT *FROM tb_lowongan a
                     LEFT JOIN tb_user b ON (a.user_id=b.user_id)
@@ -31,22 +29,19 @@
 	                    <label> Nama Perusahaan</label>
 	                        <input type="text" class="form-control" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>"/>
 	                    </div>
-	                    <!-- <div class="form-group">
-	                    <label> Email</label>
-	                        <input type="text" class="form-control" name="email" value="<?php echo $data['email']; ?>" disabled/>
-	                    </div> -->
 	                    <div class="form-group">
-	                    <label> Alamat</label>
-	                        <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>"/>
+	                    <label> Upload Bukti Transfer</label>
+	                            <input type="file" name="transfer" required/><i style="color:red;">* 
+	                            File tipe .png, .jpg/jpeg</i>
 	                    </div>
-	                    <div class="form-group">
+	                    <!-- <div class="form-group">
 	                    <label> No Rekening</label>
 	                        <input type="text" class="form-control" placeholder="No Rekening" name="rekening" value="<?php echo $data['rekening']; ?>" required/>
 	                    </div>
 	                    <div class="form-group">
 	                    <label> Jumlah pembayaran</label>
 	                        <input type="text" class="form-control" placeholder="Harga" name="harga" value="<?php echo $data['harga']; ?>" maxlength="5" onkeypress="return num(event)" required/>
-	                    </div>
+	                    </div> -->
 	                    <div class="form-group">
 	                    <label></label>
 	                        <a class="btn btn-default" href="?p=job.view">Batal</a>

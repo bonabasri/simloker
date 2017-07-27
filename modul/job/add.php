@@ -44,6 +44,8 @@
                 <form class="" role="form" style="margin-top: 10px;" action="?p=job.action" id="defaultForm" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_lowongan" value="<?php echo $id; ?>">
                     <input type="hidden" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>">
+                    <input type="hidden" name="alamat" value="<?php echo $data['alamat']; ?>">
+                    <input type="hidden" name="no_telp" value="<?php echo $data['no_telp']; ?>">
                     <div class="form-group">
                     <label> Kategori Pekerjaan</label>
                         <select class="form-control" name="id_kategori_pekerjaan" required/>

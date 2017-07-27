@@ -1,6 +1,7 @@
 <?php     
     session_start();
     require_once ('core.php');
+    require( dirname( __FILE__ ) . '/fungsi.php' );
     // require_once ('mail.php');
     if  ( empty($_SESSION['uname']) )  
     {

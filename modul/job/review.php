@@ -32,9 +32,9 @@
                 $status = $data['stat'];
                     $status = $data['stat'];
                             if ($status === '0') {
-                                $status = '<span class="label label-default">Belum Aktif</span>';
+                                $status = '<span class="label label-default">Tidak Aktif</span>';
                             } elseif ($status === '1') {
-                                $status = '<span class="label label-primary">Proses Konfirmasi Pembayaran</span>';
+                                $status = '<span class="label label-primary">Konfirmasi Pembayaran</span>';
                             } elseif ($status === '2') {
                                 $status = '<span class="label label-success">Sudah Aktif</span>';
                             } 
@@ -73,16 +73,23 @@
                 <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Rekening</th>
-                        <th>Harga</th>
+                        <th>Bukti Transfer</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><?php echo $data['rekening']; ?></td>
-                        <td><?php echo 'Rp.'.$data['harga'].',-'; ?></td>
-                        <td><?php echo $status; ?></td>
+                        <td><img src="dist/file/transfer/<?php echo $data['transfer']; ?>" width="130" height="80"></td>
+                        <td><?php echo $status; ?><br>
+                        <div class="form-group">
+                            <select class="form-control" name="stat"/>
+                            <option value="<?php echo $data['stat']; ?>"><?php echo $status; ?></option>
+                            <option value="0">Tidak Aktif</option>
+                            <option value="2">Aktif</option>
+                        </select>
+                        </div>
+                        </td>
+
                     </tr>
                 </tbody>
                 </table>

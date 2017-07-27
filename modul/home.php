@@ -30,7 +30,7 @@
                                 LEFT JOIN tb_perusahaan e ON 
                                 (a.user_id=e.user_id)
                             WHERE a.stat = 2 
-                            ORDER BY a.id_lowongan DESC LIMIT 10";
+                            ORDER BY a.id_lowongan DESC LIMIT 20";
                     $res = $conn->query($sql);
                     foreach ($res as $row => $data) {
                 ?>

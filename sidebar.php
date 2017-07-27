@@ -23,14 +23,12 @@
                     <div class="row">
                         <div class="col-lg-8">
                         <?php
-                            $sql = "SELECT a.*, b.id_lowongan, b.id_kategori_pekerjaan 
-                                        FROM tb_kategori_pekerjaan a
-                                    LEFT JOIN tb_lowongan b ON a.id_kategori_kerja = b.id_kategori_pekerjaan";
+                            $sql = "SELECT * FROM tb_kategori_pekerjaan";
                             $res = $conn->query($sql);
                             foreach ($res as $row => $data) {
                             echo'
                             <ul class="list-unstyled">
-                                <li><a href="?p=category&id='.$data["id_kategori_pekerjaan"].'"> '.$data['nama_kategori_kerja'].'</a>
+                                <li><a href="?p=category&id='.$data["id_kategori_kerja"].'"> '.$data['nama_kategori_kerja'].'</a>
                                 </li>
                             </ul>'; 
                             }
@@ -46,7 +44,7 @@
                     <h4>Recent Jobs</h4>
                     <?php 
                         $sql = "SELECT id_lowongan,posisi from tb_lowongan 
-                                order by id_lowongan DESC";
+                                order by id_lowongan DESC LIMIT 20";
                         $res = $conn->query($sql);
                         foreach ($res as $row => $data) {
                         echo'
