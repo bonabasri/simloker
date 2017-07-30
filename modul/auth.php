@@ -13,7 +13,6 @@
 
 		if ($res->num_rows === 1 ) {
 			foreach ($row as $key => $value) {
-				# code...
 				$_SESSION[$key] = $value;
 				//session_start();
 				$_SESSION['user_id']= $row['user_id'];
@@ -62,8 +61,40 @@
 						
 						if ($conn->query($query) === TRUE)
 						{
-							echo('<script>alert("registrasi berhasil, silahkan login"); </script>');
+							echo('<script>alert("Registrasi berhasil, silahkan login"); </script>');
 	 						echo '<meta http-equiv="refresh" content="0;URL=?p=login">';
+	 						date_default_timezone_set('Etc/UTC');
+							require 'PHPMailer/PHPMailerAutoload.php';
+							$mail = new PHPMailer;
+							$mail->isSMTP();
+							$mail->Host = 'smtp.gmail.com';
+							$mail->Port = 587;
+							$mail->SMTPSecure = 'tls';
+							$mail->SMTPAuth = true;
+							$mail->Username = "amaliyanasithotul@gmail.com";
+							$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
+							$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
+							$mail->addAddress('amaliyanasithotul@gmail.com', 'lokercilacapcom');
+							$mail->Subject = 'Selamat Datang di lokercilacap.com';
+							$mail->msgHTML("<body style='margin: 20px;'>
+							        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>
+							        <br>
+							        Selamat Datang ".$user_id.", <br>
+						        	Anda baru saja bergabung sebagai ".$uac." di lokercilacap!<br>
+							        <ul>
+								        <li>Baca <a href='http://localhost/simloker/?p=add-job'>panduan memulai</a>
+								        </li>
+							        </ul>
+							        <hr>
+							        Salam Hangat, <br>
+							        Admin lokercilacap
+							        </div>
+							        </body>");
+							$mail->AltBody = 'Selamat Datang di lokercilacap.com';
+
+							if (!$mail->send()) {
+							    echo "Mailer Error: " . $mail->ErrorInfo;
+							}
 						}
 						if ($uac === 'PELAMAR') 
 						{

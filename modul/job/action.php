@@ -78,10 +78,10 @@
 						$mail->Port = 587;
 						$mail->SMTPSecure = 'tls';
 						$mail->SMTPAuth = true;
-						$mail->Username = "amaliyanasithotul@gmail.com";
+						$mail->Username = "luckman.heckem@gmail.com";
 						$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
 						$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
-						$mail->addAddress('amaliyanasithotul@gmail.com', 'lokercilacapcom');
+						$mail->addAddress('luckman.heckem@gmail.com', 'lokercilacapcom');
 						$mail->Subject = 'Selamat Datang di lokercilacap.com';
 						$mail->msgHTML("<body style='margin: 20px;'>
 						        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>
@@ -94,6 +94,13 @@
 							        <li>Judul Lowongan : ".$v_posisi." </li>
 							        <li>Nomor Telepon : ".$no_telp." </li>
 							        <li>Alamat : ".$alamat." </li>
+						        </ul>
+						        <p> Nomor Rekening </p>
+						        <ul>
+						        	<li>BNI = 0242142155 </li>
+									<li>BCA = 846111891</li>
+									<li>Mandiri = 7106486608</li>
+									Atas Nama Nasithotul Amaliya
 						        </ul>
 						        Selanjutnya untuk mengaktifkan iklan anda, <br> 
 						        Klik link

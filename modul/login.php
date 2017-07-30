@@ -5,12 +5,7 @@
                         <h1 class="panel-title" style="padding-top:13px;">Login</h1>
                         <br>
                         <div style="color: rgba(102,117,127,0.6);">
-                            <?php
-                            error_reporting(0);
-                            if($_GET['action']=='error'){
-                                echo "The username and password did not match.";
-                            }
-                            ?>
+                            
                         </div>
                     
                     <div class="panel-body" style="height: 320px;">
