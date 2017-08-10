@@ -3,6 +3,7 @@
     	$sql = "SELECT *FROM tb_lowongan a
                     LEFT JOIN tb_user b ON (a.user_id=b.user_id)
                     LEFT JOIN tb_perusahaan c ON (a.user_id=c.user_id) 
+                    LEFT JOIN tb_pembayaran d ON (a.id_lowongan=d.id_lowongan)
                 WHERE a.id_lowongan = '$getID'";
 	            $res = $conn->query($sql);
 	            foreach ($res as $row => $data);
@@ -31,7 +32,8 @@
 	                    </div>
 	                    <div class="form-group">
 	                    <label> Upload Bukti Transfer</label>
-	                            <input type="file" name="transfer" required/><i style="color:red;">* 
+	                            <input type="file" name="transfer" required/>
+	                            <img src="dist/file/transfer/<?php echo $data['transfer'];?>" width="120" height="90"><i style="color:red;">* 
 	                            File tipe .png, .jpg/jpeg</i>
 	                    </div>
 	                    <!-- <div class="form-group">

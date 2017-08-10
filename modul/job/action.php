@@ -79,7 +79,7 @@
 						$mail->SMTPSecure = 'tls';
 						$mail->SMTPAuth = true;
 						$mail->Username = "luckman.heckem@gmail.com";
-						$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
+						$mail->Password = "heckem93";  /*Tulis Password Gmail Anda Disini*/
 						$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
 						$mail->addAddress('luckman.heckem@gmail.com', 'lokercilacapcom');
 						$mail->Subject = 'Selamat Datang di lokercilacap.com';
@@ -296,11 +296,14 @@
 			{
 				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_img) ) 
 				{
+					
+					$sql = "INSERT INTO tb_pembayaran (id_lowongan, transfer)
+							VALUES ('$id','$v_img')";
+
 					$sql = "UPDATE tb_lowongan SET
-								transfer = '$v_img',
 								stat = 1
 							WHERE id_lowongan = '$getId'";
-
+							
 					if ($conn->query($sql) === TRUE) 
 					{
 						echo '<script>alert("Lowongan berhasil dikonfirmasi"); </script>';
