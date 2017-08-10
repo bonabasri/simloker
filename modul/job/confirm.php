@@ -1,4 +1,7 @@
-    <?php 
+    <?php
+
+	if ($_SESSION['uac'] === 'PERUSAHAAN') {
+             
     	$getID = $_GET['id'];
     	$sql = "SELECT *FROM tb_lowongan a
                     LEFT JOIN tb_user b ON (a.user_id=b.user_id)
@@ -55,6 +58,14 @@
 	    </div>
 	</div>
 </div>
+
+<?php 
+} else {
+	echo " ";
+	echo '<script>alert("Maaf, akses halaman ini hanya user perusahaan"); </script>';
+	echo '<meta http-equiv="refresh" content="0;URL=logout.php">';
+}
+?>
 
 	<script>
 		function num(evt) {
