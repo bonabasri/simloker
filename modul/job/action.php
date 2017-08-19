@@ -3,6 +3,8 @@
 	if ( isset($_POST['save']) ) 
 	{
 		$v_user_id 					= $_SESSION['user_id'];
+		$email						= $_SESSION['email'];
+		$pass 						= $_SESSION['upsw'];
 		$id 						= $_POST['id_lowongan'];
 		$nama_perusahaan 			= $_POST['nama_perusahaan'];
 		$alamat 					= $_POST['alamat'];
@@ -78,10 +80,10 @@
 						$mail->Port = 587;
 						$mail->SMTPSecure = 'tls';
 						$mail->SMTPAuth = true;
-						$mail->Username = "luckman.heckem@gmail.com";
-						$mail->Password = "heckem93";  /*Tulis Password Gmail Anda Disini*/
+						$mail->Username = $email;
+						$mail->Password = $pass;  /*Tulis Password Gmail Anda Disini*/
 						$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
-						$mail->addAddress('luckman.heckem@gmail.com', 'lokercilacapcom');
+						$mail->addAddress($email, $v_user_id);
 						$mail->Subject = 'Selamat Datang di lokercilacap.com';
 						$mail->msgHTML("<body style='margin: 20px;'>
 						        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>

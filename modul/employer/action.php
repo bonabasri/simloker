@@ -43,8 +43,6 @@
 											(
 											nama_perusahaan, 
 											alamat, 
-											kota, 
-											prov, 
 											no_telp,
 											logo,
 											ket_perusahaan,
@@ -52,8 +50,6 @@
 													(
 													'$v_nama_perusahaan',
 													'$v_alamat',
-													'$v_kota',
-													'$v_prov',
 													'$v_no_telp',
 													'$v_logo',
 													'$v_ket_perusahaan',
@@ -118,8 +114,6 @@
 							SET 
 								nama_perusahaan = '$v_nama_perusahaan',
 								alamat 			= '$v_alamat',
-								kota 			= '$v_kota',
-								prov 			= '$v_prov',
 								no_telp 		= '$v_no_telp',
 								ket_perusahaan 	= '$v_ket_perusahaan' 
 							WHERE user_id 		= '".$v_user_id."' ";
@@ -161,8 +155,6 @@
 								SET 
 									nama_perusahaan = '$v_nama_perusahaan',
 									alamat 			= '$v_alamat',
-									kota 			= '$v_kota',
-									prov 			= '$v_prov',
 									no_telp 		= '$v_no_telp',
 									logo 			= '$v_logo',
 									ket_perusahaan 	= '$v_ket_perusahaan' 
@@ -226,8 +218,6 @@
 							SET 
 								nama_perusahaan = '$v_nama_perusahaan',
 								alamat 			= '$v_alamat',
-								kota 			= '$v_kota',
-								prov 			= '$v_prov',
 								no_telp 		= '$v_no_telp',
 								ket_perusahaan 	= '$v_ket_perusahaan' 
 							WHERE user_id 		= '".$v_user_id."' ";
@@ -269,8 +259,6 @@
 								SET 
 									nama_perusahaan = '$v_nama_perusahaan',
 									alamat 			= '$v_alamat',
-									kota 			= '$v_kota',
-									prov 			= '$v_prov',
 									no_telp 		= '$v_no_telp',
 									logo 			= '$v_logo',
 									ket_perusahaan 	= '$v_ket_perusahaan' 

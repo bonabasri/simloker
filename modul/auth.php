@@ -6,8 +6,9 @@
 	{
 	$v_uname = $conn->real_escape_string($_POST['uname']);
 	$v_upsw	 = $conn->real_escape_string($_POST['upsw']);
+	// $v_upsw	 = $conn->real_escape_string(sha1($_POST['upsw']));
 
-	$log = "SELECT *FROM tb_user WHERE uname='".$v_uname."' AND upsw='".sha1($v_upsw)."'";
+	$log = "SELECT *FROM tb_user WHERE uname='".$v_uname."' AND upsw='".$v_upsw."'";
 	$res = $conn->query($log);
 	$row = $res->fetch_assoc();
 
@@ -34,7 +35,8 @@
 	{	
 		$uname 		= $_POST['uname'];
 		$user_id	= $uname;
-		$upsw 		= sha1($_POST['upsw']);
+		// $upsw 		= sha1($_POST['upsw']);
+		$upsw 		= $_POST['upsw'];
 		$email 		= $_POST['email'];
 		$uac 		= $_POST['uac'];
 		
@@ -71,10 +73,10 @@
 							$mail->Port = 587;
 							$mail->SMTPSecure = 'tls';
 							$mail->SMTPAuth = true;
-							$mail->Username = "amaliyanasithotul@gmail.com";
-							$mail->Password = "";  /*Tulis Password Gmail Anda Disini*/
-							$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
-							$mail->addAddress('amaliyanasithotul@gmail.com', 'lokercilacapcom');
+							$mail->Username = $email;
+							$mail->Password = $upsw;  /*Tulis Password Gmail Anda Disini*/
+							$mail->setFrom('admin.lokercilacap@gmail.com', 'adminlokercilacap.com');
+							$mail->addAddress($email, $user_id);
 							$mail->Subject = 'Selamat Datang di lokercilacap.com';
 							$mail->msgHTML("<body style='margin: 20px;'>
 							        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>
@@ -94,6 +96,7 @@
 
 							if (!$mail->send()) {
 							    echo "Mailer Error: " . $mail->ErrorInfo;
+							    echo "Mohon masukkan alamat email yang valid!";
 							}
 						}
 						if ($uac === 'PELAMAR') 

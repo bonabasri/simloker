@@ -25,6 +25,7 @@
                     LEFT JOIN tb_kategori_pendidikan d ON (a.id_pendidikan=d.id_pendidikan)
                     LEFT JOIN tb_perusahaan e ON (a.user_id=e.user_id)
                     LEFT JOIN tb_user f ON (a.user_id= f.user_id)
+                    LEFT JOIN tb_pembayaran g ON (a.id_lowongan=g.id_lowongan)
                     WHERE a.id_lowongan = '$GetID'";
                 $res = $conn->query($sql);
                 $data = $res->fetch_assoc();
@@ -93,8 +94,10 @@
                     </tr>
                 </tbody>
                 </table>
+                    
                     <button class="btn btn-primary pull-right" type="submit" name="update">Konfirmasi
                         </button>
+                        <a class="btn btn-default pull-right" href="?p=job.views">Batal</a>
                     </form>
                 </div>
             </div>

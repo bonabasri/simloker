@@ -57,12 +57,12 @@
                     <label> Alamat</label>
                         <input type="text" class="form-control" name="alamat" value="<?php echo $data['alamat']; ?>" placeholder="Alamat" required/>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <input type="text" class="form-control" name="kota" value="<?php echo $data['kota']; ?>" placeholder="Kota" required/>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="prov" value="<?php echo $data['prov']; ?>" placeholder="Propinsi" required/>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                     <label> Nomor Telepon</label>
                         <input type="text" class="form-control" name="no_telp" value="<?php echo $data['no_telp']; ?>" required/>
