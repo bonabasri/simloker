@@ -299,13 +299,23 @@
 				if ( move_uploaded_file( $fileTemp,$upload_dir.$v_img) ) 
 				{
 					
-					$sql = "INSERT INTO tb_pembayaran (id_lowongan, transfer)
-							VALUES ('$id','$v_img')";
+					$query = "INSERT INTO tb_pembayaran ( id_lowongan, transfer)
+							VALUES ('$getId', '$v_img' ) ";
+		
+					if ($conn->query($query) === TRUE) 
+					{
+						echo '<script>alert("Lowongan berhasil dikonfirmasi"); </script>';
+				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+					}else{
+						echo "terjadi kesalahan fatal" .$query.' <br> ' .$conn->error;
+						echo '<script>alert("data lowongan gagal diupdate"); </script>';
+				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
+					}
 
 					$sql = "UPDATE tb_lowongan SET
 								stat = 1
 							WHERE id_lowongan = '$getId'";
-							
+
 					if ($conn->query($sql) === TRUE) 
 					{
 						echo '<script>alert("Lowongan berhasil dikonfirmasi"); </script>';
@@ -315,6 +325,7 @@
 						echo '<script>alert("data lowongan gagal diupdate"); </script>';
 				 		echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';
 					}
+
 				} else {
 					echo '<script>alert("gagal upload file"); </script>';
 					echo '<meta http-equiv="refresh" content="0;URL=?p=job.view">';

@@ -6,7 +6,6 @@
 	{
 	$v_uname = $conn->real_escape_string($_POST['uname']);
 	$v_upsw	 = $conn->real_escape_string($_POST['upsw']);
-	// $v_upsw	 = $conn->real_escape_string(sha1($_POST['upsw']));
 
 	$log = "SELECT *FROM tb_user WHERE uname='".$v_uname."' AND upsw='".$v_upsw."'";
 	$res = $conn->query($log);
@@ -35,7 +34,6 @@
 	{	
 		$uname 		= $_POST['uname'];
 		$user_id	= $uname;
-		// $upsw 		= sha1($_POST['upsw']);
 		$upsw 		= $_POST['upsw'];
 		$email 		= $_POST['email'];
 		$uac 		= $_POST['uac'];
@@ -75,7 +73,7 @@
 							$mail->SMTPAuth = true;
 							$mail->Username = $email;
 							$mail->Password = $upsw;  /*Tulis Password Gmail Anda Disini*/
-							$mail->setFrom('admin.lokercilacap@gmail.com', 'adminlokercilacap.com');
+							$mail->setFrom('admin.lokercilacap@gmail.com', 'lokercilacap.com');
 							$mail->addAddress($email, $user_id);
 							$mail->Subject = 'Selamat Datang di lokercilacap.com';
 							$mail->msgHTML("<body style='margin: 20px;'>
@@ -96,7 +94,6 @@
 
 							if (!$mail->send()) {
 							    echo "Mailer Error: " . $mail->ErrorInfo;
-							    echo "Mohon masukkan alamat email yang valid!";
 							}
 						}
 						if ($uac === 'PELAMAR') 
