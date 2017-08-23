@@ -242,7 +242,7 @@
 
     <script type="text/javascript" src="js/login.js"></script>
 
-
+    <script type="text/javascript" src="bootstrap/jquery/dist/jquery.min.js"></script>
     <!-- Metis Menu Plugin JavaScript -->
     <script src="bootstrap/metisMenu/dist/metisMenu.min.js"></script>
 
@@ -269,7 +269,7 @@
                 //autoclose:true
                 changeMonth: true,
                 yearRange: "-30:+0",
-                format: "dd-mm-yyyy",
+                format: "dd/mm/yyyy",
                 calendarWeeks: true,
                 todayBtn: "linked",
                 changeYear: true
@@ -331,9 +331,33 @@
             });
             
             CKEDITOR.replace( 'editor' );
+
+            window.onload=function(){
+                $('#datepicker').on('change', function() {
+                    var dob = new Date(this.value);
+                    var today = new Date();
+                    var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+                    $('#umur').val(age);
+                });
+            }
+            
+            $('#provinsi').on('change',function(){
+                var stateID = $(this).val();
+                if(stateID){
+                    $.ajax({
+                        type:'POST',
+                        url:'ajaxKota.php',
+                        data:'id_provinsi='+stateID,
+                        success:function(html){
+                            $('#kota').html(html);
+                        }
+                    }); 
+                }else{
+                    $('#kota').html('<option value="">- Pilih Kota -</option>'); 
+                }
+            });
             
     </script>
-
 </body>
 
 </html>

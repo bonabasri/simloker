@@ -109,11 +109,13 @@
 		$v_nama_belakang 	= $_POST['nama_belakang'];
 		$v_tempat_lahir		= $_POST['tempat_lahir'];
 
-		$date	         	= explode('-',$_POST['tgl_lahir']);
+		$date	         	= explode('/',$_POST['tgl_lahir']);
 		$v_tgl_lahir 		= $date['2'].'-'.$date['1'].'-'.$date['0'];
 		
 		$v_jk				= $_POST['jk'];
 		$v_agama			= $_POST['agama'];
+		$v_provinsi			= $_POST['provinsi'];
+		$v_kota				= $_POST['kota'];
 		$v_alamat			= $_POST['alamat'];
 		$v_lulusan			= $_POST['lulusan'];
 		$v_usia				= $_POST['usia'];
@@ -137,6 +139,8 @@
 									tgl_lahir 		= '$v_tgl_lahir',
 									jk 				= '$v_jk',
 									agama 			= '$v_agama',
+									provinsi		= '$v_provinsi',
+									kota 			= '$v_kota',
 									alamat 			= '$v_alamat',
 									lulusan 		= '$v_lulusan',
 									usia 			= '$v_usia',
@@ -174,6 +178,8 @@
 									tgl_lahir 		= '$v_tgl_lahir',
 									jk 				= '$v_jk',
 									agama 			= '$v_agama',
+									provinsi		= '$v_provinsi',
+									kota 			= '$v_kota',
 									alamat 			= '$v_alamat',
 									lulusan 		= '$v_lulusan',
 									usia 			= '$v_usia',

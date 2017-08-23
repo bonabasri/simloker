@@ -14,10 +14,15 @@
         <?php
             $GetID  = $_SESSION['user_id'];
             $sql = "SELECT *FROM tb_pelamar a
-                    INNER JOIN tb_user b ON (a.user_id=b.user_id) 
+                    LEFT JOIN tb_user b ON (a.user_id=b.user_id)
+                    LEFT JOIN tb_provinsi c ON (a.provinsi = c.id_provinsi)
+                    LEFT JOIN tb_kota d ON (a.kota = d.id_kota)
                     WHERE a.user_id = '$GetID'";
             $res = $conn->query($sql);
             $data = $res->fetch_assoc();
+
+            $query = $conn->query("SELECT * FROM tb_provinsi");
+            $rowCount = $query->num_rows;
 
             $sql = "SELECT * FROM tb_jenis_pekerjaan";
             $res = $conn->query($sql);
@@ -62,7 +67,7 @@
                     </div>
                     <div class="form-group">
                     <label> Tanggal Lahir</label>
-                        <input type="text" class="form-control" name="tgl_lahir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_lahir']), 'd-m-Y'); ?>" placeholder="Tanggal Lahir" required/>
+                        <input type="text" class="form-control" name="tgl_lahir" id="datepicker" value="<?php echo date_format(date_create($data['tgl_lahir']), 'd/m/Y'); ?>" placeholder="Tanggal Lahir" required/>
                     </div>
                     <div class="form-group">
                     <label> Jenis Kelamin</label>
@@ -75,7 +80,35 @@
 
                     <div class="form-group">
                     <label> Agama</label>
-                        <input type="text" class="form-control" name="agama" value="<?php echo $data['agama']; ?>" placeholder="Agama" required/>
+                        <select class="form-control" name="agama" value="<?php echo $data['agama'];?>" required/>
+                            <option value="<?php echo $data['agama'];?>"><?php echo $data['agama'];?></option>
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Budha">Budha</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                    <label> Provinsi</label>
+                        <select class="form-control" name="provinsi" id="provinsi" required/>
+                            <option value="<?php echo $data['provinsi']; ?>"><?php echo $data['provinsi']; ?></option>
+                            <?php
+                                if($rowCount > 0){
+                                    while($row = $query->fetch_assoc()){ 
+                                        echo '<option value="'.$row['id_provinsi'].'">'.$row['provinsi'].'</option>';
+                                    }
+                                }else{
+                                    echo '<option value="">Provinsi Tidak Tersedia</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                    <label> Kota</label>
+                        <select class="form-control" name="kota" id="kota" required/>
+                            <option value="<?php echo $data['kota']; ?>"><?php echo $data['kota']; ?></option>
+                        </select>
                     </div>
                     <div class="form-group">
                     <label> Alamat</label>
@@ -100,7 +133,7 @@
                     </div>
                     <div class="form-group">
                     <label> Usia</label>
-                        <input type="text" class="form-control" name="usia" value="<?php echo $data['usia']; ?>" placeholder="Usia" required/>
+                        <input type="text" class="form-control" name="usia" id="umur" value="<?php echo $data['usia']; ?>" placeholder="Usia" required/>
                     </div>
                     <div class="form-group">
                     <label> Nomor Telepon</label>
@@ -133,5 +166,3 @@
     </div>
 </div>
 </div>
-
-
