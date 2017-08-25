@@ -69,7 +69,7 @@ if (isset($_POST['apply-save']))
 								        <div style='width: 640px; font-family: Arial, sans-serif; font-size: 14px; padding:30px 30px 30px 30px; line-height:25px; border:#eaeaea solid 10px; border-radius: 5px; color:#445566;'>
 								        <br>
 								        Pemberitahuan dari lokercilacap!<br>
-								        Halloo <b>".$v_user_id."<br>, <br>
+								        Halloo <b>".$v_user_id."</b>, <br>
 							        	Anda baru saja mengirim lamaran di lokercilacap!<br>
 							        	Lowongan Anda berhasil dikirim.
 								        Nantikan informasi selanjutnya
