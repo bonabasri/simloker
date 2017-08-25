@@ -17,8 +17,7 @@
                         <th style="width:5%;">No</th>
                         <th>Pelamar</th>
                         <th>Email</th>
-                        <th>Posisi</th> 
-                        <th>CV</th>
+                        <th>Posisi</th>
                         <th style="text-align:center;">Tgl Lamar</th>
                         <th style="text-align:center;">Status</th>
                         <th style="text-align:center;">Control</th>
@@ -44,6 +43,10 @@
                                 $status = '<span class="label label-primary">Proses Interview</span>';
                             } elseif ($status === '2') {
                                 $status = '<span class="label label-success">Diterima</span>';
+                            } elseif ($status === '3') {
+                                $status = '<span class="label label-danger">Ditolak</span>';
+                            } elseif ($status === '4') {
+                                $status = '<span class="label label-warning">Kurang Persyaratan</span>';
                             }
                         $no++;
                     ?>
@@ -52,7 +55,6 @@
                         <td ><?php echo $data['nama_depan'].' '.$data['nama_belakang']; ?></td>
                         <td ><?php echo $data['email'];?></td>
                         <td ><?php echo $data['posisi'];?></td>
-                        <td style="width: 15%;"><a href="dist/file/cv/<?php echo $data['file']; ?>" target="_blank"><?php echo $data['file'];?></a></td>
                         <td style="text-align:center;"><?php echo date_format(date_create($data['tgl_lamar']), 'd/m/Y');?> </td>
                         <td ><?php echo $status;?></td>
                         <td style="text-align:center;">

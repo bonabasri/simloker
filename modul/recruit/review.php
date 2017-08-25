@@ -32,9 +32,13 @@
                     if ($status === '0') {
                         $status = '<span class="label label-default">Pelamar Baru</span>';
                     } elseif ($status === '1') {
-                        $status = '<span class="label label-primary">Proses Interview</span>';
+                        $status = '<span class="label label-primary">Undang Interview</span>';
                     } elseif ($status === '2') {
                         $status = '<span class="label label-success">Diterima</span>';
+                    } elseif ($status === '3') {
+                        $status = '<span class="label label-danger">Tidak Diterima</span>';
+                    } elseif ($status === '4') {
+                        $status = '<span class="label label-warning">Kurang Persyaratan</span>';
                     }
             ?>
                 <tr>
@@ -76,6 +80,11 @@
                     <tr>
                         <input type="hidden" name="id" value="<?php echo $GetID; ?>">
                         <input type="hidden" name="id_lamaran" value="<?php echo $data['id_lamaran']; ?>">
+                        <input type="hidden" name="email" value="<?php echo $data['email']; ?>">
+                        <input type="hidden" name="upsw" value="<?php echo $data['upsw']; ?>">
+                        <input type="hidden" name="nama_perusahaan" value="<?php echo $data['nama_perusahaan']; ?>">
+                        <input type="hidden" name="posisi" value="<?php echo $data['posisi']; ?>">
+                        <input type="hidden" name="uname" value="<?php echo $data['uname']; ?>">
                         <td>
                             <textarea name="message" class="form-control" placeholder="Tulis pesan disini"><?php echo $data['message'];?></textarea>
                         </td><br>
@@ -93,13 +102,15 @@
                 <tbody>
                     <tr>
                         <td style="width: 50%;">
-                            <input type="text" name="tgl_interview" id="datepicker" value="<?php echo date_format(date_create($data['tgl_interview']), 'd-m-Y'); ?>" class="form-control"/>
+                            <input type="text" name="tgl_interview" id="datepicker" value="<?php echo date_format(date_create($data['tgl_interview']), 'd/m/Y'); ?>" class="form-control"/>
                         </td>
                         <td>
                             <select class="form-control" name="status">
                                 <option value="<?php echo $data['status']; ?>" name="status"><?php echo $status; ?></option>
                                 <option value="1">Undang Interview</option>
-                                <option value="2">Diterima Kerja</option>
+                                <option value="2">Diterima</option>
+                                <option value="3">Tidak Diterima</option>
+                                <option value="4">Kurang Persyaratan</option>
                             </select>
                         </td>
                     </tr>

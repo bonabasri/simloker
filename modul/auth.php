@@ -5,7 +5,8 @@
 	if (isset($_POST['login'])) 
 	{
 	$v_uname = $conn->real_escape_string($_POST['uname']);
-	$v_upsw	 = $conn->real_escape_string($_POST['upsw']);
+	// $v_upsw	 = $conn->real_escape_string($_POST['upsw']);
+	$v_upsw	 = $conn->real_escape_string(sha1($_POST['upsw']));
 
 	$log = "SELECT *FROM tb_user WHERE uname='".$v_uname."' AND upsw='".$v_upsw."'";
 	$res = $conn->query($log);
